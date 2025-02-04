@@ -40,11 +40,11 @@ function Header() {
 
       </div>
 
-      <div className="header-bar-2">
+      {/* <div className="header-bar-2">
             <div className="marquee-content">
                 <h6>Assuring Integrity, Independency, Impartiality, Confidentiality, Objectivity and Conflict of interest in performing system audits.</h6>
             </div>
-        </div>
+        </div> */}
 
       
       <div className="header-bar-3">

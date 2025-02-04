@@ -35,7 +35,7 @@ function Footer() {
 
             {/* Copyright Section */}
             <div className="footer-bottom">
-                <p>&copy; {new Date().getFullYear()} Your Company. All Rights Reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Globaq @ www.globaqksa.com </p>
             </div>
         </footer>
     );
