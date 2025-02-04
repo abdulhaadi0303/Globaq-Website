@@ -73,7 +73,17 @@
     color: var(--primary-black);
 }
 
-
+/* === Section Separators === */
+.home-bar-2::before,
+.home-bar-3::before,
+.home-bar-4::before {
+    content: "";
+    display: block;
+    width: 80%;  /* 80% width of the page */
+    height: 2px;
+    background-color: #ddd; /* Light gray */
+    margin: 30px auto; /* Centers the separator */
+}
 
 /* === Responsive Design === */
 @media (max-width: 768px) {
@@ -92,5 +102,13 @@
 
     .custom-list li strong {
         min-width: auto;
+    }
+
+    /* Reduce margin for smaller screens */
+    .home-bar-2::before,
+    .home-bar-3::before,
+    .home-bar-4::before {
+        width: 85%;  /* Slightly wider for better visibility */
+        margin: 20px auto;
     }
 }

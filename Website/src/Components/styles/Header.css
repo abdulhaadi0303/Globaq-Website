@@ -1,3 +1,13 @@
+/* === Header Separator (Covers 90% Width & Centered) === */
+.header::after {
+  content: "";
+  display: block;
+  width: 94%;  /* 90% width of the page */
+  height: 2px;
+  background-color: #444; /* Dark gray line */
+  margin: 10px auto; /* Centers the separator */
+}
+
 /* General Header Styling */
 .header {
   background: var(--white); /* Ensures the header background is white */
@@ -129,5 +139,10 @@
   .header-bar-3 nav {
       flex-wrap: wrap;
       gap: 20px;
+  }
+
+  /* Reduce separator width for smaller screens */
+  .header::after {
+      width: 95%;
   }
 }
