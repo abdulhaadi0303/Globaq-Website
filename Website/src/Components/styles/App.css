@@ -1,0 +1,11 @@
+:root {
+    --primary-black: #333333;
+    --dark-gray: #555555;
+    --bright-orange: #F26C23;
+    --light-gray: #EAEAEA;
+    --white: #FFFFFF; /* Ensure white is correctly set */
+}
+
+body, .header, .home-bar-1, .home-bar-2, .home-bar-3, .home-bar-4 {
+    background-color: var(--white) !important;
+}

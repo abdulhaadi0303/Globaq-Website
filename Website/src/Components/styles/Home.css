@@ -1,0 +1,96 @@
+/* === Home Sections === */
+.home-bar-1,
+.home-bar-2,
+.home-bar-3,
+.home-bar-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 5%;
+}
+
+/* === Carousel === */
+.home-bar-1 {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 300px;
+}
+
+.image-container {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    background: var(--bright-orange);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carousel-btn:hover {
+    background: var(--dark-gray);
+}
+
+/* === Home Sections Background Fix === */
+.home-bar-2 { background-color: var(--white); } /* Vision - White */
+.home-bar-3 { background-color: var(--light-gray); } /* Mission - Gray */
+.home-bar-4 { background-color: var(--white); } /* Policy - White */
+
+/* === List Styling === */
+.custom-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    width: 80%;
+}
+
+.custom-list li {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.custom-list li strong {
+    min-width: 200px;
+    display: inline-block;
+    font-weight: bold;
+    color: var(--primary-black);
+}
+
+
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .home-bar-1 {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-container {
+        width: 90%;
+    }
+
+    .custom-list li {
+        flex-direction: column;
+    }
+
+    .custom-list li strong {
+        min-width: auto;
+    }
+}

@@ -1,0 +1,133 @@
+/* General Header Styling */
+.header {
+  background: var(--white); /* Ensures the header background is white */
+  padding: 10px;
+}
+
+/* === Header Bar 1 === */
+.header-bar-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 7%;
+}
+
+/* Home Logo - Centered */
+.header-bar-1-homeimage {
+  flex: 3; /* Adjusts width (40%) */
+  display: flex;
+  justify-content: center;
+}
+
+.header-bar-1-homeimage img {
+  width: 220px; /* Adjusted for better scaling */
+  height: auto;
+}
+
+/* Social Media Icons */
+.header-bar-1-media {
+  flex: 2; /* Adjusts width (20%) */
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.social-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.facebook:hover { color: #1877f2; }
+.twitter:hover { color: #1da1f2; }
+.linkedin:hover { color: #0a66c2; }
+.google:hover { color: #db4437; }
+
+/* Side Logo */
+.header-bar-1-sideimage {
+  flex: 1; /* Adjusts width (10%) */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-bar-1-sideimage img {
+  width: 50px;
+  height: auto;
+}
+
+/* === Header Bar 2 (Marquee) === */
+.header-bar-2 {
+  overflow: hidden;
+  height: 30px;
+  background: var(--white);
+  color: var(--primary-black);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.marquee-content {
+  white-space: nowrap;
+  display: flex;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* === Header Bar 3 (Navigation) === */
+.header-bar-3 nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: var(--white);
+  padding: 10px 0;
+}
+
+.header-bar-3 nav a {
+  color: var(--primary-black);
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.header-bar-3 nav a:hover {
+  color: var(--bright-orange);
+  text-decoration: underline;
+}
+
+/* === Responsive Header === */
+@media (max-width: 768px) {
+  .header-bar-1 {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .header-bar-1-homeimage {
+      order: -1; /* Moves logo to the top */
+      flex: 1;
+  }
+
+  .header-bar-1-media {
+      margin: 10px 0;
+      justify-content: center;
+  }
+
+  .header-bar-1-sideimage {
+      justify-content: center;
+      margin-top: 10px;
+  }
+
+  .header-bar-3 nav {
+      flex-wrap: wrap;
+      gap: 20px;
+  }
+}
