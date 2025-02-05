@@ -3,6 +3,7 @@
     background: #222; /* Dark background */
     color: #ddd; /* Light gray text */
     padding: 40px 5%;
+    margin-top:100px;
 }
 
 /* Footer Container - Flexbox for Sections */

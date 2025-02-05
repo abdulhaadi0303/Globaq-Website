@@ -7,7 +7,29 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 40px 5%;
+    padding: 30px 5%;
+}
+
+/* === Heading Styles (Vision, Mission, Policy) === */
+.home-bar-2 h2, 
+.home-bar-3 h2, 
+.home-bar-4 h2 {
+    color: #F26C23; /* Orange shade matching website */
+    font-size: 33px; /* Slightly larger */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* === Section Text Styling === */
+.home-bar-2 h3,
+.home-bar-3 h3,
+.home-bar-4 h3 {
+    font-weight: normal; /* Removes bold effect */
+    font-size: 18px; /* Slightly larger for readability */
+    color: var(--primary-black); /* Ensures proper contrast */
+    max-width: 80%;
+    line-height: 1.6;
 }
 
 /* === Carousel === */
@@ -30,6 +52,7 @@
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 /* Carousel Buttons */
@@ -41,15 +64,18 @@
     font-size: 24px;
     cursor: pointer;
     border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 .carousel-btn:hover {
     background: var(--dark-gray);
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 /* === Home Sections Background Fix === */
+.home-bar-1 { background-color: var(--white); } /* Vision - White */
 .home-bar-2 { background-color: var(--white); } /* Vision - White */
-.home-bar-3 { background-color: var(--light-gray); } /* Mission - Gray */
+.home-bar-3 { background-color: var(--white); } /* Mission - Gray */
 .home-bar-4 { background-color: var(--white); } /* Policy - White */
 
 /* === List Styling === */
@@ -60,17 +86,24 @@
     width: 80%;
 }
 
-.custom-list li {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+/* === Improved List Titles (Meet Customer Requirements, etc.) === */
+.custom-list li strong {
+    font-size: 20px; /* Increased size */
+    font-weight: bold;
+    color: #333; /* Darker color for readability */
+    display: inline-block; /* Ensures inline formatting */
+    margin-right: 5px; /* Adds slight spacing */
 }
 
-.custom-list li strong {
-    min-width: 200px;
-    display: inline-block;
-    font-weight: bold;
+/* === List Descriptions Stay Inline === */
+.custom-list li {
+    font-size: 17px; /* Slightly larger */
     color: var(--primary-black);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    line-height: 1.5;
 }
 
 /* === Section Separators === */
@@ -109,6 +142,6 @@
     .home-bar-3::before,
     .home-bar-4::before {
         width: 85%;  /* Slightly wider for better visibility */
-        margin: 20px auto;
+        margin: 10px auto;
     }
 }

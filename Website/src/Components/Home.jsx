@@ -43,8 +43,8 @@ function Home() {
             {/* Bar 2 for Info Section */}
             <div className="home-bar-2">
                 <h2>Our Vision</h2>
-                <h3>To be a global market leader in<strong>conformance and compliance</strong> industry to contribute in
-                <strong>sustainable</strong> future</h3>
+                <h3>To be a global market leader in <strong> conformance and compliance </strong> industry to contribute in
+                <strong> sustainable</strong> future</h3>
                 {/* Add navigation tabs here */}
             </div>
 
@@ -65,18 +65,16 @@ function Home() {
                   continuous improvement, professionalism, and competency, ensuring customer satisfaction and the 
                   delivery of sustainable, quality-driven solutions.</h3>
                 <h3>To achieve this, we will:</h3>
-                    <ul class="custom-list">
-                        <li><strong>Meet Customer Requirements: </strong> Deliver tailored solutions that meet and exceed customer expectations.</li>
-                        <li><strong>Ensure Compliance: </strong> Adhere to all applicable legal, regulatory, and industry standards in all our services.</li>
-                        <li><strong>Foster Continuous Improvement: </strong> Regularly review and enhance our processes to maintain efficiency and effectiveness.</li>
-                        <li><strong>Empower Our Team: </strong> Invest in the development of our employees to ensure they are skilled, knowledgeable, and aligned with our mission.</li>
-                        <li><strong>Promote Sustainability: </strong> Integrate sustainable practices into our operations and services to contribute to a better future.</li>
-                    </ul>
+                <ul class="custom-list">
+                    <li><strong>Meet Customer Requirements:</strong> Deliver tailored solutions that meet and exceed customer expectations.</li>
+                    <li><strong>Ensure Compliance:</strong> Adhere to all applicable legal, regulatory, and industry standards in all our services.</li>
+                    <li><strong>Foster Continuous Improvement:</strong> Regularly review and enhance our processes to maintain efficiency and effectiveness.</li>
+                    <li><strong>Empower Our Team:</strong> Invest in the development of our employees to ensure they are skilled, knowledgeable, and aligned with our mission.</li>
+                    <li><strong>Promote Sustainability:</strong> Integrate sustainable practices into our operations and services to contribute to a better future.</li>
+                </ul>
 
                 {/* Add navigation tabs here */}
             </div>
-
-            <div className="home-bar-4"></div>
         </>
     );
 }
