@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import "./styles/Home.css";
 
 // Import images from the assets folder
-import img1 from "../assets/Logo.jpg";
-import img2 from "../assets/react.svg";
+import logo from "../assets/Logo.jpg";
+import img1 from "../assets/pic 1.jpg";
+import img4 from "../assets/pic 4.jpg";
+import img2 from "../assets/pic 2.jpg";
+import img8 from "../assets/pic 8.jpg"
 
-const images = [img1, img2]; // Add more images if needed
+const images = [img1,img4, img2, img8]; // Add more images if needed
 
 function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,7 +26,7 @@ function Home() {
 
     // Auto-slide effect every 3 seconds
     useEffect(() => {
-        const interval = setInterval(nextImage, 3000);
+        const interval = setInterval(nextImage, 2500);
         return () => clearInterval(interval);
     }, []);
 
