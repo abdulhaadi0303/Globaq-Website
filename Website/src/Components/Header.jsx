@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "./styles/Header.css";
+import "./styles/Headertop.css";
 
-// Import images from the assets folder
+// Import images
 import Logo from "../assets/Logo.jpg";
 import ReactLogo from "../assets/react.svg";
 
@@ -9,6 +11,15 @@ import ReactLogo from "../assets/react.svg";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 
 function Header() {
+  const navigate = useNavigate();
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showSubDropdown, setShowSubDropdown] = useState(false);
+  const [showCertificationDropdown, setShowCertificationDropdown] = useState(false);
+
+  const handleNavigation = (option) => {
+    navigate(`/ManagementSystemAudits?option=${option}`);
+  };
+
   return (
     <div className="header">
       <div className="header-bar-1">
@@ -42,7 +53,49 @@ function Header() {
       <div className="header-bar-3">
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/ManagementSystemAudits">Management System Audits</Link>
+          
+          {/* Dropdown for Management System Audits */}
+          <div 
+            className="dropdown"
+            onMouseEnter={() => setShowDropdown(true)}
+            onMouseLeave={() => setShowDropdown(false)}
+          >
+            <span className="dropdown-title">Management System Audits</span>
+            {showDropdown && (
+              <div className="dropdown-content">
+                <div 
+                  className="dropdown-item"
+                  onMouseEnter={() => setShowSubDropdown(true)}
+                  onMouseLeave={() => setShowSubDropdown(false)}
+                >
+                  Second Party Audits
+                  {showSubDropdown && (
+                    <div className="sub-dropdown-content">
+                      <span onClick={() => handleNavigation("Vendor Assessment")}>Vendor Assessment</span>
+                      <span onClick={() => handleNavigation("Schedule Q - Quality Assessment")}>Schedule Q - Quality Assessment</span>
+                      <span onClick={() => handleNavigation("Schedule D - Safety Assessment")}>Schedule D - Safety Assessment</span>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Management System Certification Audits */}
+                <div 
+                  className="dropdown-item"
+                  onMouseEnter={() => setShowCertificationDropdown(true)}
+                  onMouseLeave={() => setShowCertificationDropdown(false)}
+                >
+                  Management System Certification Audits
+                  {showCertificationDropdown && (
+                    <div className="sub-dropdown-content">
+                      <span>Coming Soon</span>
+                      
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
           <Link to="/Trainings">Trainings</Link>
           <Link to="/ISOConsultancy">ISO Consultancy</Link>
           <Link to="/AuditAssistance">Audit Assistance</Link>
