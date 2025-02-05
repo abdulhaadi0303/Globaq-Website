@@ -21,7 +21,7 @@
 
 .header-bar-3 nav a:hover {
   color: var(--bright-orange);
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 /* === Responsive Header (Header Bar 3) === */
