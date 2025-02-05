@@ -10,8 +10,3 @@ body, .header, .home-bar-1, .home-bar-2, .home-bar-3, .home-bar-4 {
     background-color: var(--white) !important;
 }
 
-/* === Set Full Page Background to White === */
-body {
-    background: white; /* Ensures the whole page has a white background */
-}
-

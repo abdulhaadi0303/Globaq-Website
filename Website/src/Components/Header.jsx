@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import './styles/Header.css';
+import "./styles/Header.css";
 
 // Import images from the assets folder
-import Logo from '../assets/Logo.jpg';
-import ReactLogo from '../assets/react.svg';
+import Logo from "../assets/Logo.jpg";
+import ReactLogo from "../assets/react.svg";
 
 // Import Font Awesome for social media icons
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGoogle } from "react-icons/fa";
@@ -11,11 +11,11 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 function Header() {
   return (
     <div className="header">
-
       <div className="header-bar-1">
-
         <div className="header-bar-1-homeimage">
-        <Link to="/"> <img src={Logo} alt="LOGO" /> </Link>
+          <Link to="/">
+            <img src={Logo} alt="LOGO" className="responsive-logo" />
+          </Link>
         </div>
 
         {/* Social Media Icons */}
@@ -35,30 +35,20 @@ function Header() {
         </div>
 
         <div className="header-bar-1-sideimage">
-          <img src={ReactLogo} alt="React Logo" /> 
+          <img src={ReactLogo} alt="React Logo" className="responsive-logo" />
         </div>
-
       </div>
 
-      {/* <div className="header-bar-2">
-            <div className="marquee-content">
-                <h6>Assuring Integrity, Independency, Impartiality, Confidentiality, Objectivity and Conflict of interest in performing system audits.</h6>
-            </div>
-        </div> */}
-
-      
       <div className="header-bar-3">
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/ManagementSystemAudits">Management System Audits</Link>
-            <Link to="/Trainings">Trainings</Link>
-            <Link to="/ISOConsultancy">ISO Consultancy</Link>
-            <Link to="/AuditAssistance">Audit Assistance</Link>
-            <Link to="/LaboratoryQualityManagementSystemServices">Laboratory Quality Management System Services</Link>
+          <Link to="/">Home</Link>
+          <Link to="/ManagementSystemAudits">Management System Audits</Link>
+          <Link to="/Trainings">Trainings</Link>
+          <Link to="/ISOConsultancy">ISO Consultancy</Link>
+          <Link to="/AuditAssistance">Audit Assistance</Link>
+          <Link to="/LaboratoryQualityManagementSystemServices">Lab Quality Management</Link>
         </nav>
-
       </div>
-
     </div>
   );
 }
