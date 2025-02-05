@@ -15,6 +15,10 @@ function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showSubDropdown, setShowSubDropdown] = useState(false);
   const [showCertificationDropdown, setShowCertificationDropdown] = useState(false);
+  const [showTrainingsDropdown, setShowTrainingsDropdown] = useState(false);
+  const [showConsultancyDropdown, setShowConsultancyDropdown] = useState(false);
+  const [showAssistanceDropdown, setShowAssistanceDropdown] = useState(false);
+  const [showLabServicesDropdown, setShowLabServicesDropdown] = useState(false);
 
   const handleNavigation = (option) => {
     navigate(`/ManagementSystemAudits?option=${option}`);
@@ -53,7 +57,7 @@ function Header() {
       <div className="header-bar-3">
         <nav>
           <Link to="/">Home</Link>
-          
+
           {/* Dropdown for Management System Audits */}
           <div 
             className="dropdown"
@@ -88,7 +92,6 @@ function Header() {
                   {showCertificationDropdown && (
                     <div className="sub-dropdown-content">
                       <span>Coming Soon</span>
-                      
                     </div>
                   )}
                 </div>
@@ -96,10 +99,81 @@ function Header() {
             )}
           </div>
 
-          <Link to="/Trainings">Trainings</Link>
-          <Link to="/ISOConsultancy">ISO Consultancy</Link>
-          <Link to="/AuditAssistance">Audit Assistance</Link>
-          <Link to="/LaboratoryQualityManagementSystemServices">Lab Quality Management</Link>
+          {/* Dropdown for Trainings */}
+          <div 
+            className="dropdown"
+            onMouseEnter={() => setShowTrainingsDropdown(true)}
+            onMouseLeave={() => setShowTrainingsDropdown(false)}
+          >
+            <span className="dropdown-title">Trainings</span>
+            {showTrainingsDropdown && (
+              <div className="dropdown-content">
+                <div className="dropdown-item">
+                  <span>Dummy Training 1</span>
+                </div>
+                <div className="dropdown-item">
+                  <span>Dummy Training 2</span>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Dropdown for ISO Consultancy */}
+          <div 
+            className="dropdown"
+            onMouseEnter={() => setShowConsultancyDropdown(true)}
+            onMouseLeave={() => setShowConsultancyDropdown(false)}
+          >
+            <span className="dropdown-title">ISO Consultancy</span>
+            {showConsultancyDropdown && (
+              <div className="dropdown-content">
+                <div className="dropdown-item">
+                  <span>Dummy Consultancy 1</span>
+                </div>
+                <div className="dropdown-item">
+                  <span>Dummy Consultancy 2</span>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Dropdown for Audit Assistance */}
+          <div 
+            className="dropdown"
+            onMouseEnter={() => setShowAssistanceDropdown(true)}
+            onMouseLeave={() => setShowAssistanceDropdown(false)}
+          >
+            <span className="dropdown-title">Audit Assistance</span>
+            {showAssistanceDropdown && (
+              <div className="dropdown-content">
+                <div className="dropdown-item">
+                  <span>Dummy Assistance 1</span>
+                </div>
+                <div className="dropdown-item">
+                  <span>Dummy Assistance 2</span>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Dropdown for Laboratory Quality Management System Services */}
+          <div 
+            className="dropdown"
+            onMouseEnter={() => setShowLabServicesDropdown(true)}
+            onMouseLeave={() => setShowLabServicesDropdown(false)}
+          >
+            <span className="dropdown-title">Lab Quality Management System Services</span>
+            {showLabServicesDropdown && (
+              <div className="dropdown-content">
+                <div className="dropdown-item">
+                  <span>Dummy Service 1</span>
+                </div>
+                <div className="dropdown-item">
+                  <span>Dummy Service 2</span>
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
       </div>
     </div>

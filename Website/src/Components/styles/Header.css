@@ -78,13 +78,6 @@
   color: white;
 }
 
-/* Fix for the second option not turning orange */
-.dropdown-content .dropdown-item:nth-child(2):hover {
-  background: var(--white) !important;
-  color: var(--primary-black) !important;
-  text-decoration: none;
-}
-
 /* Sub-dropdown for Second Party Audits */
 .sub-dropdown-content {
   position: absolute;
@@ -115,6 +108,13 @@
   background: var(--white);
 }
 
+.sub-dropdown-content span:hover {
+  background: var(--bright-orange);
+  color: white;
+}
+
+/* Make sure all dropdown items have consistent hover effect */
+.dropdown-content .dropdown-item:hover,
 .sub-dropdown-content span:hover {
   background: var(--bright-orange);
   color: white;
