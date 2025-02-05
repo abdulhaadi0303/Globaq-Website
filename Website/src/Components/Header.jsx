@@ -186,7 +186,7 @@ function Header() {
           </div>
 
 
-{/* Dropdown for ISO Consultancy */}
+            {/* Dropdown for ISO Consultancy */}
 <div
   className="dropdown"
   onMouseEnter={() => setShowConsultancyDropdown(true)}
@@ -195,54 +195,65 @@ function Header() {
   <span className="dropdown-title">ISO Consultancy</span>
   {showConsultancyDropdown && (
     <div className="dropdown-content">
-      {/* ISO Consultancy Sub Tabs */}
-      <div
-        className="dropdown-item"
-        onMouseEnter={() => setShowSubDropdown(true)}
-        onMouseLeave={() => setShowSubDropdown(false)}
-      >
-        ISO Consultancy Services
-        {showSubDropdown && (
-          <div className="sub-dropdown-content">
-            <span onClick={() => handleNavigation("ISO/IEC 17025:2017", "Consultancy")}>
-              ISO/IEC 17025:2017
-            </span>
-            <span onClick={() => handleNavigation("ISO/IEC 17020:2012", "Consultancy")}>
-              ISO/IEC 17020:2012
-            </span>
-            <span onClick={() => handleNavigation("ISO 9001:2015", "Consultancy")}>
-              ISO 9001:2015
-            </span>
-            <span onClick={() => handleNavigation("ISO 14001:2015", "Consultancy")}>
-              ISO 14001:2015
-            </span>
-            <span onClick={() => handleNavigation("ISO 45001:2018", "Consultancy")}>
-              ISO 45001:2018
-            </span>
-            <span onClick={() => handleNavigation("ISO 22000:2018", "Consultancy")}>
-              ISO 22000:2018
-            </span>
-            <span onClick={() => handleNavigation("ISO 55001:2014", "Consultancy")}>
-              ISO 55001:2014
-            </span>
-            <span onClick={() => handleNavigation("ISO 31000:2018", "Consultancy")}>
-              ISO 31000:2018
-            </span>
-            <span onClick={() => handleNavigation("ISO 59004:2024", "Consultancy")}>
-              ISO 59004:2024
-            </span>
-            <span onClick={() => handleNavigation("ISO 59010:2024", "Consultancy")}>
-              ISO 59010:2024
-            </span>
-            <span onClick={() => handleNavigation("ISO 59020:2024", "Consultancy")}>
-              ISO 59020:2024
-            </span>
-          </div>
-        )}
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO/IEC 17025:2017", "Consultancy")}>
+          ISO/IEC 17025:2017
+        </span>
+      </div>
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO/IEC 17020:2012", "Consultancy")}>
+          ISO/IEC 17020:2012
+        </span>
+      </div>
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO 9001:2015", "Consultancy")}>
+          ISO 9001:2015
+        </span>
+      </div>
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO 14001:2015", "Consultancy")}>
+          ISO 14001:2015
+        </span>
+      </div>
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO 45001:2018", "Consultancy")}>
+          ISO 45001:2018
+        </span>
+      </div>
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO 22000:2018", "Consultancy")}>
+          ISO 22000:2018
+        </span>
+      </div>
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO 55001:2014", "Consultancy")}>
+          ISO 55001:2014
+        </span>
+      </div>
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO 31000:2018", "Consultancy")}>
+          ISO 31000:2018
+        </span>
+      </div>
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO 59004:2024", "Consultancy")}>
+          ISO 59004:2024
+        </span>
+      </div>
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO 59010:2024", "Consultancy")}>
+          ISO 59010:2024
+        </span>
+      </div>
+      <div className="dropdown-item">
+        <span onClick={() => handleNavigation("ISO 59020:2024", "Consultancy")}>
+          ISO 59020:2024
+        </span>
       </div>
     </div>
   )}
 </div>
+
 
 
           {/* Dropdown for Audit Assistance */}
@@ -268,7 +279,8 @@ function Header() {
           
 
           {/* Dropdown for Laboratory Quality Management System Services */}
-          <div 
+                  {/* Dropdown for Lab Quality Management System Services */}
+                  <div 
             className="dropdown"
             onMouseEnter={() => setShowLabServicesDropdown(true)}
             onMouseLeave={() => setShowLabServicesDropdown(false)}
@@ -276,15 +288,43 @@ function Header() {
             <span className="dropdown-title">Lab Quality Management System Services</span>
             {showLabServicesDropdown && (
               <div className="dropdown-content">
+                {/* Consultancy */}
                 <div className="dropdown-item">
-                  <span>Dummy Service 1</span>
+                  <span>Consultancy</span>
+                </div>
+                
+                {/* Training Sub-tab */}
+                <div className="dropdown-item">
+                  <span className="sub-dropdown-title">Training</span>
+                  <div className="sub-dropdown-content">
+                    <span>ISO/IEC 17025:2017 Awareness training</span>
+                    <span>ISO/IEC 17025:2017 Internal auditor training</span>
+                    <span>Measurement uncertainty training</span>
+                    <span>Proficiency testing training</span>
+                    <span>Risk assessment training</span>
+                    <span>Root cause analysis training</span>
+                  </div>
+                </div>
+                
+                {/* Other Sub-tabs */}
+                <div className="dropdown-item">
+                  <span>Implementation Support</span>
                 </div>
                 <div className="dropdown-item">
-                  <span>Dummy Service 2</span>
+                  <span>3rd Party Internal Audit</span>
+                </div>
+                <div className="dropdown-item">
+                  <span>Support for Internal Audit</span>
+                </div>
+                <div className="dropdown-item">
+                  <span>Support for Accreditation Process</span>
                 </div>
               </div>
             )}
           </div>
+
+
+
         </nav>
       </div>
     </div>

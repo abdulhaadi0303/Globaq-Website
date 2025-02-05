@@ -7,7 +7,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 30px 5%;
+    padding: 20px 5%;
 }
 
 /* === Heading Styles (Vision, Mission, Policy) === */
@@ -42,7 +42,7 @@
 }
 
 .image-container {
-    width: 90%;
+    width: 92%;
     display: flex;
     justify-content: center;
     align-items: center;

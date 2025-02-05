@@ -56,7 +56,7 @@ function Home() {
                 <h3>To provide SET (simple, efficient, and timely) 
                 quality assurance solutions, continuously improving our services through professionalism, accuracy, 
                 competency, and a relentless focus on customer satisfaction, ensuring sustainable
-                 and quality products/services for consumers.</h3>
+                 and quality services for consumers.</h3>
                 {/* Add navigation tabs here */}
             </div>
 
