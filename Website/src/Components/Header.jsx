@@ -58,8 +58,8 @@ function Header() {
         <nav>
           <Link to="/">Home</Link>
 
-          {/* Dropdown for Management System Audits */}
-          <div 
+ {/* Dropdown for Management System Audits */}
+ <div
             className="dropdown"
             onMouseEnter={() => setShowDropdown(true)}
             onMouseLeave={() => setShowDropdown(false)}
@@ -67,7 +67,7 @@ function Header() {
             <span className="dropdown-title">Management System Audits</span>
             {showDropdown && (
               <div className="dropdown-content">
-                <div 
+                <div
                   className="dropdown-item"
                   onMouseEnter={() => setShowSubDropdown(true)}
                   onMouseLeave={() => setShowSubDropdown(false)}
@@ -81,9 +81,9 @@ function Header() {
                     </div>
                   )}
                 </div>
-                
+
                 {/* Management System Certification Audits */}
-                <div 
+                <div
                   className="dropdown-item"
                   onMouseEnter={() => setShowCertificationDropdown(true)}
                   onMouseLeave={() => setShowCertificationDropdown(false)}
@@ -100,7 +100,7 @@ function Header() {
           </div>
 
           {/* Dropdown for Trainings */}
-          <div 
+          <div
             className="dropdown"
             onMouseEnter={() => setShowTrainingsDropdown(true)}
             onMouseLeave={() => setShowTrainingsDropdown(false)}
@@ -108,34 +108,141 @@ function Header() {
             <span className="dropdown-title">Trainings</span>
             {showTrainingsDropdown && (
               <div className="dropdown-content">
-                <div className="dropdown-item">
-                  <span>Dummy Training 1</span>
+                {/* ISO Trainings */}
+                <div
+                  className="dropdown-item"
+                  onMouseEnter={() => setShowSubDropdown(true)}
+                  onMouseLeave={() => setShowSubDropdown(false)}
+                >
+                  ISO Trainings
+                  {showSubDropdown && (
+                    <div className="sub-dropdown-content">
+                      <span onClick={() => handleNavigation("ISO Implementation Training", "Trainings")}>
+                        ISO Implementation Training
+                      </span>
+                      <span onClick={() => handleNavigation("ISO Awareness Training", "Trainings")}>
+                        ISO Awareness Training
+                      </span>
+                      <span onClick={() => handleNavigation("Internal Audit Training", "Trainings")}>
+                        Internal Audit Training
+                      </span>
+                    </div>
+                  )}
                 </div>
-                <div className="dropdown-item">
-                  <span>Dummy Training 2</span>
+
+                {/* Other Trainings */}
+                <div
+                  className="dropdown-item"
+                  onMouseEnter={() => setShowAssistanceDropdown(true)}
+                  onMouseLeave={() => setShowAssistanceDropdown(false)}
+                >
+                  Other Trainings
+                  {showAssistanceDropdown && (
+                    <div className="sub-dropdown-content">
+                      <span onClick={() => handleNavigation("Six Sigma Training", "Trainings")}>
+                        Six Sigma Training
+                      </span>
+                      <span onClick={() => handleNavigation("Lean Six Sigma Training", "Trainings")}>
+                        Lean Six Sigma Training
+                      </span>
+                      <span onClick={() => handleNavigation("5S Training", "Trainings")}>5S Training</span>
+                      <span onClick={() => handleNavigation("ESG Training", "Trainings")}>ESG Training</span>
+                      <span onClick={() => handleNavigation("SDGs Awareness Training", "Trainings")}>SDGs Awareness Training</span>
+                      <span onClick={() => handleNavigation("Circular Economy Awareness Training", "Trainings")}>
+                        Circular Economy Awareness Training
+                      </span>
+                      <span onClick={() => handleNavigation("Risk Assessment Training", "Trainings")}>
+                        Risk Assessment Training
+                      </span>
+                      <span onClick={() => handleNavigation("Root Cause Analysis Training", "Trainings")}>
+                        Root Cause Analysis Training
+                      </span>
+                      <span onClick={() => handleNavigation("HACCP Awareness Training", "Trainings")}>
+                        HACCP Awareness Training
+                      </span>
+                      <span onClick={() => handleNavigation("HIRAC Training", "Trainings")}>HIRAC Training</span>
+                      <span onClick={() => handleNavigation("Saudi Aramco Schedule Q Awareness Training", "Trainings")}>
+                        Saudi Aramco Schedule Q Awareness Training
+                      </span>
+                      <span onClick={() => handleNavigation("Saudi Aramco Schedule D Awareness Training", "Trainings")}>
+                        Saudi Aramco Schedule D Awareness Training
+                      </span>
+                      <span onClick={() => handleNavigation("Saudi Aramco CSM Awareness Training", "Trainings")}>
+                        Saudi Aramco CSM Awareness Training
+                      </span>
+                      <span onClick={() => handleNavigation("Saudi Aramco CSAR Awareness Training", "Trainings")}>
+                        Saudi Aramco CSAR Awareness Training
+                      </span>
+                      <span onClick={() => handleNavigation("Saudi Aramco WSSM Awareness Training", "Trainings")}>
+                        Saudi Aramco WSSM Awareness Training
+                      </span>
+                    </div>
+                  )}
                 </div>
+                
               </div>
             )}
           </div>
 
-          {/* Dropdown for ISO Consultancy */}
-          <div 
-            className="dropdown"
-            onMouseEnter={() => setShowConsultancyDropdown(true)}
-            onMouseLeave={() => setShowConsultancyDropdown(false)}
-          >
-            <span className="dropdown-title">ISO Consultancy</span>
-            {showConsultancyDropdown && (
-              <div className="dropdown-content">
-                <div className="dropdown-item">
-                  <span>Dummy Consultancy 1</span>
-                </div>
-                <div className="dropdown-item">
-                  <span>Dummy Consultancy 2</span>
-                </div>
-              </div>
-            )}
+
+{/* Dropdown for ISO Consultancy */}
+<div
+  className="dropdown"
+  onMouseEnter={() => setShowConsultancyDropdown(true)}
+  onMouseLeave={() => setShowConsultancyDropdown(false)}
+>
+  <span className="dropdown-title">ISO Consultancy</span>
+  {showConsultancyDropdown && (
+    <div className="dropdown-content">
+      {/* ISO Consultancy Sub Tabs */}
+      <div
+        className="dropdown-item"
+        onMouseEnter={() => setShowSubDropdown(true)}
+        onMouseLeave={() => setShowSubDropdown(false)}
+      >
+        ISO Consultancy Services
+        {showSubDropdown && (
+          <div className="sub-dropdown-content">
+            <span onClick={() => handleNavigation("ISO/IEC 17025:2017", "Consultancy")}>
+              ISO/IEC 17025:2017
+            </span>
+            <span onClick={() => handleNavigation("ISO/IEC 17020:2012", "Consultancy")}>
+              ISO/IEC 17020:2012
+            </span>
+            <span onClick={() => handleNavigation("ISO 9001:2015", "Consultancy")}>
+              ISO 9001:2015
+            </span>
+            <span onClick={() => handleNavigation("ISO 14001:2015", "Consultancy")}>
+              ISO 14001:2015
+            </span>
+            <span onClick={() => handleNavigation("ISO 45001:2018", "Consultancy")}>
+              ISO 45001:2018
+            </span>
+            <span onClick={() => handleNavigation("ISO 22000:2018", "Consultancy")}>
+              ISO 22000:2018
+            </span>
+            <span onClick={() => handleNavigation("ISO 55001:2014", "Consultancy")}>
+              ISO 55001:2014
+            </span>
+            <span onClick={() => handleNavigation("ISO 31000:2018", "Consultancy")}>
+              ISO 31000:2018
+            </span>
+            <span onClick={() => handleNavigation("ISO 59004:2024", "Consultancy")}>
+              ISO 59004:2024
+            </span>
+            <span onClick={() => handleNavigation("ISO 59010:2024", "Consultancy")}>
+              ISO 59010:2024
+            </span>
+            <span onClick={() => handleNavigation("ISO 59020:2024", "Consultancy")}>
+              ISO 59020:2024
+            </span>
           </div>
+        )}
+      </div>
+    </div>
+  )}
+</div>
+
 
           {/* Dropdown for Audit Assistance */}
           <div 
@@ -147,14 +254,17 @@ function Header() {
             {showAssistanceDropdown && (
               <div className="dropdown-content">
                 <div className="dropdown-item">
-                  <span>Dummy Assistance 1</span>
+                  <span onClick={() => handleNavigation("ISO Internal Audits", "AuditAssistance")}>
+                  ISO Internal Audits</span>
                 </div>
                 <div className="dropdown-item">
-                  <span>Dummy Assistance 2</span>
+                  <span onClick={() => handleNavigation("ISO third party audit", "AuditAssistance")}>
+                  ISO third party audit</span>
                 </div>
               </div>
             )}
           </div>
+          
 
           {/* Dropdown for Laboratory Quality Management System Services */}
           <div 
@@ -181,3 +291,6 @@ function Header() {
 }
 
 export default Header;
+
+
+         
