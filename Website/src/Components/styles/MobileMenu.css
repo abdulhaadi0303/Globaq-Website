@@ -1,0 +1,77 @@
+.mobile-menu-container {
+    height: 50px; /* Set the desired height */
+    display: flex;
+    align-items: center; /* Vertically center content */
+    position: relative; /* Needed for absolute positioning of the menu */
+    padding: 0 20px; /* Add some padding to the sides */
+  }
+  
+  .hamburger-icon {
+    cursor: pointer;
+    margin-left: 20%; /* 20% gap from the left */
+    z-index: 1001; /* Ensure it's above the menu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center bars vertically */
+    gap: 5px; /* Space between the bars */
+    width: 30px; /* Adjust as needed */
+  }
+  
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-black); /* Or your preferred color */
+    transition: 0.3s; /* Smooth animation */
+  }
+  
+  /* Styles for the open menu (same as before) */
+  .mobile-menu {
+    background: var(--white);
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 50px; /* Position below the container */
+    left: 0; /* Or right: 0; for right alignment */
+    width: 100%; /* Or a specific width */
+    transform: translateY(-100%); /* Initially hidden */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+    z-index: 1000;
+    opacity: 0;
+  }
+  
+  .mobile-menu.open {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  
+  .mobile-menu nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .mobile-menu nav ul li {
+    text-align: center;
+  }
+  
+  .mobile-menu nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--primary-black);
+    border: 1px solid #333;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    background: var(--white);
+  }
+  
+  .mobile-menu nav ul li a:hover {
+    background: var(--bright-orange);
+    color: white;
+  }
