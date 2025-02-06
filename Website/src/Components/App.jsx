@@ -3,11 +3,11 @@ import Header from "./Header";
 import Home from "./Home"; 
 import Footer from "./Footer"; 
 
-import ManagementSystemAudits from "./ManagementSystemAudits";
-import Trainings from "./Trainings";
-import ISOConsultancy from "./ISOConsultancy";
-import AuditAssistance  from "./AuditAssistance";
-import LaboratoryQualityManagementSystemServices from "./LaboratoryQualityManagementSystemServices"
+import ManagementSystemAudits from "./Pages/ManagementSystemAudits";
+import Trainings from "./Pages/Trainings";
+import ISOConsultancy from "./Pages/ISOConsultancy";
+import AuditAssistance  from "./Pages/AuditAssistance";
+import LaboratoryQualityManagementSystemServices from "./Pages/LaboratoryQualityManagementSystemServices"
 
 import './styles/App.css'
 

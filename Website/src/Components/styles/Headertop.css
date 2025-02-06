@@ -24,13 +24,13 @@
 
 /* Home Logo - Centered */
 .header-bar-1-homeimage {
-  flex: 3; /* Adjusts width (40%) */
+  flex: 3; 
   display: flex;
   justify-content: center;
 }
 
 .header-bar-1-homeimage img {
-  width: 220px; /* Adjusted for better scaling */
+  width: 225px; /* Adjusted for better scaling */
   height: auto;
 }
 
