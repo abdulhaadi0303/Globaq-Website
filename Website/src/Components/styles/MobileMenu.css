@@ -1,77 +1,122 @@
 .mobile-menu-container {
-    height: 50px; /* Set the desired height */
+    position: relative;
+    display: flex; /* Ensures hamburger aligns properly */
+    align-items: center; /* Vertically centers the hamburger */
+}
+
+.hamburger-icon {
     display: flex;
-    align-items: center; /* Vertically center content */
-    position: relative; /* Needed for absolute positioning of the menu */
-    padding: 0 20px; /* Add some padding to the sides */
-  }
-  
-  .hamburger-icon {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 30px;
     cursor: pointer;
-    margin-left: 20%; /* 20% gap from the left */
-    z-index: 1001; /* Ensure it's above the menu */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center bars vertically */
-    gap: 5px; /* Space between the bars */
-    width: 30px; /* Adjust as needed */
-  }
-  
-  .bar {
-    width: 100%;
+    transition: transform 0.3s ease; /* Smooth hamburger animation */
+    margin:1px 10%;
+}
+
+.hamburger-icon.open {
+    transform: rotate(90deg); /* Rotates the icon when open */
+}
+
+.bar {
     height: 3px;
-    background-color: var(--primary-black); /* Or your preferred color */
-    transition: 0.3s; /* Smooth animation */
-  }
-  
-  /* Styles for the open menu (same as before) */
-  .mobile-menu {
-    background: var(--white);
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid #ddd;
-    position: absolute;
-    top: 50px; /* Position below the container */
-    left: 0; /* Or right: 0; for right alignment */
-    width: 100%; /* Or a specific width */
-    transform: translateY(-100%); /* Initially hidden */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px; /* Slightly rounded bars */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth bar animations */
+}
+
+.hamburger-icon.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* X animation */
+}
+
+.hamburger-icon.open .bar:nth-child(2) {
+    opacity: 0; /* Middle bar disappears */
+}
+
+.hamburger-icon.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* X animation */
+}
+
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%; /* Slightly wider menu */
+    max-width: 350px; /* Set a maximum width */
+    height: 100vh;
+    background-color: #fff;
+    transition: left 0.3s ease-in-out;
     z-index: 1000;
-    opacity: 0;
-  }
-  
-  .mobile-menu.open {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-  
-  .mobile-menu nav ul {
+    overflow-y: auto;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.mobile-menu.open {
+    left: 0;
+}
+
+.mobile-menu nav ul {
     list-style: none;
-    padding: 0;
+    padding: 20px; /* Add some padding */
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .mobile-menu nav ul li {
-    text-align: center;
-  }
-  
-  .mobile-menu nav ul li a {
-    display: block;
-    padding: 10px 15px;
-    font-size: 18px;
-    text-decoration: none;
-    color: var(--primary-black);
-    border: 1px solid #333;
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-    background: var(--white);
-  }
-  
-  .mobile-menu nav ul li a:hover {
-    background: var(--bright-orange);
-    color: white;
-  }
+}
+
+.mobile-menu nav ul li {
+    padding: 15px 10px; /* Adjust padding */
+    border-bottom: 1px solid #eee; /* Lighter border */
+    transition: background-color 0.2s ease; /* Hover effect */
+}
+
+.mobile-menu nav ul li:hover {
+    background-color: #f5f5f5; /* Light gray on hover */
+}
+
+
+.mobile-menu nav ul li .dropdown-title,
+.mobile-menu nav ul li .sub-dropdown-title,
+.mobile-menu nav ul li .dropdown-item {
+    cursor: pointer;
+    font-weight: 500; /* Slightly lighter font-weight */
+    color: #333; /* Darker text color */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center content */
+    justify-content: space-between; /* Align icon to right */
+}
+
+.mobile-menu nav ul li .dropdown-title::after,
+.mobile-menu nav ul li .sub-dropdown-title::after {
+    content: '\276F'; /* Right-pointing chevron */
+    font-size: 14px;
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+.mobile-menu nav ul li .dropdown-title.open::after,
+.mobile-menu nav ul li .sub-dropdown-title.open::after {
+    transform: rotate(90deg); /* Rotate chevron when open */
+}
+
+.mobile-menu nav ul li .dropdown-content,
+.mobile-menu nav ul li .sub-dropdown-content {
+    margin-left: 20px;
+    overflow: hidden; /* Prevents content from overflowing during animation */
+    max-height: 0;
+    transition: max-height 0.3s ease; /* Smooth expand/collapse */
+}
+
+.mobile-menu nav ul li .dropdown-content.open,
+.mobile-menu nav ul li .sub-dropdown-content.open {
+    max-height: 500px; /* Adjust as needed */
+}
+
+.mobile-menu nav ul li .dropdown-item {
+    padding: 10px 0; /* Adjust padding for dropdown items */
+    border-bottom: none; /* Remove border from dropdown items */
+}
+
+.mobile-menu nav ul li .dropdown-item:hover {
+  background-color: transparent; /* Remove hover effect for nested items */
+    color: #007bff; /* Example: Blue on hover */
+}
