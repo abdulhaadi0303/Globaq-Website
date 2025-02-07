@@ -12,27 +12,15 @@
   text-decoration: none;
   font-size: 18px;
   padding: 7px 15px;
-  border: 1px solid #333; /* Border like home tab */
-  border-radius: 1px; /* Slightly rounded edges */
+  border: 1px solid #333;
+  border-radius: 3px;
   transition: all 0.3s ease-in-out;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
-  margin-bottom: 5px; /* Reduce bottom margin */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
 }
 
-.header-bar-3 nav a:hover {
-  color: var(--bright-orange);
-  /* text-decoration: underline; */
-}
 
-/* === Responsive Header (Header Bar 3) === */
-@media (max-width: 768px) {
-  .header-bar-3 nav {
-      flex-wrap: wrap;
-      gap: 20px;
-  }
-}
-
-/* Dropdown Styling */
+/* === Dropdown Styling === */
 .dropdown {
   position: relative;
   cursor: pointer;
@@ -40,35 +28,30 @@
   font-size: 18px;
   color: var(--primary-black);
   transition: color 0.3s ease-in-out;
-  border: 1px solid #333; /* Apply border */
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Apply shadow */
-  margin-bottom: 5px; /* Reduce bottom margin */
+  border: 1px solid #333;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
 }
 
-.dropdown:hover {
-  color: var(--bright-orange);
-}
 
-/* Dropdown Menu */
+
+/* === Dropdown Menu (Appears to the Left) === */
 .dropdown-content {
   position: absolute;
-  left: 0;
+  left:30%; /* Move it to the left of the parent */
   top: 100%;
   background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   min-width: 250px;
   z-index: 1000;
   padding: 5px 0;
-  display: none; /* Initially hidden */
+  display: none;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block; /* Show dropdown on hover */
-}
 
-/* Dropdown Items */
+/* === Dropdown Items === */
 .dropdown-content .dropdown-item {
   padding: 12px 15px;
   font-size: 16px;
@@ -81,74 +64,35 @@
   position: relative;
   color: var(--primary-black);
   background: var(--white);
-  border: 1px solid #ddd; /* Apply border */
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Apply shadow */
-  margin-bottom: 5px; /* Reduce bottom margin */
-}
-
-.dropdown-content .dropdown-item:hover {
-  background: var(--bright-orange);
-  color: white;
-}
-
-/* === Sub-dropdown Styling === */
-.sub-dropdown-content {
-  position: absolute;
-  left: 100%;
-  top: 0;
-  background: white;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  min-width: 230px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: none; /* Hidden by default */
-  padding: 5px 0;
-}
-
-.dropdown-item:hover .sub-dropdown-content {
-  display: block;
-}
-
-/* Styling for sub-dropdown items */
-.sub-dropdown-content span {
-  padding: 12px 15px;
-  display: block;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
-  color: var(--primary-black);
-  background: var(--white);
-  border: 1px solid #ddd; /* Apply border */
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Apply shadow */
-  margin-bottom: 5px; /* Reduce bottom margin */
-}
-
-.sub-dropdown-content span:hover {
-  background: var(--bright-orange);
-  color: white;
-}
-
-/* === Fix for Trainings Dropdown === */
-.dropdown-item {
-  position: relative;
-}
-
-.dropdown-item .sub-dropdown-content {
-  top: 0;
-  left: 100%;
-  min-width: 230px;
-  border-radius: 5px;
   border: 1px solid #ddd;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-  background: white;
-  display: none;
-  padding: 5px 0;
+  margin-bottom: 5px;
 }
+
+
+ /* Hover Logic  */
+ 
+.dropdown:hover {
+  color: var(--bright-orange);
+}
+.dropdown-item:hover{
+  color: var(--bright-orange);
+}
+.final-item:hover{
+  color: white;
+  background: var(--bright-orange);
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 
 .dropdown-item:hover .sub-dropdown-content {
   display: block;
 }
+
 
 /* === Responsive Adjustments === */
 @media (max-width: 768px) {
@@ -164,6 +108,3 @@
     box-shadow: none;
   }
 }
-
-
-
