@@ -85,8 +85,8 @@ function Home() {
             >
                 <h2>Our Vision</h2>
                 <h3>
-                    To be a global market leader in <strong>conformance and compliance</strong> industry to contribute in
-                    <strong> sustainable</strong> future
+                To be a global market leader in the conformance and compliance industry, contributing to a 
+                sustainable future by delivering innovative and reliable quality assurance solutions
                 </h3>
             </div>
 
@@ -106,40 +106,39 @@ function Home() {
 
             {/* Bar 4 - Policy */}
             <div
-                id="bar-4"
-                ref={(el) => (sectionsRef.current[2] = el)}
-                className={`home-bar-4 ${visibleSections["bar-4"] ? "show" : ""}`}
-            >
-                <h2>Our Policy</h2>
-                <h3>
-                    We are dedicated to providing high-quality services, including but not limited to Management System Audits,
-                    Trainings, ISO Consultancy, Audit Assistance, Laboratory Quality Management System Services, etc., while
-                    adhering to the principles of best total quality management.
-                </h3>
-                <h2>To achieve this, we will:</h2>
-                <ul className="custom-list">
-                    <li>
-                        <strong>Meet Customer Requirements:</strong> Deliver tailored solutions that meet and exceed customer
-                        expectations.
-                    </li>
-                    <li>
-                        <strong>Ensure Compliance:</strong> Adhere to all applicable legal, regulatory, and industry standards in
-                        all our services.
-                    </li>
-                    <li>
-                        <strong>Foster Continuous Improvement:</strong> Regularly review and enhance our processes to maintain
-                        efficiency and effectiveness.
-                    </li>
-                    <li>
-                        <strong>Empower Our Team:</strong> Invest in the development of our employees to ensure they are skilled,
-                        knowledgeable, and aligned with our mission.
-                    </li>
-                    <li>
-                        <strong>Promote Sustainability:</strong> Integrate sustainable practices into our operations and services to
-                        contribute to a better future.
-                    </li>
-                </ul>
-            </div>
+    id="bar-4"
+    ref={(el) => (sectionsRef.current[2] = el)}
+    className={`home-bar-4 ${visibleSections["bar-4"] ? "show" : ""}`}
+>
+    <h2>Our Quality Policy</h2>
+    <h3>
+        At GLOBAQ, quality is at the heart of everything we do. We are dedicated to adhering to the principles of total 
+        quality management, ensuring that our services meet the highest standards of excellence. Our quality policy emphasizes:
+    </h3>
+    <ul className="custom-list">
+        <li>
+            <strong>Meeting and Exceeding Customer Requirements:</strong> We strive to deliver solutions that not only 
+            meet but surpass customer expectations.
+        </li>
+        <li>
+            <strong>Ensuring Compliance:</strong> We adhere to all legal, regulatory, and industry standards in every 
+            aspect of our services.
+        </li>
+        <li>
+            <strong>Fostering Continuous Improvement:</strong> We are committed to regularly enhancing our processes 
+            to ensure efficiency and effectiveness.
+        </li>
+        <li>
+            <strong>Empowering Our Team:</strong> We invest in training and development to equip our employees with 
+            the skills and knowledge needed for excellence.
+        </li>
+        <li>
+            <strong>Promoting Sustainability:</strong> We integrate sustainable practices into our operations and 
+            services to contribute to a greener future.
+        </li>
+    </ul>
+</div>
+
         </>
     );
 }

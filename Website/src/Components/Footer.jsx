@@ -15,7 +15,7 @@ function Footer() {
                 {/* Section 2 - Contact Info */}
                 <div className="footer-section contact-info">
                     <h3>Contact Us</h3>
-                    <p><FaMapMarkerAlt /> 123 Street, City, Country</p>
+                    <p><FaMapMarkerAlt />Al-Khobar, Saudi Arabia</p>
                     <p><FaEnvelope /> info@globaqksa.com</p>
                     <p><FaPhone /> +96 653-0767286 </p>
                 </div>

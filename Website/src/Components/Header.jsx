@@ -8,6 +8,7 @@ import MobileMenu from "./MobileMenu";
 // Import images
 import Logo from "../assets/Logo.jpg";
 import ReactLogo from "../assets/react.svg";
+// import sideimg from "../assets/G.JPGE";
 
 // Import Font Awesome for social media icons
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGoogle } from "react-icons/fa";
@@ -55,10 +56,11 @@ function HeaderTop() {
           {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
             <FaTwitter className="social-icon twitter" />
           </a> */}
+
           <a href="https://www.linkedin.com/company/global-quality-specialists-company-limited-globaq/" target="_blank" rel="noopener noreferrer">
             <FaLinkedinIn className="social-icon linkedin" />
           </a>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://globaqksa.com" target="_blank" rel="noopener noreferrer">
             <FaGoogle className="social-icon google" />
           </a>
         </div>
