@@ -8,8 +8,9 @@ import img1 from "../assets/pic 1.jpg";
 import img4 from "../assets/pic 4.jpg";
 import img2 from "../assets/pic 2.jpg";
 import img8 from "../assets/pic 8.jpg"
+import img3 from "../assets/pic 3.jpg"
 
-const images = [img1,img4, img2, img8]; // Add more images if needed
+const images = [img1,img4, img2, img8 ,img3] // Add more images if needed
 
 function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
