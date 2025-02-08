@@ -30,6 +30,9 @@
     color: var(--primary-black); /* Ensures proper contrast */
     max-width: 80%;
     line-height: 1.6;
+    background: var(--light-gray); 
+    padding: 3% 2%;
+    border-radius: 20px;
 }
 
 /* === Carousel === */
@@ -127,11 +130,12 @@
     }
 
     .image-container {
-        width: 90%;
+        width: 92%;
     }
 
     .custom-list li {
         flex-direction: column;
+        text-align: center;
     }
 
     .custom-list li strong {
@@ -142,7 +146,22 @@
     .home-bar-2::before,
     .home-bar-3::before,
     .home-bar-4::before {
-        width: 85%;  /* Slightly wider for better visibility */
+        width: 90%;  /* Slightly wider for better visibility */
         margin: 10px auto;
     }
+}
+
+/* Initially hide the sections */
+.home-bar-2, 
+.home-bar-3, 
+.home-bar-4 {
+    opacity: 0;
+    transform: translateY(50px); /* Start from below */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Class to be added when section is visible */
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
