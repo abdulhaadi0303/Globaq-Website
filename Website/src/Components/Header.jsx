@@ -7,7 +7,7 @@ import MobileMenu from "./MobileMenu";
 
 // Import images
 import Logo from "../assets/Logo.jpg";
-import ReactLogo from "../assets/react.svg";
+// import ReactLogo from "../assets/react.svg";
 import sideimg from "../assets/G.jpg";
 
 // Import Font Awesome for social media icons
