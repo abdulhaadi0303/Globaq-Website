@@ -25,7 +25,7 @@ const dropdownData = [
         label: "ISO Trainings",
         subItems: [
           {
-            label: "ISO Implementation Training",
+            label: "ISO Implementation Training", route: "Trainings/ISOTrainings/ISOImplementationTraining",
             subItems: [
               "ISO/IEC 17025:2017",
               "ISO/IEC 17020:2012",
@@ -44,7 +44,7 @@ const dropdownData = [
             })),
           },
           {
-            label: "ISO Awareness Training",
+            label: "ISO Awareness Training", route: "Trainings/ISOTrainings/ISOAwarenessTraining",
             subItems: [
               "ISO/IEC 17025:2017",
               "ISO/IEC 17020:2012",
@@ -63,7 +63,7 @@ const dropdownData = [
             })),
           },
           {
-            label: "Internal Audit Training",
+            label: "Internal Audit Training", route: "Trainings/ISOTrainings/InternalAuditTraining",
             subItems: [
               "ISO/IEC 17025:2017",
               "ISO/IEC 17020:2012",
@@ -79,7 +79,7 @@ const dropdownData = [
         ],
       },
       {
-        label: "Other Trainings",
+        label: "Other Trainings", route: "Trainings/OtherTrainings",
         subItems: [
           "Six Sigma Training",
           "Lean Six Sigma Training",
@@ -105,7 +105,7 @@ const dropdownData = [
   },
   // 3- ISO Consultancy
   {
-    title: "ISO Consultancy",
+    title: "ISO Consultancy", route: "ISOConsultancy",
     items: [
       "ISO/IEC 17025:2017",
       "ISO/IEC 17020:2012",
@@ -123,6 +123,7 @@ const dropdownData = [
       route: "ISOConsultancy"
     })),
   },
+  
   // 4 - Lab Quality Management System Services
   {
     title: "Lab Quality Management System Services",
