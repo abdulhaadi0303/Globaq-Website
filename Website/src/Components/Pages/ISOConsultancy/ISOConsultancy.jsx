@@ -1,4 +1,4 @@
-import "../styles/routes.css";
+import "../../styles/routes.css";
 
 function ISOConsultancy() {
     return (

@@ -9,14 +9,22 @@ import ScheduleQQualityAssessment from "./Pages/Management System Audits/Schedul
 import ScheduleDSafetyAssessment from "./Pages/Management System Audits/ScheduleDSafetyAssessment";
 import VendorAssessment from "./Pages/Management System Audits/VendorAssessment";
 
+//Trainings Section Related Imports
 import ISOImplementationTraining from "./Pages/Trainings/ISOImplementationTraining.jsx";
 import InternalAuditTraining from "./Pages/Trainings/InternalAuditTraining.jsx";
 import ISOAwarenessTraining from "./Pages/Trainings/ISOAwarenessTraining.jsx";
 import OtherTrainings from "./Pages/Trainings/OtherTrainings.jsx";
 
-import ISOConsultancy from "./Pages/ISOConsultancy";
+//ISO Consultancy Section Related Imports
+import ISOConsultancy from "./Pages/ISOConsultancy/ISOConsultancy.jsx";
 
-import LaboratoryQualityManagementSystemServices from "./Pages/LaboratoryQualityManagementSystemServices"
+//Laboratory Quality Management System Services Section Related Imports 
+import Consultancy from "./Pages/Laboratory Quality Management System Services/Consultancy.jsx" 
+import Training from "./Pages/Laboratory Quality Management System Services/Training.jsx" 
+import ImplementationSupport from "./Pages/Laboratory Quality Management System Services/ImplementationSupport.jsx" 
+import PartyInternalAudit from "./Pages/Laboratory Quality Management System Services/3rdPartyInternalAudit.jsx" 
+import SupportforInternalAudit from "./Pages/Laboratory Quality Management System Services/SupportforInternalAudit.jsx" 
+import SupportforAccreditationProcess from "./Pages/Laboratory Quality Management System Services/SupportforAccreditationProcess.jsx" 
 
 // Audit Assistance Section Related Imports
 import ISOThirdPartyAudits  from "./Pages/Audit Assistance/ISOThirdPartyAudits";
@@ -62,7 +70,13 @@ function App() {
         <Route path="AuditAssistance/ISOThirdPartyAudits" element={<ISOThirdPartyAudits />} />
         <Route path="AuditAssistance/ISOInternalAudits" element={<ISOInternalAudits />} />
 
-        <Route path="LaboratoryQualityManagementSystemServices" element={<LaboratoryQualityManagementSystemServices />} />
+        <Route path="LaboratoryQualityManagementSystemServices/Consultancy" element={<Consultancy />} />
+        <Route path="LaboratoryQualityManagementSystemServices/Training" element={<Training />} />
+        <Route path="LaboratoryQualityManagementSystemServices/ImplementationSupport" element={<ImplementationSupport />} />
+        <Route path="LaboratoryQualityManagementSystemServices/3rdPartyInternalAudit" element={<PartyInternalAudit />} />
+        <Route path="LaboratoryQualityManagementSystemServices/SupportforInternalAudit" element={<SupportforInternalAudit />} />
+        <Route path="LaboratoryQualityManagementSystemServices/SupportforAccreditationProcess" element={<SupportforAccreditationProcess />} />
+
     </Route>
     
 </Routes>

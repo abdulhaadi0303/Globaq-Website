@@ -123,14 +123,14 @@ const dropdownData = [
       route: "ISOConsultancy"
     })),
   },
-  
+
   // 4 - Lab Quality Management System Services
   {
     title: "Lab Quality Management System Services",
     items: [
-      { label: "Consultancy" , route: "LaboratoryQualityManagementSystemServices" },
+      { label: "Consultancy" , route: "LaboratoryQualityManagementSystemServices/Consultancy" },
       {
-        label: "Training",
+        label: "Training", route: "LaboratoryQualityManagementSystemServices/Training",
         subItems: [
           "ISO/IEC 17025:2017 Awareness training",
           "ISO/IEC 17025:2017 Internal auditor training",
@@ -140,13 +140,13 @@ const dropdownData = [
           "Root cause analysis training",
         ].map((item) => ({
           label: item,
-          route: "LaboratoryQualityManagementSystemServices"
+          route: "LaboratoryQualityManagementSystemServices/Training"
         })),
       },
-      { label: "Implementation Support" ,route: "LaboratoryQualityManagementSystemServices"},
-      { label: "3rd Party Internal Audit" ,route: "LaboratoryQualityManagementSystemServices"},
-      { label: "Support for Internal Audit" ,route: "LaboratoryQualityManagementSystemServices"},
-      { label: "Support for Accreditation Process" ,route: "LaboratoryQualityManagementSystemServices"},
+      { label: "Implementation Support" ,route: "LaboratoryQualityManagementSystemServices/ImplementationSupport"},
+      { label: "3rd Party Internal Audit" ,route: "LaboratoryQualityManagementSystemServices/3rdPartyInternalAudit"},
+      { label: "Support for Internal Audit" ,route: "LaboratoryQualityManagementSystemServices/SupportforInternalAudit"},
+      { label: "Support for Accreditation Process" ,route: "LaboratoryQualityManagementSystemServices/SupportforAccreditationProcess"},
     ],
   },
   // 5- Audit Assistance
