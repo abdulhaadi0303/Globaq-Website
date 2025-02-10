@@ -4,7 +4,7 @@ const dropdownData = [
     title: "Management System Audits",
     items: [
       {
-        label: "Second Party Audits",
+        label: "Second Party Audits", 
         subItems: [
           { label: "Vendor Assessment", route: "MangementSystemAudits/VendorAssessment" },
           { label: "Schedule Q - Quality Assessment",route: "MangementSystemAudits/ScheduleQQualityAssessment"},
