@@ -40,7 +40,7 @@ const dropdownData = [
               "ISO 59020:2024",
             ].map((item) => ({
               label: item,
-              route: "Trainings"
+              route: "Trainings/ISOTrainings/ISOImplementationTraining"
             })),
           },
           {
@@ -59,7 +59,7 @@ const dropdownData = [
               "ISO 59020:2024",
             ].map((item) => ({
               label: item,
-              route: "Trainings"
+              route: "Trainings/ISOTrainings/ISOAwarenessTraining"
             })),
           },
           {
@@ -73,7 +73,7 @@ const dropdownData = [
               "ISO 22000:2018",
             ].map((item) => ({
               label: item,
-              route: "Trainings"
+              route: "Trainings/ISOTrainings/InternalAuditTraining"
             })),
           },
         ],
@@ -98,7 +98,7 @@ const dropdownData = [
           "Saudi Aramco Work Site Safety Manual (WSSM) Awareness Training",
         ].map((item) => ({
           label: item,
-          route: "Trainings"
+          route: "Trainings/OtherTrainings"
         })),
       },
     ],

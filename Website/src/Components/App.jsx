@@ -9,7 +9,11 @@ import ScheduleQQualityAssessment from "./Pages/Management System Audits/Schedul
 import ScheduleDSafetyAssessment from "./Pages/Management System Audits/ScheduleDSafetyAssessment";
 import VendorAssessment from "./Pages/Management System Audits/VendorAssessment";
 
-import Trainings from "./Pages/Trainings";
+import ISOImplementationTraining from "./Pages/Trainings/ISOImplementationTraining.jsx";
+import InternalAuditTraining from "./Pages/Trainings/InternalAuditTraining.jsx";
+import ISOAwarenessTraining from "./Pages/Trainings/ISOAwarenessTraining.jsx";
+import OtherTrainings from "./Pages/Trainings/OtherTrainings.jsx";
+
 import ISOConsultancy from "./Pages/ISOConsultancy";
 
 import LaboratoryQualityManagementSystemServices from "./Pages/LaboratoryQualityManagementSystemServices"
@@ -45,12 +49,19 @@ function App() {
         <Route path="MangementSystemAudits/VendorAssessment" element={<VendorAssessment />} />
 
 
-        <Route path="Trainings" element={<Trainings />} />
+        <Route path="Trainings/ISOTrainings/ISOImplementationTraining" element={<ISOImplementationTraining />} />
+        <Route path="Trainings/ISOTrainings/ISOAwarenessTraining" element={<ISOAwarenessTraining />} />
+        <Route path="Trainings/ISOTrainings/InternalAuditTraining" element={<InternalAuditTraining />} />
+        <Route path="Trainings/OtherTrainings" element={<OtherTrainings />} />
+        
+
+
+
         <Route path="ISOConsultancy" element={<ISOConsultancy />} />
 
         <Route path="AuditAssistance/ISOThirdPartyAudits" element={<ISOThirdPartyAudits />} />
         <Route path="AuditAssistance/ISOInternalAudits" element={<ISOInternalAudits />} />
-        
+
         <Route path="LaboratoryQualityManagementSystemServices" element={<LaboratoryQualityManagementSystemServices />} />
     </Route>
     
