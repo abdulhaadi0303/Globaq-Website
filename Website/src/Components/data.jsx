@@ -6,14 +6,14 @@ const dropdownData = [
       {
         label: "Second Party Audits",
         subItems: [
-          { label: "Vendor Assessment", onClick: () => handleNavigation("Vendor Assessment") },
-          { label: "Schedule Q - Quality Assessment", onClick: () => handleNavigation("Schedule Q - Quality Assessment") },
-          { label: "Schedule D - Safety Assessment", onClick: () => handleNavigation("Schedule D - Safety Assessment") },
+          { label: "Vendor Assessment", route: "MangementSystemAudits/VendorAssessment" },
+          { label: "Schedule Q - Quality Assessment",route: "MangementSystemAudits/ScheduleQQualityAssessment"},
+          { label: "Schedule D - Safety Assessment", route: "MangementSystemAudits/ScheduleDSafetyAssessment"},
         ],
       },
       {
         label: "Management System Certification Audits",
-        subItems: [{ label: "Coming Soon" }],
+        subItems: [{ label: "ManagementSystemAudits" , route: "ManagementSystemAudits"}],
       },
     ],
   },
@@ -40,7 +40,7 @@ const dropdownData = [
               "ISO 59020:2024",
             ].map((item) => ({
               label: item,
-              onClick: () => handleNavigation(item, "Trainings"),
+              route: "Trainings"
             })),
           },
           {
@@ -59,7 +59,7 @@ const dropdownData = [
               "ISO 59020:2024",
             ].map((item) => ({
               label: item,
-              onClick: () => handleNavigation(item, "Trainings"),
+              route: "Trainings"
             })),
           },
           {
@@ -73,7 +73,7 @@ const dropdownData = [
               "ISO 22000:2018",
             ].map((item) => ({
               label: item,
-              onClick: () => handleNavigation(item, "Trainings"),
+              route: "Trainings"
             })),
           },
         ],
@@ -98,7 +98,7 @@ const dropdownData = [
           "Saudi Aramco Work Site Safety Manual (WSSM) Awareness Training",
         ].map((item) => ({
           label: item,
-          onClick: () => handleNavigation(item, "Trainings"),
+          route: "Trainings"
         })),
       },
     ],
@@ -120,14 +120,14 @@ const dropdownData = [
       "ISO 59020:2024",
     ].map((item) => ({
       label: item,
-      onClick: () => handleNavigation(item, "Consultancy"),
+      route: "ISOConsultancy"
     })),
   },
   // 4 - Lab Quality Management System Services
   {
     title: "Lab Quality Management System Services",
     items: [
-      { label: "Consultancy" },
+      { label: "Consultancy" , route: "LaboratoryQualityManagementSystemServices" },
       {
         label: "Training",
         subItems: [
@@ -139,21 +139,21 @@ const dropdownData = [
           "Root cause analysis training",
         ].map((item) => ({
           label: item,
-          onClick: () => handleNavigation(item, "Lab Quality Management System Services"),
+          route: "LaboratoryQualityManagementSystemServices"
         })),
       },
-      { label: "Implementation Support" },
-      { label: "3rd Party Internal Audit" },
-      { label: "Support for Internal Audit" },
-      { label: "Support for Accreditation Process" },
+      { label: "Implementation Support" ,route: "LaboratoryQualityManagementSystemServices"},
+      { label: "3rd Party Internal Audit" ,route: "LaboratoryQualityManagementSystemServices"},
+      { label: "Support for Internal Audit" ,route: "LaboratoryQualityManagementSystemServices"},
+      { label: "Support for Accreditation Process" ,route: "LaboratoryQualityManagementSystemServices"},
     ],
   },
   // 5- Audit Assistance
   {
     title: "Audit Assistance",
     items: [
-      { label: "ISO Internal Audits", onClick: () => handleNavigation("ISO Internal Audits", "AuditAssistance") },
-      { label: "ISO third party audit", onClick: () => handleNavigation("ISO third party audit", "AuditAssistance") },
+      { label: "ISO Internal Audits", route: "AuditAssistance/ISOInternalAudits"},
+      { label: "ISO third party audit", route: "AuditAssistance/ISOThirdPartyAudits" },
     ],
   },
 ];

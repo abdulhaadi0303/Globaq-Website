@@ -22,9 +22,7 @@
 }
 
 /* === Section Text Styling === */
-.home-bar-2 h3,
-.home-bar-3 h3,
-.home-bar-4 h3 {
+.textboxes{
     font-weight: normal; /* Removes bold effect */
     font-size: 19px; /* Slightly larger for readability */
     color: var(--primary-black); /* Ensures proper contrast */
@@ -84,6 +82,7 @@
 
 /* === List Styling === */
 .custom-list {
+    /* background-color: var(--);  */
     list-style: none;
     padding: 0;
     text-align: left;

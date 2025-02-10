@@ -84,9 +84,10 @@ function Home() {
                 className={`home-bar-2 ${visibleSections["bar-2"] ? "show" : ""}`}
             >
                 <h2>Our Vision</h2>
-                <h3>
-                To be a global market leader in the conformance and compliance industry, contributing to a 
-                sustainable future by delivering innovative and reliable quality assurance solutions
+                <h3 className="textboxes">
+                To be a global market leader in the conformance and compliance industry, contributing to a
+sustainable future by delivering innovative and reliable quality assurance solutions. This vision
+aligns with Saudi Vision 2030's focus on sustainable development and a high quality of life.
                 </h3>
             </div>
 
@@ -97,48 +98,39 @@ function Home() {
                 className={`home-bar-3 ${visibleSections["bar-3"] ? "show" : ""}`}
             >
                 <h2>Our Mission</h2>
-                <h3>
-                    To provide SET (simple, efficient, and timely) quality assurance solutions, continuously improving our
-                    services through professionalism, accuracy, competency, and a relentless focus on customer satisfaction,
-                    ensuring sustainable and quality services for consumers.
+                <h3 className="textboxes">
+                To provide <strong>SET (simple, efficient, and timely)</strong> quality assurance solutions, continuously
+improving our services through professionalism, accuracy, competency, and a relentless focus
+on customer satisfaction, ensuring sustainable and quality services for consumers.
+
                 </h3>
             </div>
 
-            {/* Bar 4 - Policy */}
+            {/* Bar 4 - Quality Commitment */}
             <div
-    id="bar-4"
-    ref={(el) => (sectionsRef.current[2] = el)}
-    className={`home-bar-4 ${visibleSections["bar-4"] ? "show" : ""}`}
->
-    <h2>Our Quality Policy</h2>
-    <h3>
-        At GLOBAQ, quality is at the heart of everything we do. We are dedicated to adhering to the principles of total 
-        quality management, ensuring that our services meet the highest standards of excellence. Our quality policy emphasizes:
-    </h3>
-    <ul className="custom-list">
-        <li>
-            <strong>Meeting and Exceeding Customer Requirements:</strong> We strive to deliver solutions that not only 
-            meet but surpass customer expectations.
-        </li>
-        <li>
-            <strong>Ensuring Compliance:</strong> We adhere to all legal, regulatory, and industry standards in every 
-            aspect of our services.
-        </li>
-        <li>
-            <strong>Fostering Continuous Improvement:</strong> We are committed to regularly enhancing our processes 
-            to ensure efficiency and effectiveness.
-        </li>
-        <li>
-            <strong>Empowering Our Team:</strong> We invest in training and development to equip our employees with 
-            the skills and knowledge needed for excellence.
-        </li>
-        <li>
-            <strong>Promoting Sustainability:</strong> We integrate sustainable practices into our operations and 
-            services to contribute to a greener future.
-        </li>
-    </ul>
-</div>
-
+                id="bar-4"
+                ref={(el) => (sectionsRef.current[2] = el)}
+                className={`home-bar-4 ${visibleSections["bar-4"] ? "show" : ""}`}
+            >
+                <h2>Our Commitment to Quality</h2>
+                <h3 className="textboxes">
+                <strong>At GLOBAQ, </strong>quality is at the heart of everything we do. We are dedicated to adhering to the
+principles of total quality management, ensuring that our services meet the highest standards of
+excellence. Our quality policy emphasizes:
+                
+                <ul className="custom-list" >
+                    <li>-Meeting and exceeding customer requirements.</li>
+                    <li>-Ensuring compliance with legal, regulatory, and industry standards.</li>
+                    <li>-Fostering continuous improvement in all our processes.</li>
+                    <li>-Empowering our team through training and development.</li>
+                    <li>-Promoting sustainability in our operations and services.</li>
+                </ul>
+                
+                By upholding these commitments, we aim to build long-term relationships with our customers,
+stakeholders, and the community, contributing to a sustainable and quality-focused future while
+ensuring mutual growth and success, in line with the overarching goals of <strong>Saudi Vision 2030.</strong>
+                </h3>
+            </div>
         </>
     );
 }

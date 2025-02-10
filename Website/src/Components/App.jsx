@@ -3,18 +3,27 @@ import Header from "./Header";
 import Home from "./Home"; 
 import Footer from "./Footer"; 
 
-import ManagementSystemAudits from "./Pages/ManagementSystemAudits";
+
+// Management System Audits Section Related Imports
+import ScheduleQQualityAssessment from "./Pages/Management System Audits/ScheduleQQualityAssessment.jsx";
+import ScheduleDSafetyAssessment from "./Pages/Management System Audits/ScheduleDSafetyAssessment";
+import VendorAssessment from "./Pages/Management System Audits/VendorAssessment";
+
 import Trainings from "./Pages/Trainings";
 import ISOConsultancy from "./Pages/ISOConsultancy";
-import AuditAssistance  from "./Pages/AuditAssistance";
+
 import LaboratoryQualityManagementSystemServices from "./Pages/LaboratoryQualityManagementSystemServices"
+
+// Audit Assistance Section Related Imports
+import ISOThirdPartyAudits  from "./Pages/Audit Assistance/ISOThirdPartyAudits";
+import ISOInternalAudits  from "./Pages/Audit Assistance/ISOInternalAudits";
 
 import './styles/App.css'
 
 // Layout Function
 function Layout() {
   return (
-    <div className="layout" style={{ height: "100vh", background: "#555555",padding:"0px", margin:"0px"  }}>
+    <div className="layout" style={{ height: "100vh", background:"#e4e4e7",padding:"0px", margin:"0px"  }}>
       <Header /> {/* Header now contains the navigation links */}
       <div className="body">
         <Outlet /> {/* This renders the changing content based on routes */}
@@ -30,10 +39,18 @@ function App() {
 <Routes>
     <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
-        <Route path="ManagementSystemAudits" element={<ManagementSystemAudits />} />
+
+        <Route path="MangementSystemAudits/ScheduleQQualityAssessment" element={<ScheduleQQualityAssessment />} />
+        <Route path="MangementSystemAudits/ScheduleDSafetyAssessment" element={<ScheduleDSafetyAssessment />} />
+        <Route path="MangementSystemAudits/VendorAssessment" element={<VendorAssessment />} />
+
+
         <Route path="Trainings" element={<Trainings />} />
         <Route path="ISOConsultancy" element={<ISOConsultancy />} />
-        <Route path="AuditAssistance" element={<AuditAssistance />} />
+
+        <Route path="AuditAssistance/ISOThirdPartyAudits" element={<ISOThirdPartyAudits />} />
+        <Route path="AuditAssistance/ISOInternalAudits" element={<ISOInternalAudits />} />
+        
         <Route path="LaboratoryQualityManagementSystemServices" element={<LaboratoryQualityManagementSystemServices />} />
     </Route>
     

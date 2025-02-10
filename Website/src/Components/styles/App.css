@@ -2,7 +2,7 @@
     --primary-black: #333333;
     --dark-gray: #555555;
     --bright-orange: #F26C23;
-    --light-gray: #EAEAEA;
+    --light-gray:rgba(234, 234, 234, 0.94);
     --white:rgb(255, 255, 255); /* Ensure white is correctly set */
 }
 

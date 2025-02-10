@@ -1,11 +1,17 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./styles/Dropdown.css";
 import { useState } from "react";
-
-import dropdownData from "./data.jsx"
+import dropdownData from "./data.jsx";
 
 function Dropdown({ title, items }) {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = (item) => {
+    if (item.route) {
+      navigate(`/${item.route}`); // ✅ Uses `route` from `data.jsx`
+    }
+  };
 
   return (
     <div
@@ -19,9 +25,9 @@ function Dropdown({ title, items }) {
           {items.map((item, index) => (
             <div key={index} className="dropdown-item">
               {item.subItems ? (
-                <Dropdown className="final-item" title={item.label} items={item.subItems} />
+                <Dropdown title={item.label} items={item.subItems} />
               ) : (
-                <span onClick={item.onClick}>{item.label}</span>
+                <span onClick={() => handleClick(item)}>{item.label}</span>
               )}
             </div>
           ))}
@@ -31,29 +37,16 @@ function Dropdown({ title, items }) {
   );
 }
 
-
 function DropDown() {
-  const navigate = useNavigate();
-
-  const handleNavigation = (option, category) => {
-    navigate(`/${category}?option=${option}`);
-  };
-
   return (
-    <>
-      <div className="header-bar-3">
-        <nav>
-          <Link to="/">Home</Link>
-          {dropdownData.map((dropdown, index) => (
-            <Dropdown
-              key={index}
-              title={dropdown.title}
-              items={dropdown.items}
-            />
-          ))}
-        </nav>
-      </div>
-    </>
+    <div className="header-bar-3">
+      <nav>
+        <Link to="/">Home</Link>
+        {dropdownData.map((dropdown, index) => (
+          <Dropdown key={index} title={dropdown.title} items={dropdown.items} />
+        ))}
+      </nav>
+    </div>
   );
 }
 
