@@ -13,7 +13,10 @@ function VendorAssessment() {
                     Our supplier evaluation and assessment services reduce risks and inefficiencies in vendor
                     onboarding and ongoing supplier management. We provide comprehensive assessments of
                     supplier management systems, capabilities, capacity, competency, and compliance, enabling
-                    faster approvals, a better understanding of supplier needs, and effective risk mitigation. We help
+                    faster approvals, a better understanding of supplier needs, and effective risk mitigation. 
+                 </p>
+                 <p>
+                    We help
                     organizations select suppliers based on defined criteria beyond price, and conduct on-site
                     audits for initial selection and ongoing performance evaluation.
                 </p>

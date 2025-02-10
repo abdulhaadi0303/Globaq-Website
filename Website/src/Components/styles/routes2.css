@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center; /* Centers vertically */
     align-items: center; /* Centers horizontally */
+    text-align: center;
     background-color:rgb(248, 249, 250); /* Light gray background */
     color: #333; /* Dark text for readability */
     font-size: 24px;
@@ -22,8 +23,4 @@
     border-radius: 20px;
     text-align: left;
 }
-
-.textbox h1{
-    text-align: center;
-} 
 
