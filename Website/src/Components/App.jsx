@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Header from "./Header"; 
 import Home from "./Home"; 
 import Footer from "./Footer"; 
+import AboutUs from "./AboutUs.jsx"; 
 
 
 // Management System Audits Section Related Imports
@@ -51,6 +52,7 @@ function App() {
 <Routes>
     <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
 
         <Route path="MangementSystemAudits/ScheduleQQualityAssessment" element={<ScheduleQQualityAssessment />} />
         <Route path="MangementSystemAudits/ScheduleDSafetyAssessment" element={<ScheduleDSafetyAssessment />} />

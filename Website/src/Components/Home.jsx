@@ -106,24 +106,54 @@ on customer satisfaction, ensuring sustainable and quality services for consumer
                 </h3>
             </div>
 
-            {/* Bar 4 - Quality Commitment */}
             <div
-                id="bar-4"
-                ref={(el) => (sectionsRef.current[2] = el)}
-                className={`home-bar-4 ${visibleSections["bar-4"] ? "show" : ""}`}
+    id="bar-4"
+    ref={(el) => (sectionsRef.current[2] = el)}
+    className={`home-bar-4 ${visibleSections["bar-4"] ? "show" : ""}`}
+>
+    <h2>Our Commitment to Quality</h2>
+    <h3 className="textboxes">
+        <strong>At GLOBAQ, </strong>quality is at the heart of everything we do. We are dedicated to adhering to the
+        principles of total quality management, ensuring that our services meet the highest standards of
+        excellence. Our quality policy emphasizes:
+        
+        <ul className="custom-list">
+            <li>  Meeting and exceeding customer requirements.</li>
+            <li>  Ensuring compliance with legal, regulatory, and industry standards.</li>
+            <li>  Fostering continuous improvement in all our processes.</li>
+            <li>  Empowering our team through training and development.</li>
+            <li>  Promoting sustainability in our operations and services.</li>
+        </ul>
+        
+        By upholding these commitments, we aim to build long-term relationships with our customers,
+        stakeholders, and the community, contributing to a sustainable and quality-focused future while
+        ensuring mutual growth and success, in line with the overarching goals of <strong>Saudi Vision 2030.</strong>
+    </h3>
+</div>
+
+
+
+            <div
+                id="bar-5"
+                ref={(el) => (sectionsRef.current[3] = el)}
+                className={`home-bar-5 ${visibleSections["bar-5"] ? "show" : ""}`}
             >
-                <h2>Our Commitment to Quality</h2>
+                <h2>What We Do</h2>
                 <h3 className="textboxes">
-                <strong>At GLOBAQ, </strong>quality is at the heart of everything we do. We are dedicated to adhering to the
-principles of total quality management, ensuring that our services meet the highest standards of
-excellence. Our quality policy emphasizes:
+                GLOBAQ specializes in providing comprehensive quality assurance solutions designed to
+                simplify compliance processes and enhance organizational performance. We work closely with
+                our clients to understand their challenges and deliver practical, efficient, and timely solutions
+                that align with international standards and regulations.
+                Our services support the growth and development of various sectors, a key objective of Vision
+                2030.
+                Our major services include:
                 
                 <ul className="custom-list" >
-                    <li>-Meeting and exceeding customer requirements.</li>
-                    <li>-Ensuring compliance with legal, regulatory, and industry standards.</li>
-                    <li>-Fostering continuous improvement in all our processes.</li>
-                    <li>-Empowering our team through training and development.</li>
-                    <li>-Promoting sustainability in our operations and services.</li>
+                    <li><strong> Management System Audits: </strong> (Vendor Assessments, Schedule Q - Quality Assessments,Schedule D - Safety Assessments, and Management System Certification Audits)</li>
+                    <li><strong>Trainings: </strong>(ISO Trainings, QHSE trainings and other industry specific trainings)</li>
+                    <li><strong>ISO Consultancy: </strong></li>
+                    <li><strong>Audit Assistance: </strong>(ISO Internal audits, ISO third-party audits, Pre-Qualification audits )</li>
+                    <li><strong>Laboratory Quality Management System Services: </strong>(ISO/IEC 17025 Consultancy,Support for accreditation process)</li>
                 </ul>
                 
                 By upholding these commitments, we aim to build long-term relationships with our customers,
@@ -131,6 +161,9 @@ stakeholders, and the community, contributing to a sustainable and quality-focus
 ensuring mutual growth and success, in line with the overarching goals of <strong>Saudi Vision 2030.</strong>
                 </h3>
             </div>
+
+        
+            
         </>
     );
 }

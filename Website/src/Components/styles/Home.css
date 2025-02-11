@@ -2,18 +2,20 @@
 .home-bar-1,
 .home-bar-2,
 .home-bar-3,
-.home-bar-4 {
+.home-bar-4,
+.home-bar-5 {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 5px 5%;
+    padding: 3px 4%;
 }
 
 /* === Heading Styles (Vision, Mission, Policy) === */
 .home-bar-2 h2, 
 .home-bar-3 h2, 
-.home-bar-4 h2 {
+.home-bar-4 h2,
+.home-bar-5 h2 {
     color: #F26C23; /* Orange shade matching website */
     font-size: 33px; /* Slightly larger */
     font-weight: bold;
@@ -39,11 +41,11 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    height: 350px;
+    height: 450px;
 }
 
 .image-container {
-    width: 94%;
+    width: 96%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +53,7 @@
 
 .image-container img {
     max-width: 100%;
-    height: 700px;
+    height: 500px;
     width: 100%;
     border-radius: 7px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
@@ -79,6 +81,7 @@
 .home-bar-2 { background-color: var(--white); } /* Vision - White */
 .home-bar-3 { background-color: var(--white); } /* Mission - Gray */
 .home-bar-4 { background-color: var(--white); } /* Policy - White */
+.home-bar-5 { background-color: var(--white); } /* Policy - White */
 
 /* === List Styling === */
 .custom-list {
@@ -100,7 +103,7 @@
 
 /* === List Descriptions Stay Inline === */
 .custom-list li {
-    font-size: 17px; /* Slightly larger */
+    font-size: 19px; /* Slightly larger */
     color: var(--primary-black);
     display: flex;
     flex-wrap: wrap;
@@ -109,10 +112,18 @@
     line-height: 1.5;
 }
 
+.custom-list li::before {
+    content: "→"; /* Arrow bullet */
+    color: var(--primary-black); /* Match text color */
+    font-weight: bold;
+    margin-right: 8px; /* Space between arrow and text */
+}
+
 /* === Section Separators === */
 .home-bar-2::before,
 .home-bar-3::before,
-.home-bar-4::before {
+.home-bar-4::before,
+.home-bar-5::before {
     content: "";
     display: block;
     width: 82%;  /* 80% width of the page */
@@ -144,7 +155,8 @@
     /* Reduce margin for smaller screens */
     .home-bar-2::before,
     .home-bar-3::before,
-    .home-bar-4::before {
+    .home-bar-4::before,
+    .home-bar-5::before  {
         width: 90%;  /* Slightly wider for better visibility */
         margin: 10px auto;
     }
@@ -153,7 +165,8 @@
 /* Initially hide the sections */
 .home-bar-2, 
 .home-bar-3, 
-.home-bar-4 {
+.home-bar-4,
+.home-bar-5 {
     opacity: 0;
     transform: translateY(50px); /* Start from below */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;

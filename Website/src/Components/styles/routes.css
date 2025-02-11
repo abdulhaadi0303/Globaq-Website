@@ -21,9 +21,17 @@
     padding: 3% 2%;
     border-radius: 20px;
     text-align: left;
+    margin: 3% 3%;
 }
 
 .textbox h1{
     text-align: center;
 } 
+
+/* Highlighting Exceptions with Bright Orange & Underline */
+.Exception {
+    /* color: var(--bright-orange); */
+    text-decoration: underline; /* Adds an underline */
+}
+
 
