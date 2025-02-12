@@ -35,3 +35,15 @@
 }
 
 
+
+.textbox a {
+    color: inherit; /* Inherits the text color from parent */
+    text-decoration: none; /* No underline by default */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+    display: inline-block; /* Ensures transform works correctly */
+}
+
+.textbox a:hover {
+    color: var(--bright-orange); /* Bright orange color on hover */
+    transform: translateY(-2px); /* Moves the link up slightly */
+}
