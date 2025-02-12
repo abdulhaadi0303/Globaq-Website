@@ -12,8 +12,8 @@ const dropdownData = [
         ],
       },
       {
-        label: "Management System Certification Audits",
-        subItems: [{ label: "ManagementSystemAudits" , route: "ManagementSystemAudits"}],
+        label: "Management System Certification Audits", route: "MangementSystemAudits/ManagementSystemCertificationAudits",
+        // subItems: [{ label: "ManagementSystemAudits" , route: "ManagementSystemAudits"}],
       },
     ],
   },
@@ -144,7 +144,7 @@ const dropdownData = [
         })),
       },
       { label: "Implementation Support" ,route: "LaboratoryQualityManagementSystemServices/ImplementationSupport"},
-      { label: "3rd Party Internal Audit" ,route: "LaboratoryQualityManagementSystemServices/3rdPartyInternalAudit"},
+      { label: "Third Party Internal Audit" ,route: "LaboratoryQualityManagementSystemServices/3rdPartyInternalAudit"},
       { label: "Support for Internal Audit" ,route: "LaboratoryQualityManagementSystemServices/SupportforInternalAudit"},
       { label: "Support for Accreditation Process" ,route: "LaboratoryQualityManagementSystemServices/SupportforAccreditationProcess"},
     ],
@@ -154,7 +154,7 @@ const dropdownData = [
     title: "Audit Assistance",
     items: [
       { label: "ISO Internal Audits", route: "AuditAssistance/ISOInternalAudits"},
-      { label: "ISO third party audit", route: "AuditAssistance/ISOThirdPartyAudits" },
+      { label: "ISO Third party audit", route: "AuditAssistance/ISOThirdPartyAudits" },
     ],
   },
 ];

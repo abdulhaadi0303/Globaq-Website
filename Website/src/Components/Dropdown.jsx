@@ -58,7 +58,7 @@ function DropDown() {
                 {dropdownData.map((dropdown, index) => (
                     <Dropdown key={index} title={dropdown.title} items={dropdown.items} />
                 ))}
-                <Link to="/AboutUs">About US</Link>
+                <Link to="/AboutUs">About Us</Link>
             </nav>
         </div>
     );

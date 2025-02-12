@@ -17,7 +17,7 @@ function Footer() {
                     <h3>Contact Us</h3>
                     <p><FaMapMarkerAlt />Al-Khobar, Saudi Arabia</p>
                     <p><FaEnvelope /> info@globaqksa.com</p>
-                    <p><FaPhone /> +96 653-0767286 </p>
+                    <p><FaPhone /> +966 53 076 7286 </p>
                 </div>
 
                 {/* Section 3 - Quick Links */}

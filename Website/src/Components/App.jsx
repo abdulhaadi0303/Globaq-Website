@@ -7,8 +7,9 @@ import AboutUs from "./AboutUs.jsx";
 
 // Management System Audits Section Related Imports
 import ScheduleQQualityAssessment from "./Pages/Management System Audits/ScheduleQQualityAssessment.jsx";
-import ScheduleDSafetyAssessment from "./Pages/Management System Audits/ScheduleDSafetyAssessment";
-import VendorAssessment from "./Pages/Management System Audits/VendorAssessment";
+import ScheduleDSafetyAssessment from "./Pages/Management System Audits/ScheduleDSafetyAssessment.jsx";
+import VendorAssessment from "./Pages/Management System Audits/VendorAssessment.jsx";
+import ManagementSystemCertificationAudits from "./Pages/Management System Audits/ManagementSystemCertificationAudits.jsx";
 
 //Trainings Section Related Imports
 import ISOImplementationTraining from "./Pages/Trainings/ISOImplementationTraining.jsx";
@@ -57,7 +58,7 @@ function App() {
         <Route path="MangementSystemAudits/ScheduleQQualityAssessment" element={<ScheduleQQualityAssessment />} />
         <Route path="MangementSystemAudits/ScheduleDSafetyAssessment" element={<ScheduleDSafetyAssessment />} />
         <Route path="MangementSystemAudits/VendorAssessment" element={<VendorAssessment />} />
-
+        <Route path="MangementSystemAudits/ManagementSystemCertificationAudits" element={<ManagementSystemCertificationAudits />} />
 
         <Route path="Trainings/ISOTrainings/ISOImplementationTraining" element={<ISOImplementationTraining />} />
         <Route path="Trainings/ISOTrainings/ISOAwarenessTraining" element={<ISOAwarenessTraining />} />
