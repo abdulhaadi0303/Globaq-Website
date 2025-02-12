@@ -133,7 +133,7 @@ on customer satisfaction, ensuring sustainable and quality services for consumer
 
 
 
-            <div
+            {/* <div
                 id="bar-5"
                 ref={(el) => (sectionsRef.current[3] = el)}
                 className={`home-bar-5 ${visibleSections["bar-5"] ? "show" : ""}`}
@@ -160,7 +160,7 @@ on customer satisfaction, ensuring sustainable and quality services for consumer
 stakeholders, and the community, contributing to a sustainable and quality-focused future while
 ensuring mutual growth and success, in line with the overarching goals of <strong>Saudi Vision 2030.</strong>
                 </h3>
-            </div>
+            </div> */}
 
         
             
