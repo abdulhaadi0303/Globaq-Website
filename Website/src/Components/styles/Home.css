@@ -3,7 +3,9 @@
 .home-bar-2,
 .home-bar-3,
 .home-bar-4,
-.home-bar-5 {
+.home-bar-5,
+.about 
+{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +17,8 @@
 .home-bar-2 h2, 
 .home-bar-3 h2, 
 .home-bar-4 h2,
-.home-bar-5 h2 {
+.home-bar-5 h2,
+.about h2 {
     color: #F26C23; /* Orange shade matching website */
     font-size: 33px; /* Slightly larger */
     font-weight: bold;
@@ -81,7 +84,7 @@
 .home-bar-2 { background-color: var(--white); } /* Vision - White */
 .home-bar-3 { background-color: var(--white); } /* Mission - Gray */
 .home-bar-4 { background-color: var(--white); } /* Policy - White */
-.home-bar-5 { background-color: var(--white); } /* Policy - White */
+.about { background-color: var(--white); } /* Policy - White */
 
 /* === List Styling === */
 .custom-list {
@@ -123,7 +126,8 @@
 .home-bar-2::before,
 .home-bar-3::before,
 .home-bar-4::before,
-.home-bar-5::before {
+.home-bar-5::before,
+.about::before {
     content: "";
     display: block;
     width: 82%;  /* 80% width of the page */
@@ -156,7 +160,8 @@
     .home-bar-2::before,
     .home-bar-3::before,
     .home-bar-4::before,
-    .home-bar-5::before  {
+    .home-bar-5::before,
+    .about::before   {
         width: 90%;  /* Slightly wider for better visibility */
         margin: 10px auto;
     }
@@ -166,7 +171,7 @@
 .home-bar-2, 
 .home-bar-3, 
 .home-bar-4,
-.home-bar-5 {
+.home-bar-5,{
     opacity: 0;
     transform: translateY(50px); /* Start from below */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;

@@ -1,11 +1,13 @@
-import "../Components/styles/routes.css";
+import "../Components/styles/Home.css";
 
 function AboutUs() {
     return (
-        <div className="page-container">
+        <>
+        <div className="about">
             {/* Text Box 1: Introduction */}
+            <h2 >Introduction</h2>
             <div className="textbox">
-                <h1 className="Exception">Introduction</h1>
+                
                 <p>
                     Global Quality Specialists Company Limited (GLOBAQ) is a fast-growing organization emerging
                     as a trusted name in the conformance and compliance industry.
@@ -23,8 +25,9 @@ function AboutUs() {
             </div>
 
             {/* Text Box 2: Who We Are */}
+            <h2>Who We Are</h2>
             <div className="textbox">
-                <h1 className="Exception">Who We Are</h1>
+                
                 <p>
                     At GLOBAQ, we are a team of passionate and skilled professionals with deep expertise in
                     quality management, compliance, health and safety, and sustainability.
@@ -41,8 +44,9 @@ function AboutUs() {
             </div>
 
             {/* Text Box 3: What We Do */}
+            <h2 >What We Do</h2>
             <div className="textbox">
-                <h1 className="Exception">What We Do</h1>
+                
                 <p>
                     GLOBAQ specializes in providing comprehensive quality assurance solutions designed to
                     simplify compliance processes and enhance organizational performance. We work closely with
@@ -67,6 +71,7 @@ function AboutUs() {
                 </ul>
             </div>
         </div>
+        </>
     );
 }
 
