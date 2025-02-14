@@ -72,32 +72,4 @@ html, body {
   }
   
   
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .header-bar {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .header-logo-container {
-      order: -1; /* Place logo on top in mobile view */
-      margin-bottom: 10px; /* Add some space below the logo */
-    }
-  
-    .header-navigation {
-      margin: 10px 0;
-      justify-content: center;
-      flex-direction: column; /* Stack navigation items vertically */
-      gap: 10px; /* Adjust gap in mobile view */
-    }
-  
-    .header-side-image-container {
-      justify-content: center;
-      margin-top: 10px;
-    }
-  
-    .header::after {
-      width: 95%; /* Adjust separator width in mobile view */
-    }
-  }
+ 
