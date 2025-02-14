@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Header from "./Header"; 
+import Head from "./head";
 import Home from "./Home"; 
 import Footer from "./Footer"; 
 import AboutUs from "./AboutUs.jsx"; 
@@ -38,7 +39,7 @@ import './styles/App.css'
 function Layout() {
   return (
     <div className="layout" style={{ height: "100vh", background:"#e4e4e7",padding:"0px", margin:"0px"  }}>
-      <Header /> {/* Header now contains the navigation links */}
+      <Head /> {/* Header now contains the navigation links */}
       <div className="body">
         <Outlet /> {/* This renders the changing content based on routes */}
       </div>

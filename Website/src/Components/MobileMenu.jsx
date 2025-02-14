@@ -71,6 +71,9 @@ function MobileMenu() {
           <Link to="/" onClick={closeMenu}>
             Home
           </Link>
+          <Link to="/Aboutus" onClick={closeMenu}>
+            About Us
+          </Link>
           {dropdownData.map((dropdown, index) => (
             <MobileDropdown
               key={index}

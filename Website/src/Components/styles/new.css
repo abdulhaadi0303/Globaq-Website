@@ -1,0 +1,103 @@
+/* Reset and Box Sizing */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+  
+  *, *::before, *::after { /* Apply box-sizing to all elements */
+    box-sizing: inherit;
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: var(--white); /* Use CSS variable if defined */
+    padding: 10px; /* Consistent padding */
+    padding-top:25px
+  }
+  
+  .header::after { /* Separator line */
+    content: "";
+    display: block;
+    width: 98%; /* Slightly reduced width for better visual balance */
+    height: 2px;
+    background-color: #444;
+    margin: 15px auto; /* Increased margin for spacing */
+  }
+  
+  .header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min width:96vw;
+    max-width: 100vw; /* Prevent overflow */
+  }
+  
+  /* Logo Styles */
+  .header-logo-container {
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header-logo {
+    width: 190px;
+    height: auto;
+    max-width: 100%; /* Prevent logo from overflowing its container */
+  }
+  
+  /* Navigation Styles */
+  .header-navigation {
+    flex: 9; /* Adjust as needed */
+    display: flex;
+    justify-content:center;
+    gap: 18px; /* Increased gap */
+}
+  
+  
+  /* Side Image Styles */
+  .header-side-image-container {
+    flex: 1;
+    display: flex;
+    justify-content:center;
+  }
+  
+  .header-side-image {
+    width: 45px; /* Adjusted width */
+    height: auto;
+    max-width: 100%;  /* Prevent image from overflowing its container */
+  }
+  
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .header-bar {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .header-logo-container {
+      order: -1; /* Place logo on top in mobile view */
+      margin-bottom: 10px; /* Add some space below the logo */
+    }
+  
+    .header-navigation {
+      margin: 10px 0;
+      justify-content: center;
+      flex-direction: column; /* Stack navigation items vertically */
+      gap: 10px; /* Adjust gap in mobile view */
+    }
+  
+    .header-side-image-container {
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    .header::after {
+      width: 95%; /* Adjust separator width in mobile view */
+    }
+  }
