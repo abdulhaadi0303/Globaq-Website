@@ -38,7 +38,7 @@ html, body {
   
   /* Logo Styles */
   .header-logo-container {
-    flex: 1.5;
+    flex: 1.75;
     display: flex;
     justify-content: center;
   }
@@ -60,7 +60,7 @@ html, body {
   
   /* Side Image Styles */
   .header-side-image-container {
-    flex: 1;
+    flex: 0.25;
     display: flex;
     justify-content:center;
   }

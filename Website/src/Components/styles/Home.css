@@ -168,17 +168,14 @@
 }
 
 /* Initially hide the sections */
-.home-bar-2, 
-.home-bar-3, 
-.home-bar-4,
-.home-bar-5,{
+.home-bar-2, .home-bar-3, .home-bar-4 {
     opacity: 0;
-    transform: translateY(50px); /* Start from below */
+    transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Class to be added when section is visible */
-.show {
+.home-bar-2.show, .home-bar-3.show, .home-bar-4.show {
     opacity: 1;
     transform: translateY(0);
 }
+

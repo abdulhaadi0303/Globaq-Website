@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./styles/new.css";
+import "./styles/head.css";
 
 import DropdownMenu from "./Dropdown"; // More descriptive name
 import MobileMenu from "./MobileMenu";
@@ -43,7 +43,7 @@ function HeaderContent({ isMobile }) {
       </div>
 
       <div className="header-side-image-container"> {/* More descriptive name */}
-        <img src={SideImage} alt="Side Graphic" className="header-side-image" /> {/* Added alt text */}
+        {/* <img src={SideImage} alt="Side Graphic" className="header-side-image" /> Added alt text */}
       </div>
     </div>
   );

@@ -3,22 +3,22 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  background: #f8f8f8;
+  background: #FFFF;
   padding: 7px 10px;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* border-bottom: 1px solid #eee; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .header-bar-3 nav a {
   color: #333;
   text-decoration: none;
-  font-size: 11px;
-  padding: 8px 18px;
+  font-size: 12px;
+  padding: 7px 19px;
   border: none;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
   background: #fff;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .header-bar-3 nav a:hover {
@@ -31,13 +31,13 @@
 .dropdown {
   position: relative;
   cursor: pointer;
-  padding: 8px 18px;
-  font-size: 11px;
+  padding: 7px 19px;
+  font-size: 12px;
   color: #333;
   transition: all 0.3s ease-in-out;
   border: none;
   border-radius: 5px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   display: inline-flex;
   align-items: center;
   background: #fff;
@@ -90,6 +90,7 @@
   color: #333;
   background: #fff;
   border-bottom: 1px solid #eee;
+  
 }
 
 /* Remove border from the last item */
