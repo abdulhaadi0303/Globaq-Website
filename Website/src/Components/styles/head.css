@@ -71,5 +71,20 @@ html, body {
     max-width: 100%;  /* Prevent image from overflowing its container */
   }
   
+
+  @media (max-width: 768px) { /* Adjust the breakpoint as needed */
+    .header-logo-container {
+      flex: 4.5;
+    }
+  
+    .header-navigation {
+      flex: 3.5;
+    }
+  
+    .header-side-image-container {
+      flex: 0.5;
+    }
+  }
+  
   
  
