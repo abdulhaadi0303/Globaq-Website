@@ -1,75 +1,52 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./styles/Headertop.css";
+import "./styles/Header.css";
 
-import DropDown from "./Dropdown";
+import DropdownMenu from "./Dropdown"; // More descriptive name
 import MobileMenu from "./MobileMenu";
 
-// Import images
 import Logo from "../assets/Logo.jpg";
-// import ReactLogo from "../assets/react.svg";
-import sideimg from "../../public/G.jpg";
+import SideImage from "../../public/G.jpg"; // Consistent naming (PascalCase)
 
-// Import Font Awesome for social media icons
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGoogle } from "react-icons/fa";
+// No need to import Font Awesome unless used in DropdownMenu or MobileMenu
 
-function Header() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+function Head() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
+      setIsMobile(window.innerWidth < 768);
     };
-    
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <>
-      <div className="header">
-        <HeaderTop />
-        {/* <MobileMenu />  */}
-        {isMobile ? <MobileMenu /> : <DropDown />}
-        
-        
-      </div>
-    </>
+    <header className="header"> {/* Use semantic <header> tag */}
+      <HeaderContent isMobile={isMobile} />
+    </header>
   );
 }
 
-function HeaderTop() {
+function HeaderContent({ isMobile }) {
   return (
-    <div className="header-bar-1">
-      <div className="header-bar-1-homeimage">
+    <div className="header-bar"> {/* Simplified class name */}
+      <div className="header-logo-container"> {/* More descriptive name */}
         <Link to="/">
-          <img src={Logo} alt="LOGO" className="responsive-logo" />
+          <img src={Logo} alt="Company Logo" className="header-logo" /> {/* Added alt text */}
         </Link>
       </div>
 
-      {/* Social Media Icons */}
+      <div className="header-navigation"> {/* Clearer name */}
+        {isMobile ? <MobileMenu /> : <DropdownMenu />}
+      </div>
 
-        <div className="header-bar-1-media">
-          {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebookF className="social-icon facebook" />
-          </a> */}
-          {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className="social-icon twitter" />
-          </a> */}
-
-          <a href="https://www.linkedin.com/company/global-quality-specialists-company-limited-globaq/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedinIn className="social-icon linkedin" />
-          </a>
-          <a target="_blank" rel="noopener noreferrer">
-            <FaGoogle className="social-icon google" />
-          </a>
-        </div>
-
-      <div className="header-bar-1-sideimage">
-        <img src={sideimg} alt="React Logo" className="responsive-logo" />
+      <div className="header-side-image-container"> {/* More descriptive name */}
+        {/* <img src={SideImage} alt="Side Graphic" className="header-side-image" /> Added alt text */}
       </div>
     </div>
   );
 }
 
-export default Header;
+export default Head;

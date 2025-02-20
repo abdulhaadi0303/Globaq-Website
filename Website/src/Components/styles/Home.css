@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 3px 4%;
+    padding: 3px 3%;
 }
 
 /* === Heading Styles (Vision, Mission, Policy) === */
@@ -48,7 +48,7 @@
 }
 
 .image-container {
-    width: 96%;
+    width: 98%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@
     background: var(--bright-orange);
     color: var(--white);
     border: none;
-    padding: 10px 15px;
+    padding: 8px 12px;
     font-size: 24px;
     cursor: pointer;
     border-radius: 5px;
