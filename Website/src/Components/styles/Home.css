@@ -1,0 +1,181 @@
+/* === Home Sections === */
+.home-bar-1,
+.home-bar-2,
+.home-bar-3,
+.home-bar-4,
+.home-bar-5,
+.about 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3px 3%;
+}
+
+/* === Heading Styles (Vision, Mission, Policy) === */
+.home-bar-2 h2, 
+.home-bar-3 h2, 
+.home-bar-4 h2,
+.home-bar-5 h2,
+.about h2 {
+    color: #F26C23; /* Orange shade matching website */
+    font-size: 33px; /* Slightly larger */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* === Section Text Styling === */
+.textboxes{
+    font-weight: normal; /* Removes bold effect */
+    font-size: 19px; /* Slightly larger for readability */
+    color: var(--primary-black); /* Ensures proper contrast */
+    max-width: 80%;
+    line-height: 1.6;
+    background: var(--light-gray); 
+    padding: 3% 2%;
+    border-radius: 20px;
+}
+
+/* === Carousel === */
+.home-bar-1 {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 450px;
+}
+
+.image-container {
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: 500px;
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    background: var(--bright-orange);
+    color: var(--white);
+    border: none;
+    padding: 8px 12px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.carousel-btn:hover {
+    background: var(--dark-gray);
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* === Home Sections Background Fix === */
+.home-bar-1 { background-color: var(--white); } /* Vision - White */
+.home-bar-2 { background-color: var(--white); } /* Vision - White */
+.home-bar-3 { background-color: var(--white); } /* Mission - Gray */
+.home-bar-4 { background-color: var(--white); } /* Policy - White */
+.about { background-color: var(--white); } /* Policy - White */
+
+/* === List Styling === */
+.custom-list {
+    /* background-color: var(--);  */
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    width: 80%;
+}
+
+/* === Improved List Titles (Meet Customer Requirements, etc.) === */
+.custom-list li strong {
+    font-size: 20px; /* Increased size */
+    font-weight: bold;
+    color: #333; /* Darker color for readability */
+    display: inline-block; /* Ensures inline formatting */
+    margin-right: 5px; /* Adds slight spacing */
+}
+
+/* === List Descriptions Stay Inline === */
+.custom-list li {
+    font-size: 19px; /* Slightly larger */
+    color: var(--primary-black);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    line-height: 1.5;
+}
+
+.custom-list li::before {
+    content: "→"; /* Arrow bullet */
+    color: var(--primary-black); /* Match text color */
+    font-weight: bold;
+    margin-right: 8px; /* Space between arrow and text */
+}
+
+/* === Section Separators === */
+.home-bar-2::before,
+.home-bar-3::before,
+.home-bar-4::before,
+.home-bar-5::before,
+.about::before {
+    content: "";
+    display: block;
+    width: 82%;  /* 80% width of the page */
+    height: 2px;
+    background-color: #ddd; /* Light gray */
+    margin: 15px auto; /* Centers the separator */
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .home-bar-1 {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-container {
+        width: 92%;
+    }
+
+    .custom-list li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .custom-list li strong {
+        min-width: auto;
+    }
+
+    /* Reduce margin for smaller screens */
+    .home-bar-2::before,
+    .home-bar-3::before,
+    .home-bar-4::before,
+    .home-bar-5::before,
+    .about::before   {
+        width: 90%;  /* Slightly wider for better visibility */
+        margin: 10px auto;
+    }
+}
+
+/* Initially hide the sections */
+.home-bar-2, .home-bar-3, .home-bar-4 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.home-bar-2.show, .home-bar-3.show, .home-bar-4.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
