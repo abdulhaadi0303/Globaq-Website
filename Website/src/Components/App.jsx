@@ -3,6 +3,7 @@ import Header from "./Header";
 import Home from "./Home"; 
 import Footer from "./Footer"; 
 import AboutUs from "./AboutUs.jsx"; 
+import WhatsAppButton from "./WhatsAppButton.jsx"
 
 
 // Management System Audits Section Related Imports
@@ -43,6 +44,7 @@ function Layout() {
         <Outlet /> {/* This renders the changing content based on routes */}
       </div>
       <Footer />
+      <WhatsAppButton/>
     </div>
   );
 }
