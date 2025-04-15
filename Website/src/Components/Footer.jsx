@@ -1,4 +1,6 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 import "./styles/Footer.css";
 import locationImg from "../assets/Logo.jpg"; // Replace with your actual image
 
@@ -24,9 +26,16 @@ function Footer() {
                 <div className="footer-section quick-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Brochure</a></li>
-                        <li><a href="#">News</a></li>
+                        {/* <li><a href="#">Brochure</a></li>
+                        <li><a href="#">News</a></li> */}
+                        <li>
+                        <Link to="/AboutUs">About Us</Link>
+                        </li>
                         <li><a href="#">Careers</a></li>
+                        <li>
+                        <Link to="/ContactUs">Contact Us</Link>
+                        </li>
+
                         {/* <li><a href="#">Contact Us</a></li> */}
                     </ul>
                 </div>

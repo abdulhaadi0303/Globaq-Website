@@ -26,6 +26,7 @@ function Head() {
     <header className="header"> {/* Use semantic <header> tag */}
       <HeaderContent isMobile={isMobile} />
     </header>
+    
   );
 }
 

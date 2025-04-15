@@ -1,0 +1,112 @@
+.form-container {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .form-header-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .form-content {
+    max-width: 600px;
+    margin:2rem auto;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+  
+  .form-content h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .form-content label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .form-content input,
+  .form-content textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+  }
+  
+  .form-content button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-content button:hover {
+    background-color: #0056b3;
+  }
+  
+  .required {
+    color: red;
+    margin-left: 4px;
+  }
+
+
+.success-message {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeIn 0.5s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.success-message::before {
+  content: "✓";
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional: Add a close button */
+.success-message button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* For a more modern look with icons */
+.success-message.with-icon {
+  display: flex;
+  align-items: center;
+}
+
+.success-icon {
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+  

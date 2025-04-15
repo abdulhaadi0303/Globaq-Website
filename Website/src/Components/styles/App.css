@@ -14,10 +14,6 @@
     width: 100%; /* Or your desired width */
   }
   
-  .header-bar-1 {
-    /* Styling for your top bar */
-  }
-  
   /* Style for both mobile and desktop menus */
   .header > * { /* Selects direct children of .header */
     position: relative; /* Or absolute if you want to control placement more */
@@ -35,4 +31,25 @@
   .main-content {  /* Or whatever class you use */
     position: relative;
     z-index: 1;
+  }
+
+  .layout-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .scrollable-content {
+    padding-top: 80px; /* Header height */
+    min-height: calc(100vh - 80px); /* Viewport minus header */
+  }
+  
+  .footer {
+    position: relative;
   }

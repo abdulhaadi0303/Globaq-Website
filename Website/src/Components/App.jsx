@@ -3,8 +3,11 @@ import Header from "./Header";
 import Home from "./Home"; 
 import Footer from "./Footer"; 
 import AboutUs from "./AboutUs.jsx"; 
-import WhatsAppButton from "./WhatsAppButton.jsx"
-
+import WhatsAppButton from "./WhatsAppButton.jsx";
+import ContactUs from "./ContactUs.jsx";
+import ThanksPage from "./Thanks.jsx";
+import ScrollToTop from "./ScrollToTop.jsx";
+// import ScrollToTop from "react-scroll-to-top";
 
 // Management System Audits Section Related Imports
 import ScheduleQQualityAssessment from "./Pages/Management System Audits/ScheduleQQualityAssessment.jsx";
@@ -36,26 +39,48 @@ import ISOInternalAudits  from "./Pages/Audit Assistance/ISOInternalAudits";
 import './styles/App.css'
 
 // Layout Function
+// function Layout() {
+//   return (
+//     <div className="layout" style={{ height: "100vh", background:"#e4e4e7",padding:"0px", margin:"0px"  }}>
+//       <Header /> {/* Header now contains the navigation links */}
+//       <div className="body">
+//         <Outlet /> {/* This renders the changing content based on routes */}
+//       </div>
+//       <Footer />
+//       <WhatsAppButton/>
+//     </div>
+//   );
+// }
+
 function Layout() {
   return (
-    <div className="layout" style={{ height: "100vh", background:"#e4e4e7",padding:"0px", margin:"0px"  }}>
-      <Header /> {/* Header now contains the navigation links */}
-      <div className="body">
-        <Outlet /> {/* This renders the changing content based on routes */}
+    <div className="layout-container">
+      <div className="fixed-header">
+        <Header />
       </div>
-      <Footer />
-      <WhatsAppButton/>
+      <div className="scrollable-content">
+        <Outlet />
+      </div>
+      <div className="footer">
+        <Footer />
+      </div>
+      <WhatsAppButton />
     </div>
   );
 }
 
 function App() {
   return (
+
     <BrowserRouter>
+    <ScrollToTop />
 <Routes>
     <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/ContactUs" element={<ContactUs/>} />
+        <Route path="/ThanksPage" element={<ThanksPage />} />
+
 
         <Route path="MangementSystemAudits/ScheduleQQualityAssessment" element={<ScheduleQQualityAssessment />} />
         <Route path="MangementSystemAudits/ScheduleDSafetyAssessment" element={<ScheduleDSafetyAssessment />} />
@@ -87,6 +112,7 @@ function App() {
 </Routes>
 
     </BrowserRouter>
+  
   );
 }
 
