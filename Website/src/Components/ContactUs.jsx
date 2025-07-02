@@ -14,7 +14,9 @@ const ContactForm = () => {
   });
 
   const [submissionStatus, setSubmissionStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Handle changes in input fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -23,26 +25,45 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Here you would typically send the data to your backend
-    // For now, we'll just log it and show a success message
-    console.log('Form submitted:', formData);
-    
-    // Simulate form submission
-    setSubmissionStatus('success');
-    
-    // Reset form after submission (optional)
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      country: '',
-      city: '',
-      company: '',
-      message: '',
-    });
+    setIsSubmitting(true);
+    setSubmissionStatus(null);
+
+    try {
+      // Your Google Apps Script Web App URL
+      const response = await fetch('https://script.google.com/macros/s/AKfycby8-Pn9OlGjzNkp7l8qOqb5QMxtw46f_55oUtHWVins95nKM10O6InmHWD7-J1MDhIEKA/exec', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'no-cors', // This handles CORS issues with Google Apps Script
+      });
+
+      // Since mode: 'no-cors' prevents reading the response,
+      // we assume success if no error is thrown
+      console.log('Form submitted successfully to Google Sheets');
+      setSubmissionStatus('success');
+      
+      // Reset form after successful submission
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        country: '',
+        city: '',
+        company: '',
+        message: '',
+      });
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmissionStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -59,6 +80,13 @@ const ContactForm = () => {
         {submissionStatus === 'success' && (
           <div className="success-message">
             Thank you for your message! We'll get back to you soon.
+            Your message has been saved to our records.
+          </div>
+        )}
+
+        {submissionStatus === 'error' && (
+          <div className="error-message">
+            Oops! Something went wrong. Please try again.
           </div>
         )}
 
@@ -135,7 +163,9 @@ const ContactForm = () => {
           ></textarea>
         </label>
 
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Submit'}
+        </button>
       </form>
     </div>
   );

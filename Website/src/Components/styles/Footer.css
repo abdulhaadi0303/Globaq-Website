@@ -2,8 +2,8 @@
 .footer {
     background: #222; /* Dark background */
     color: #ddd; /* Light gray text */
-    padding: 40px 5%;
-    margin-top:100px;
+    padding: 30px 5%;
+    margin-top:80px;
 }
 
 /* Footer Container - Flexbox for Sections */

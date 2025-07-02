@@ -76,6 +76,7 @@ function Home() {
                     &#10095;
                 </button>
             </div>
+            
 
             {/* Bar 2 - Vision */}
             <div
@@ -167,5 +168,6 @@ ensuring mutual growth and success, in line with the overarching goals of <stron
         </>
     );
 }
+
 
 export default Home;

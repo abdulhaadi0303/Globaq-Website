@@ -7,6 +7,11 @@ import WhatsAppButton from "./WhatsAppButton.jsx";
 import ContactUs from "./ContactUs.jsx";
 import ThanksPage from "./Thanks.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
+import Partner from "./Partner.jsx";
+
+// src/App.jsx
+import "./styles/App.css";
+
 // import ScrollToTop from "react-scroll-to-top";
 
 // Management System Audits Section Related Imports
@@ -79,6 +84,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/ContactUs" element={<ContactUs/>} />
+        <Route path="/Partner" element={<Partner/>} />
         <Route path="/ThanksPage" element={<ThanksPage />} />
 
 
