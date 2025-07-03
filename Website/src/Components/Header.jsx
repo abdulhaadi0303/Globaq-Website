@@ -7,11 +7,11 @@ import MobileMenu from "./MobileMenu";
 import Logo from "../assets/Logo.jpg";
 
 function Head() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1100);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1150);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1100);
+      setIsMobile(window.innerWidth < 1150);
     };
 
     window.addEventListener("resize", handleResize);
@@ -40,11 +40,12 @@ function HeaderContent({ isMobile }) {
 
           <div className="flex justify-center">
             <Link to="/">
-              <img
-                src={Logo}
-                alt="Company Logo"
-                className={`${isMobile ? "w-[140px] sm:w-[160px]" : "w-[190px]"} h-auto max-w-full`}
-              />
+            <img
+              src={Logo}
+              alt="Company Logo"
+              className="w-[180px] sm:w-[200px] md:w-[220px] lg:w-[240px] h-auto max-w-full"
+            />
+
             </Link>
           </div>
         </div>
@@ -62,7 +63,7 @@ function HeaderContent({ isMobile }) {
               to="/Partner"
               className={`text-white bg-orange-400 hover:bg-orange-700 hover:scale-[1.03] active:scale-[0.97]
                 border-none rounded-full shadow-md hover:shadow-lg transition-all duration-300 ease-in-out
-                px-4  py-2 mr-10 mb-2 text-sm sm:text-base font-semibold whitespace-nowrap`}
+                px-4  py-2 md:mr-10 mb-2 text-sm sm:text-base font-semibold whitespace-nowrap`}
             >
               Become a Partner
             </Link>
