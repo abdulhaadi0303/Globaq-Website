@@ -142,17 +142,17 @@ function DropdownMenu() {
             Home
           </Link>
           <Link
-            to="/about-us"
+            to="/AboutUs"
             className="text-base font-bold text-gray-900 hover:text-orange-500 transition duration-300"
           >
             About Us
           </Link>
-          <Link
+          {/* <Link
             to="/our-message"
             className="text-base font-bold text-gray-900 hover:text-orange-500 transition duration-300"
           >
             Our Message
-          </Link>
+          </Link> */}
           {row1Dropdowns.map((dropdown, index) => (
             <Dropdown key={index} title={dropdown.title} items={dropdown.items} />
           ))}

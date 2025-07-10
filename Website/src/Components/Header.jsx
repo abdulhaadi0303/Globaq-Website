@@ -61,11 +61,19 @@ function HeaderContent({ isMobile }) {
           <div className="flex justify-end ml-4 sm:ml-8">
             <Link
               to="/Partner"
-              className={`text-white bg-orange-400 hover:bg-orange-700 hover:scale-[1.03] active:scale-[0.97]
-                border-none rounded-full shadow-md hover:shadow-lg transition-all duration-300 ease-in-out
-                px-4  py-2 md:mr-10 mb-2 text-sm sm:text-base font-semibold whitespace-nowrap`}
+              className={`relative text-white bg-gradient-to-r from-orange-400 to-orange-500 
+                hover:from-orange-500 hover:to-orange-600 hover:scale-[1.03] active:scale-[0.97]
+                border-2 border-orange-400 hover:border-orange-500 rounded-full 
+                shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out
+                px-4 py-2 md:mr-10 mb-2 text-sm sm:text-base font-semibold whitespace-nowrap
+                before:absolute before:inset-0 before:rounded-full before:bg-white before:opacity-0 
+                hover:before:opacity-10 before:transition-opacity before:duration-300
+                ring-2 ring-orange-200 ring-opacity-0 hover:ring-opacity-50
+                backdrop-blur-sm overflow-hidden group`}
             >
-              Become a Partner
+              <span className="relative z-10">
+                Become a Partner
+              </span>
             </Link>
           </div>
 
