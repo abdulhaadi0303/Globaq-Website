@@ -3,16 +3,19 @@ const dropdownData = [
   {
     title: "Management System Audits",
     items: [
+
       {
-        label: "Second Party Audits", 
-        subItems: [
-          { label: "Vendor Assessment", route: "MangementSystemAudits/VendorAssessment" },
-          { label: "Schedule Q - Quality Assessment",route: "MangementSystemAudits/ScheduleQQualityAssessment"},
-          { label: "Schedule D - Safety Assessment", route: "MangementSystemAudits/ScheduleDSafetyAssessment"},
-        ],
+        label: "Vendor Assessment", route: "MangementSystemAudits/VendorAssessment" 
       },
       {
-        label: "Management System Certification Audits", route: "MangementSystemAudits/ManagementSystemCertificationAudits",
+        label: "Schedule Q - Quality Assessment",route: "MangementSystemAudits/ScheduleQQualityAssessment"
+      },
+      {
+        label: "Schedule D - Safety Assessment", route: "MangementSystemAudits/ScheduleDSafetyAssessment"
+      },
+
+      {
+        label: "Other Audits (Coming Soon)", route: "MangementSystemAudits/ManagementSystemCertificationAudits",
         // subItems: [{ label: "ManagementSystemAudits" , route: "ManagementSystemAudits"}],
       },
     ],

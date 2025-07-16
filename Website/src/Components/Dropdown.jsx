@@ -31,7 +31,7 @@ function Dropdown({ title, items }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="cursor-pointer text-base font-bold text-gray-900 hover:text-orange-500 transition duration-300 flex items-center">
+      <div className="cursor-pointer text-base font-bold text-gray-800 hover:text-orange-500 transition duration-300 flex items-center">
         <span>{title}</span>
         <svg
           className={`ml-1 w-3 h-3 text-gray-600 transition-transform duration-300 ${
@@ -137,13 +137,13 @@ function DropdownMenu() {
         <div className="flex gap-6 flex-wrap items-center">
           <Link
             to="/"
-            className="text-base font-bold text-gray-900 hover:text-orange-500 transition duration-300"
+            className="text-base font-bold text-gray-800 hover:text-orange-500 transition duration-300"
           >
             Home
           </Link>
           <Link
             to="/AboutUs"
-            className="text-base font-bold text-gray-900 hover:text-orange-500 transition duration-300"
+            className="text-base font-bold text-gray-800 hover:text-orange-500 transition duration-300"
           >
             About Us
           </Link>

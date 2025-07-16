@@ -12,7 +12,7 @@ function Footer() {
                     <div className="space-y-4">
                         <div className="space-y-4">
                             <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                                Globaq KSA
+                                GLOBAQ KSA
                             </h3>
                             <p className="text-gray-300 leading-relaxed text-lg">
                                 Your trusted partner in excellence, delivering innovative solutions across Saudi Arabia.
@@ -151,7 +151,7 @@ function Footer() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center">
                         <p className="font-semibold text-lg">
-                            &copy; {new Date().getFullYear()} Globaq KSA. All rights reserved.
+                            &copy; {new Date().getFullYear()} GLOBAQ KSA. All rights reserved.
                         </p>
                         <p className="text-sm opacity-90">
                             www.globaqksa.com
