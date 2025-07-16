@@ -129,7 +129,7 @@ const dropdownData = [
 
   // 4 - Lab Quality Management System Services
   {
-    title: "Laboratory Management Services (17205)",
+    title: "Laboratory Management Services (17025)",
     items: [
       { label: "Consultancy" , route: "LaboratoryQualityManagementSystemServices/Consultancy" },
       {
