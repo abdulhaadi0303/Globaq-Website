@@ -113,19 +113,10 @@ function Home() {
                             ...prev,
                             [entry.target.id]: true,
                         }));
-                    } else {
-                        // Reset visibility when section leaves viewport
-                        setVisibleSections((prev) => ({
-                            ...prev,
-                            [entry.target.id]: false,
-                        }));
                     }
                 });
             },
-            { 
-                threshold: 0.2,
-                rootMargin: '0px 0px -10% 0px' // Trigger animation slightly before section is fully visible
-            }
+            { threshold: 0.2 }
         );
 
         sectionsRef.current.forEach((section) => {
@@ -280,9 +271,8 @@ function Home() {
                     </div>
                 </div>
             </div>
-
-                        {/* Our Services Section */}
-                        <div
+            {/* Our Services Section */}
+            <div
                 id="services"
                 ref={(el) => (sectionsRef.current[0] = el)}
                 className={`py-20 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-orange-50 transition-all duration-1000 ${
@@ -366,7 +356,6 @@ function Home() {
                     </div>
                 </div>
             </div>
-
             {/* Quality Commitment Section */}
             <div
                 id="quality"
