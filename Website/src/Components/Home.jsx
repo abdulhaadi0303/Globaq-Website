@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 // Images array - all images should be placed in the public folder
 // Public folder images are accessible directly with paths starting with "/"
@@ -10,6 +11,70 @@ const images = [
     "/pic8.jpg",     
     "/pic10.jpg",    
     "/pic11.jpg",        
+];
+
+// Services data with descriptions
+const services = [
+    {
+        title: "MS Audits (EPC Projects)",
+        description: "Comprehensive management system audits for EPC projects ensuring compliance and quality standards.",
+        route: "/services/ms-audits"
+    },
+    {
+        title: "Trainings (ISO, QHSE, Process Improvement)",
+        description: "Professional training programs covering ISO standards, QHSE practices, and process improvement methodologies.",
+        route: "/services/trainings"
+    },
+    {
+        title: "Audit Assistance & Solutions",
+        description: "Expert audit assistance and comprehensive solutions to ensure successful compliance assessments.",
+        route: "/services/audit-assistance"
+    },
+    {
+        title: "Laboratory Management System Services",
+        description: "Complete laboratory management services and ISO/IEC 17025:2017 accreditation support.",
+        route: "/services/laboratory-management"
+    },
+    {
+        title: "ISO Consultancy",
+        description: "Expert ISO consultancy services helping organizations achieve and maintain ISO certifications.",
+        route: "/services/iso-consultancy"
+    },
+    {
+        title: "CCC Consultancy",
+        description: "Specialized CCC consultancy services for regulatory compliance and market access solutions.",
+        route: "/services/ccc-consultancy"
+    },
+    {
+        title: "AI Solutions",
+        description: "Cutting-edge artificial intelligence solutions to optimize operations and enhance business intelligence.",
+        route: "/services/ai-solutions"
+    },
+    {
+        title: "ERP Solutions",
+        description: "Comprehensive enterprise resource planning solutions for streamlined business operations.",
+        route: "/services/erp-solutions"
+    },
+    {
+        title: "IT Solutions",
+        description: "Complete IT infrastructure and software solutions tailored to your business requirements.",
+        route: "/services/it-solutions"
+    },
+    {
+        title: "Sustainability & ESG Integration",
+        description: "Environmental, social, and governance consulting for sustainable business transformation.",
+        route: "/services/sustainability-esg"
+    },
+    {
+        title: "Circular Economy Solutions",
+        description: "Innovative circular economy strategies for sustainable resource management and waste reduction.",
+        route: "/services/circular-economy"
+    },
+    {
+        title: "CSR Solutions",
+        description: "Corporate social responsibility consulting to build impactful community engagement programs.",
+        route: "/services/csr-solutions"
+    }
 ];
 
 function Home() {
@@ -48,10 +113,19 @@ function Home() {
                             ...prev,
                             [entry.target.id]: true,
                         }));
+                    } else {
+                        // Reset visibility when section leaves viewport
+                        setVisibleSections((prev) => ({
+                            ...prev,
+                            [entry.target.id]: false,
+                        }));
                     }
                 });
             },
-            { threshold: 0.2 }
+            { 
+                threshold: 0.2,
+                rootMargin: '0px 0px -10% 0px' // Trigger animation slightly before section is fully visible
+            }
         );
 
         sectionsRef.current.forEach((section) => {
@@ -135,10 +209,12 @@ function Home() {
                 </div>
             </div>
 
+
+
             {/* Vision Section */}
             <div
                 id="vision"
-                ref={(el) => (sectionsRef.current[0] = el)}
+                ref={(el) => (sectionsRef.current[1] = el)}
                 className={`py-20 px-4 md:px-8 transition-all duration-1000 ${
                     visibleSections["vision"] 
                         ? "opacity-100 translate-y-0" 
@@ -173,7 +249,7 @@ function Home() {
             {/* Mission Section */}
             <div
                 id="mission"
-                ref={(el) => (sectionsRef.current[1] = el)}
+                ref={(el) => (sectionsRef.current[2] = el)}
                 className={`py-20 px-4 md:px-8 bg-gray-50 transition-all duration-1000 ${
                     visibleSections["mission"] 
                         ? "opacity-100 translate-y-0" 
@@ -205,10 +281,96 @@ function Home() {
                 </div>
             </div>
 
+                        {/* Our Services Section */}
+                        <div
+                id="services"
+                ref={(el) => (sectionsRef.current[0] = el)}
+                className={`py-20 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-orange-50 transition-all duration-1000 ${
+                    visibleSections["services"] 
+                        ? "opacity-100 translate-y-0" 
+                        : "opacity-0 translate-y-10"
+                }`}
+            >
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16">
+                        <div className="flex items-center justify-center mb-8">
+                            <div className="flex items-center gap-6">
+                                <div className="flex items-center justify-center w-20 h-20 bg-orange-100 rounded-full">
+                                    <span className="text-4xl">⚙️</span>
+                                </div>
+                                <div className="text-left">
+                                    <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
+                                        Our <span className="text-orange-500">Services</span>
+                                    </h2>
+                                    <div className="w-24 h-1 bg-orange-500 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                            Comprehensive solutions tailored to meet your business needs with excellence and innovation
+                        </p>
+                    </div>
+
+                    {/* Services Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        {services.map((service, index) => (
+                            <div
+                                key={index}
+                                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border border-gray-100"
+                            >
+                                <Link to={service.route} className="block h-full">
+                                    {/* Service Title */}
+                                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-orange-600 transition-colors duration-300 leading-tight">
+                                        {service.title}
+                                    </h3>
+
+                                    {/* Service Description */}
+                                    <p className="text-gray-600 leading-relaxed text-sm mb-6 line-clamp-4">
+                                        {service.description}
+                                    </p>
+
+                                    {/* Learn More Button */}
+                                    <div className="flex items-center text-orange-500 group-hover:text-orange-600 font-semibold text-sm mt-auto">
+                                        <span className="mr-2">Learn More</span>
+                                        <svg 
+                                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" 
+                                            fill="none" 
+                                            stroke="currentColor" 
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Call to Action */}
+                    <div className="text-center mt-16">
+                        <div className="bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
+                            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                                Need a Custom Solution?
+                            </h3>
+                            <p className="text-gray-600 mb-6">
+                                We provide tailored solutions to meet your unique business requirements. 
+                                Contact us to discuss your specific needs.
+                            </p>
+                            <Link
+                                to="/ContactUs"
+                                className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                            >
+                                Get in Touch
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Quality Commitment Section */}
             <div
                 id="quality"
-                ref={(el) => (sectionsRef.current[2] = el)}
+                ref={(el) => (sectionsRef.current[3] = el)}
                 className={`py-20 px-4 md:px-8 transition-all duration-1000 ${
                     visibleSections["quality"] 
                         ? "opacity-100 translate-y-0" 
@@ -268,30 +430,6 @@ function Home() {
                     </div>
                 </div>
             </div>
-
-            {/* Stats Section */}
-            {/* <div className="py-20 px-4 md:px-8 bg-gray-800 text-white">
-                <div className="max-w-6xl mx-auto">
-                    <div className="grid md:grid-cols-4 gap-8 text-center">
-                        {[
-                            { number: "500+", label: "Projects Completed", icon: "🏆" },
-                            { number: "95%", label: "Client Satisfaction", icon: "👥" },
-                            { number: "24/7", label: "Support Available", icon: "🛡️" },
-                            { number: "10+", label: "Years Experience", icon: "🎯" }
-                        ].map((stat, index) => (
-                            <div key={index} className="group">
-                                <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-500 rounded-full mb-4 group-hover:bg-orange-600 transition-colors duration-300">
-                                    <span className="text-2xl">{stat.icon}</span>
-                                </div>
-                                <h3 className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">
-                                    {stat.number}
-                                </h3>
-                                <p className="text-gray-300 text-lg">{stat.label}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div> */}
         </div>
     );
 }

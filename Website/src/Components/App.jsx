@@ -8,6 +8,7 @@ import ContactUs from "./ContactUs.jsx";
 import ThanksPage from "./Thanks.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import Partner from "./Partner.jsx";
+import ServicesPage from "./ServicesPage.jsx";
 
 // src/App.jsx
 import "./styles/App.css";
@@ -87,7 +88,21 @@ function App() {
         <Route path="/Partner" element={<Partner/>} />
         <Route path="/ThanksPage" element={<ThanksPage />} />
 
+        {/* New Services Routes */}
+        <Route path="/services/ms-audits" element={<ServicesPage />} />
+        <Route path="/services/trainings" element={<ServicesPage />} />
+        <Route path="/services/audit-assistance" element={<ServicesPage />} />
+        <Route path="/services/laboratory-management" element={<ServicesPage />} />
+        <Route path="/services/iso-consultancy" element={<ServicesPage />} />
+        <Route path="/services/ccc-consultancy" element={<ServicesPage />} />
+        <Route path="/services/ai-solutions" element={<ServicesPage />} />
+        <Route path="/services/erp-solutions" element={<ServicesPage />} />
+        <Route path="/services/it-solutions" element={<ServicesPage />} />
+        <Route path="/services/sustainability-esg" element={<ServicesPage />} />
+        <Route path="/services/circular-economy" element={<ServicesPage />} />
+        <Route path="/services/csr-solutions" element={<ServicesPage />} />
 
+        {/* Existing Routes */}
         <Route path="MangementSystemAudits/ScheduleQQualityAssessment" element={<ScheduleQQualityAssessment />} />
         <Route path="MangementSystemAudits/ScheduleDSafetyAssessment" element={<ScheduleDSafetyAssessment />} />
         <Route path="MangementSystemAudits/VendorAssessment" element={<VendorAssessment />} />
