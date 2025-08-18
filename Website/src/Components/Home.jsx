@@ -13,6 +13,14 @@ const images = [
     "/pic11.jpg",        
 ];
 
+// Client images array
+const clientImages = [
+    "/client1.jpg",
+    "/client2.jpg",
+    "/client3.jpg",
+    "/client4.jpg"
+];
+
 // Services data with descriptions
 const services = [
     {
@@ -79,11 +87,13 @@ const services = [
 
 function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [clientCurrentIndex, setClientCurrentIndex] = useState(0);
     const [imageLoadErrors, setImageLoadErrors] = useState({});
+    const [clientImageLoadErrors, setClientImageLoadErrors] = useState({});
     const sectionsRef = useRef([]);
     const [visibleSections, setVisibleSections] = useState({});
 
-    // Carousel functions
+    // Hero Carousel functions
     const nextImage = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
@@ -92,9 +102,24 @@ function Home() {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
-    // Auto-slide effect
+    // Client Carousel functions
+    const nextClient = () => {
+        setClientCurrentIndex((prevIndex) => (prevIndex + 1) % clientImages.length);
+    };
+
+    const prevClient = () => {
+        setClientCurrentIndex((prevIndex) => (prevIndex - 1 + clientImages.length) % clientImages.length);
+    };
+
+    // Auto-slide effect for hero carousel
     useEffect(() => {
         const interval = setInterval(nextImage, 1500);
+        return () => clearInterval(interval);
+    }, []);
+
+    // Auto-slide effect for client carousel
+    useEffect(() => {
+        const interval = setInterval(nextClient, 3000);
         return () => clearInterval(interval);
     }, []);
 
@@ -103,7 +128,12 @@ function Home() {
         setImageLoadErrors(prev => ({ ...prev, [index]: true }));
     };
 
-    // Intersection Observer for scroll animations
+    // Handle client image load errors
+    const handleClientImageError = (index) => {
+        setClientImageLoadErrors(prev => ({ ...prev, [index]: true }));
+    };
+
+    // Intersection Observer for scroll animations - FIXED
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -113,10 +143,19 @@ function Home() {
                             ...prev,
                             [entry.target.id]: true,
                         }));
+                    } else {
+                        // Reset visibility when section leaves viewport
+                        setVisibleSections((prev) => ({
+                            ...prev,
+                            [entry.target.id]: false,
+                        }));
                     }
                 });
             },
-            { threshold: 0.2 }
+            { 
+                threshold: 0.05,
+                rootMargin: '0px'
+            }
         );
 
         sectionsRef.current.forEach((section) => {
@@ -129,6 +168,16 @@ function Home() {
             });
         };
     }, []);
+
+    // Get visible client images (responsive: 1 on mobile, 2 on tablet, 3 on desktop)
+    const getVisibleClients = () => {
+        const visibleClients = [];
+        for (let i = 0; i < 3; i++) {
+            const index = (clientCurrentIndex + i) % clientImages.length;
+            visibleClients.push({ image: clientImages[index], index: index });
+        }
+        return visibleClients;
+    };
 
     return (
         <div className="min-h-screen bg-white">
@@ -200,12 +249,10 @@ function Home() {
                 </div>
             </div>
 
-
-
             {/* Vision Section */}
             <div
                 id="vision"
-                ref={(el) => (sectionsRef.current[1] = el)}
+                ref={(el) => (sectionsRef.current[0] = el)}
                 className={`py-20 px-4 md:px-8 transition-all duration-1000 ${
                     visibleSections["vision"] 
                         ? "opacity-100 translate-y-0" 
@@ -240,7 +287,7 @@ function Home() {
             {/* Mission Section */}
             <div
                 id="mission"
-                ref={(el) => (sectionsRef.current[2] = el)}
+                ref={(el) => (sectionsRef.current[1] = el)}
                 className={`py-20 px-4 md:px-8 bg-gray-50 transition-all duration-1000 ${
                     visibleSections["mission"] 
                         ? "opacity-100 translate-y-0" 
@@ -271,10 +318,11 @@ function Home() {
                     </div>
                 </div>
             </div>
+
             {/* Our Services Section */}
             <div
                 id="services"
-                ref={(el) => (sectionsRef.current[0] = el)}
+                ref={(el) => (sectionsRef.current[2] = el)}
                 className={`py-20 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-orange-50 transition-all duration-1000 ${
                     visibleSections["services"] 
                         ? "opacity-100 translate-y-0" 
@@ -356,10 +404,202 @@ function Home() {
                     </div>
                 </div>
             </div>
+
+            {/* Our Clients Section - Mobile Responsive & Improved */}
+            <div
+                id="clients"
+                ref={(el) => (sectionsRef.current[3] = el)}
+                className={`py-16 md:py-28 px-4 md:px-8 bg-gray-50 transition-all duration-1000 ${
+                    visibleSections["clients"] 
+                        ? "opacity-100 translate-y-0" 
+                        : "opacity-0 translate-y-10"
+                }`}
+            >
+                <div className="max-w-7xl mx-auto">
+                    {/* Section Header - Mobile Optimized */}
+                    <div className="text-center mb-12 md:mb-20">
+                        <div className="flex flex-col md:flex-row items-center justify-center mb-6 md:mb-8">
+                            <div className="flex items-center gap-4 md:gap-6">
+                                <div className="flex items-center justify-center w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full shadow-lg">
+                                    <span className="text-3xl md:text-5xl">🤝</span>
+                                </div>
+                                <div className="text-center md:text-left">
+                                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-2 md:mb-3">
+                                        Our Trusted <span className="text-orange-500">Clients</span>
+                                    </h2>
+                                    <div className="w-24 md:w-32 h-1 md:h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mx-auto md:mx-0"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
+                            Building partnerships with industry leaders who trust us to deliver excellence and innovation
+                        </p>
+                    </div>
+
+                    {/* Client Carousel - Mobile Responsive */}
+                    <div className="relative bg-white rounded-2xl md:rounded-3xl p-6 md:p-12 lg:p-16 shadow-xl md:shadow-2xl overflow-hidden border border-gray-100">
+                        <div className="relative flex items-center justify-center">
+                            {/* Previous Button - Subtle & Mobile Friendly */}
+                            <button
+                                onClick={prevClient}
+                                className="absolute left-2 md:left-4 z-10 bg-gray-400 hover:bg-gray-500 text-white p-2 md:p-3 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 text-lg md:text-xl font-medium opacity-70 hover:opacity-90"
+                                aria-label="Previous clients"
+                            >
+                                ‹
+                            </button>
+
+                            {/* Client Images Container - Mobile Responsive */}
+                            <div className="flex items-center justify-center mx-8 md:mx-12 lg:mx-16 xl:mx-20">
+                                {/* Mobile: Show 1 client, Tablet: Show 2, Desktop: Show 3 */}
+                                <div className="w-full max-w-6xl">
+                                    {/* Mobile View - Single Client */}
+                                    <div className="block md:hidden">
+                                        {getVisibleClients().slice(0, 1).map((client, index) => (
+                                            <div 
+                                                key={`${client.index}-${index}`}
+                                                className="flex justify-center transition-all duration-500 ease-in-out transform hover:scale-105"
+                                            >
+                                                {clientImageLoadErrors[client.index] ? (
+                                                    <div className="w-40 h-40 bg-gradient-to-br from-orange-200 to-gray-200 rounded-2xl shadow-lg flex items-center justify-center">
+                                                        <div className="text-center text-gray-600">
+                                                            <div className="text-4xl mb-2">🏢</div>
+                                                            <p className="text-sm font-semibold">Client {client.index + 1}</p>
+                                                            <p className="text-xs opacity-75">Logo not available</p>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div className="w-40 h-40 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-4 flex items-center justify-center overflow-hidden border border-gray-100 hover:border-orange-200">
+                                                        <img
+                                                            src={client.image}
+                                                            alt={`Client ${client.index + 1}`}
+                                                            className="max-w-full max-h-full object-contain transition-all duration-300 hover:scale-110"
+                                                            onError={() => handleClientImageError(client.index)}
+                                                        />
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Tablet View - Two Clients */}
+                                    <div className="hidden md:block lg:hidden">
+                                        <div className="flex justify-center gap-8">
+                                            {getVisibleClients().slice(0, 2).map((client, index) => (
+                                                <div 
+                                                    key={`${client.index}-${index}`}
+                                                    className="flex-shrink-0 transition-all duration-500 ease-in-out transform hover:scale-105"
+                                                >
+                                                    {clientImageLoadErrors[client.index] ? (
+                                                        // Fallback for client images - Responsive
+                                                        <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 bg-gradient-to-br from-orange-200 to-gray-200 rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl flex items-center justify-center">
+                                                            <div className="text-center text-gray-600">
+                                                                <div className="text-3xl md:text-4xl lg:text-6xl mb-2 md:mb-4">🏢</div>
+                                                                <p className="text-sm md:text-lg font-semibold">Client {client.index + 1}</p>
+                                                                <p className="text-xs md:text-sm opacity-75">Logo not available</p>
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 bg-white rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-4 md:p-6 lg:p-8 flex items-center justify-center overflow-hidden border border-gray-100 hover:border-orange-200">
+                                                            <img
+                                                                src={client.image}
+                                                                alt={`Client ${client.index + 1}`}
+                                                                className="max-w-full max-h-full object-contain transition-all duration-300 hover:scale-110"
+                                                                onError={() => handleClientImageError(client.index)}
+                                                            />
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Desktop View - Three Clients */}
+                                    <div className="hidden lg:block">
+                                        <div className="flex justify-center gap-8 lg:gap-12 xl:gap-16">
+                                            {getVisibleClients().map((client, index) => (
+                                                <div 
+                                                    key={`${client.index}-${index}`}
+                                                    className="flex-shrink-0 transition-all duration-500 ease-in-out transform hover:scale-105"
+                                                >
+                                                    {clientImageLoadErrors[client.index] ? (
+                                                        <div className="w-48 h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 bg-gradient-to-br from-orange-200 to-gray-200 rounded-3xl shadow-xl flex items-center justify-center">
+                                                            <div className="text-center text-gray-600">
+                                                                <div className="text-6xl mb-4">🏢</div>
+                                                                <p className="text-lg font-semibold">Client {client.index + 1}</p>
+                                                                <p className="text-sm opacity-75">Logo not available</p>
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <div className="w-48 h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 lg:p-8 flex items-center justify-center overflow-hidden border-2 border-gray-50 hover:border-orange-200">
+                                                            <img
+                                                                src={client.image}
+                                                                alt={`Client ${client.index + 1}`}
+                                                                className="max-w-full max-h-full object-contain transition-all duration-300 hover:scale-110"
+                                                                onError={() => handleClientImageError(client.index)}
+                                                            />
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Next Button - Subtle & Mobile Friendly */}
+                            <button
+                                onClick={nextClient}
+                                className="absolute right-2 md:right-4 z-10 bg-gray-400 hover:bg-gray-500 text-white p-2 md:p-3 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 text-lg md:text-xl font-medium opacity-70 hover:opacity-90"
+                                aria-label="Next clients"
+                            >
+                                ›
+                            </button>
+                        </div>
+
+                        {/* Client Indicators - Mobile Optimized */}
+                        <div className="flex justify-center mt-8 md:mt-12 space-x-2 md:space-x-3">
+                            {clientImages.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setClientCurrentIndex(index)}
+                                    className={`h-2 md:h-3 lg:h-4 rounded-full transition-all duration-300 hover:scale-110 ${
+                                        index === clientCurrentIndex 
+                                            ? 'bg-gradient-to-r from-orange-400 to-orange-500 w-8 md:w-10 lg:w-12 shadow-md' 
+                                            : 'bg-gray-300 w-2 md:w-3 lg:w-4 hover:bg-gray-400'
+                                    }`}
+                                    aria-label={`Go to client ${index + 1}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Trust Message - Mobile Responsive */}
+                    <div className="text-center mt-12 md:mt-16">
+                        <div className="bg-gradient-to-r from-orange-400 to-orange-500 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-xl md:shadow-2xl text-white max-w-4xl mx-auto">
+                            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
+                                Ready to Join Our Success Story?
+                            </h3>
+                            <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 opacity-90 leading-relaxed">
+                                Join the growing list of satisfied clients who trust GLOBAQ for their quality assurance needs. 
+                                Experience the difference that our SET approach brings to your business.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                <Link
+                                    to="/ContactUs"
+                                    className="bg-white text-orange-600 hover:bg-gray-50 font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg md:rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm md:text-base"
+                                >
+                                    Start Your Partnership
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Quality Commitment Section */}
             <div
                 id="quality"
-                ref={(el) => (sectionsRef.current[3] = el)}
+                ref={(el) => (sectionsRef.current[4] = el)}
                 className={`py-20 px-4 md:px-8 transition-all duration-1000 ${
                     visibleSections["quality"] 
                         ? "opacity-100 translate-y-0" 
