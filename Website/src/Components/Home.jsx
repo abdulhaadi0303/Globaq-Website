@@ -18,7 +18,8 @@ const clientImages = [
     "/client1.jpg",
     "/client2.jpg",
     "/client3.jpg",
-    "/client4.jpg"
+    "/client4.jpg",
+    "/aramcologo.jpg"
 ];
 
 // Services data with descriptions
