@@ -425,7 +425,7 @@ function Home() {
                                 </div>
                                 <div className="text-center md:text-left">
                                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-2 md:mb-3">
-                                        Our Trusted <span className="text-orange-500">Clients</span>
+                                    Key Clients <span className="text-orange-500">& Approvals </span>
                                     </h2>
                                     <div className="w-24 md:w-32 h-1 md:h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mx-auto md:mx-0"></div>
                                 </div>
