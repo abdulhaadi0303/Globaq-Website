@@ -59,7 +59,11 @@ async function prerender() {
     const url = `http://localhost:${PORT}${route.path}`;
     try {
       await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
-      const html = await page.content();
+      let html = await page.content();
+      // Some assets (e.g. images referenced via `new URL(path, import.meta.url)`)
+      // get baked in as absolute URLs pointing at the local prerender server.
+      // Strip that so the shipped HTML uses relative/production-correct URLs.
+      html = html.split(`http://localhost:${PORT}`).join('');
       captured.push({ route: route.path, html });
       console.log(`✓ ${route.path}`);
     } catch (err) {
