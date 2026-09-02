@@ -1,11 +1,8 @@
 /**
- * Static prerender for cPanel deployment.
- * Runs after `vite build`. Serves the built app locally, visits every
- * route with a headless browser, and writes the fully-rendered HTML to
- * dist/<route>/index.html so each URL is a real static file — no JS
- * required for crawlers or first paint.
- *
- * Usage: npm run build   (wired up in package.json to run this after vite build)
+ * Static prerender — works both locally (Mac, using your installed
+ * Chrome) and on Vercel's build container (using @sparticuz/chromium,
+ * a Chromium build made for serverless/CI Linux environments where
+ * Puppeteer's own downloaded Chrome is missing system libraries).
  */
 const path = require('path');
 const fs = require('fs');
@@ -15,7 +12,7 @@ const ROUTES = require('./routes.cjs');
 
 const PORT = 4173;
 const DIST_DIR = path.join(__dirname, '..', 'dist');
-const CHROME_PATH = process.env.CHROME_PATH || undefined;
+const IS_VERCEL = !!process.env.VERCEL;
 
 async function waitForServer(url, attempts = 20) {
   for (let i = 0; i < attempts; i++) {
@@ -30,23 +27,31 @@ async function waitForServer(url, attempts = 20) {
   throw new Error(`Server did not start at ${url}`);
 }
 
+async function getLaunchOptions() {
+  if (IS_VERCEL) {
+    const chromium = require('@sparticuz/chromium');
+    return {
+      args: chromium.args,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    };
+  }
+  const opts = { headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] };
+  if (process.env.CHROME_PATH) opts.executablePath = process.env.CHROME_PATH;
+  return opts;
+}
+
 async function prerender() {
-  console.log('Starting local static server for prerendering...');
+  console.log(`Starting local static server for prerendering (environment: ${IS_VERCEL ? 'Vercel' : 'local'})...`);
   const server = spawn('npx', ['serve', '-s', 'dist', '-l', String(PORT)], {
     cwd: path.join(__dirname, '..'),
     stdio: 'ignore',
   });
   await waitForServer(`http://localhost:${PORT}/`);
 
-  const launchOpts = { headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] };
-  if (CHROME_PATH) launchOpts.executablePath = CHROME_PATH;
+  const launchOpts = await getLaunchOptions();
   const browser = await puppeteer.launch(launchOpts);
 
-  // IMPORTANT: capture everything into memory first. dist/index.html also
-  // serves as the SPA fallback file while `serve` is running — overwriting
-  // it mid-crawl would leak one route's rendered content into whichever
-  // routes are captured afterward. Only write to disk once every route has
-  // been visited against the original, untouched build output.
   const captured = [];
   let failed = 0;
   for (const route of ROUTES) {
