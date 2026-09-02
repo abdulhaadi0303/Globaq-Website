@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function ISOConsultancy() {
     return (
         <div className="page-container">
+            <SEO
+                title="ISO Consultancy | Globaq"
+                description="Expert ISO consultancy services in Saudi Arabia covering ISO 9001, ISO 14001, ISO 45001, ISO/IEC 17025, and more — from initial assessment to certification."
+                path="/ISOConsultancy"
+            />
             <div className="textbox">
                 <h1>ISO Consultancy</h1>
                 <p>

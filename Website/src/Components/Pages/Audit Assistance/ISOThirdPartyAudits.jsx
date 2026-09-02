@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function ISOThirdPartyAudits() {
     return (
         <div className="page-container">
+            <SEO
+                title="ISO Third-Party Audits | Globaq"
+                description="Expert preparation for ISO third-party and certification audits, including gap analysis, pre-assessment audits, and corrective action guidance."
+                path="/AuditAssistance/ISOThirdPartyAudits"
+            />
             <div className="textbox">
             <h1>ISO Third-Party Audits</h1>
             <p>

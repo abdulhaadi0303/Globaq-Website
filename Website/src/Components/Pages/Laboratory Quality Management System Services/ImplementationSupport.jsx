@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function ImplementationSupport() {
     return (
         <div className="page-container">
+            <SEO
+                title="Laboratory QMS Implementation Support | Globaq"
+                description="Hands-on ISO/IEC 17025:2017 implementation support and training, from awareness to full management system implementation."
+                path="/LaboratoryQualityManagementSystemServices/ImplementationSupport"
+            />
             <div className="textbox">
                 <h1>Implementation Support</h1>
                 <p>

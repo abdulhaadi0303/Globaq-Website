@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function ScheduleD() {
     return (
         <div className="page-container">
+            <SEO
+                title="Schedule D - Safety Assessment | Globaq"
+                description="Independent third-party safety assessments for Saudi Aramco contractors, as required under Schedule D, CSM, and CSAR. GLOBAQ Aramco-qualified auditors deliver both Schedule Q and Schedule D assessments."
+                path="/MangementSystemAudits/ScheduleDSafetyAssessment"
+            />
             <div className="textbox">
                 <h1>Schedule D - Safety Assessment</h1>
                 <p>

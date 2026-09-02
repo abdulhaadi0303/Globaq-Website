@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function AccreditationSupport() {
     return (
         <div className="page-container">
+            <SEO
+                title="Laboratory QMS Accreditation Support | Globaq"
+                description="Full accreditation process support, coordinating directly with the accreditation body from assessment scheduling through final audit."
+                path="/LaboratoryQualityManagementSystemServices/SupportforAccreditationProcess"
+            />
             <div className="textbox">
                 <h1>Support for Accreditation Process</h1>
                 <p>

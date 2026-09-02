@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function Training() {
     return (
         <div className="page-container">
+            <SEO
+                title="Laboratory QMS Training | Globaq"
+                description="Laboratory quality management system training covering ISO/IEC 17025 awareness, internal auditing, measurement uncertainty, proficiency testing, risk assessment, and root cause analysis."
+                path="/LaboratoryQualityManagementSystemServices/Training"
+            />
             <div className="textbox">
                 <h1>Training</h1>
                 <p>

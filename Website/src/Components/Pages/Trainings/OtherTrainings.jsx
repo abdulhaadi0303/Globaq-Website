@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function OtherTrainings() {
     return (
         <div className="page-container">
+            <SEO
+                title="Other Trainings | Globaq"
+                description="Training programs beyond ISO standards, including Six Sigma, Lean, 5S, ESG, HACCP, HIRAC, and Saudi Aramco-specific awareness training."
+                path="/Trainings/OtherTrainings"
+            />
             <div className="textbox">
                 <h1>Other Trainings</h1>
                 <p>

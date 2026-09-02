@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function ScheduleQ() {
     return (
         <div className="page-container">
+            <SEO
+                title="Schedule Q - Quality Assessment | Globaq"
+                description="Independent quality assessments at 15% and 60% project completion milestones, ensuring contractor compliance with Saudi Aramco Schedule Q requirements."
+                path="/MangementSystemAudits/ScheduleQQualityAssessment"
+            />
             <div className="textbox">
                 <h1>Schedule Q - Quality Assessment</h1>
                 <p>

@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function VendorAssessment() {
     return (
         <div className="page-container">
+            <SEO
+                title="Vendor Assessment | Globaq"
+                description="Supplier evaluation and vendor assessment services covering management systems, capability, capacity, and compliance to reduce onboarding risk."
+                path="/MangementSystemAudits/VendorAssessment"
+            />
             <div className="textbox">
                 <h1>Vendor Assessment</h1>
                 <p>

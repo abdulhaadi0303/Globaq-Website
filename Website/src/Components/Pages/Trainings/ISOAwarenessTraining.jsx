@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function ISOAwarenessTraining() {
     return (
         <div className="page-container">
+            <SEO
+                title="ISO Awareness Training | Globaq"
+                description="ISO awareness training courses covering ISO 9001, ISO 14001, ISO 45001, ISO/IEC 17025, and other key management system standards."
+                path="/Trainings/ISOTrainings/ISOAwarenessTraining"
+            />
             <div className="textbox">
                 <h1>ISO Awareness Training</h1>
                 <p>

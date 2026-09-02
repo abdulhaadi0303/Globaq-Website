@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function InternalAuditTraining() {
     return (
         <div className="page-container">
+            <SEO
+                title="Internal Audit Training | Globaq"
+                description="Two-day internal auditor training programs covering Quality, Environmental, OH&S, Food Safety, and Laboratory Quality Management Systems."
+                path="/Trainings/ISOTrainings/InternalAuditTraining"
+            />
             <div className="textbox">
                 <h1>Internal Audit Training</h1>
                 <p>

@@ -1,8 +1,13 @@
 import "../../styles/routes.css";
-
+import SEO from "../../SEO";
 function ISOConsultancy() {
     return (
         <div className="page-container">
+            <SEO
+                title="Laboratory QMS Consultancy | Globaq"
+                description="ISO/IEC 17025:2017 consultancy services helping laboratories achieve accreditation, from system implementation to final accreditation application."
+                path="/LaboratoryQualityManagementSystemServices/Consultancy"
+            />
             <div className="textbox">
                 <h1>Consultancy</h1>
                 <p>

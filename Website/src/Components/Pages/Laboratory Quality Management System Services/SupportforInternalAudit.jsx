@@ -1,8 +1,14 @@
 import "../../styles/routes.css";
+import SEO from "../../SEO";
 
 function InternalAuditSupport() {
     return (
         <div className="page-container">
+            <SEO
+                title="Laboratory QMS Internal Audit Support | Globaq"
+                description="Collaborative internal audit support for laboratories, with on-the-job training to build independent internal audit capability."
+                path="/LaboratoryQualityManagementSystemServices/SupportforInternalAudit"
+            />
             <div className="textbox">
                 <h1>Support for Internal Audit</h1>
                 <p>
