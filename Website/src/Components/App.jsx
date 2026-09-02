@@ -10,6 +10,7 @@ import ScrollToTop from "./ScrollToTop.jsx";
 import Partner from "./Partner.jsx";
 import ServicesPage from "./ServicesPage.jsx";
 
+import Schema from "./Schema";
 // src/App.jsx
 import "./styles/App.css";
 
@@ -58,9 +59,11 @@ import './styles/App.css'
 //   );
 // }
 
+
 function Layout() {
   return (
     <div className="layout-container">
+      <Schema />
       <div className="fixed-header">
         <Header />
       </div>

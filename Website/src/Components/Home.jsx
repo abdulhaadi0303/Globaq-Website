@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import SEO from "./SEO";
 
 // Images array - all images should be placed in the public folder
 // Public folder images are accessible directly with paths starting with "/"
@@ -182,6 +183,11 @@ function Home() {
 
     return (
         <div className="min-h-screen bg-white">
+            <SEO
+                title="Globaq | ISO Certification & Quality Assurance Consultancy in Saudi Arabia"
+                description="Globaq provides ISO certification support, quality management system audits, and accreditation consultancy across Saudi Arabia."
+                path="/"
+            />
             {/* Hero Carousel Section */}
             <div className="relative h-[500px] md:h-[600px] overflow-hidden bg-gradient-to-r from-orange-50 to-gray-50">
                 {/* Carousel Container */}

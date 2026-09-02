@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import contactimg from '../assets/contact.jpg'; 
+import SEO from './SEO';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -79,6 +80,11 @@ const ContactForm = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 py-12 px-4">
+       <SEO
+        title="Contact Us | Globaq"
+        description="Get in touch with Globaq for ISO consultancy, quality audits, and accreditation support in Saudi Arabia."
+        path="/ContactUs"
+      />
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12 animate-fade-in">

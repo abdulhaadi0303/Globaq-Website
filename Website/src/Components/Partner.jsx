@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from './SEO';
 
 const GoogleSheets_PartnerForm  = "https://script.google.com/macros/s/AKfycbxj76heGerfAqTeM5VwhR_pi_-0vtMvo9Zw7SxK9-eqnU2x32oRb8INHYYcySw0spvn/exec";
 const BecomePartnerForm = () => {
@@ -197,6 +198,11 @@ console.log('Submitting partner application:', submissionData);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-12 px-4">
+      <SEO
+        title="Become a Partner | Globaq"
+        description="Partner with Globaq for quality assurance and ISO consultancy services in Saudi Arabia."
+        path="/Partner"
+      />
       <div className="max-w-4xl mx-auto">
         {/* Header with floating animation */}
         <div className="text-center mb-12 animate-fade-in">

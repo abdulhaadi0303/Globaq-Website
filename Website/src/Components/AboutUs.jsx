@@ -1,8 +1,14 @@
 import "../Components/styles/Home.css";
+import SEO from "./SEO";
 
 function AboutUs() {
     return (
         <>
+        <SEO
+            title="About Us | Globaq"
+            description="Learn about Globaq, a Saudi Arabia-based quality assurance and ISO consultancy organization."
+            path="/AboutUs"
+        />
         <div className="about">
             {/* Text Box 1: Introduction */}
             <h2 >Introduction</h2>

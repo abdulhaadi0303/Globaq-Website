@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import SEO from "./SEO";
 
 function ServicesPage() {
     const location = useLocation();
@@ -79,6 +80,12 @@ function ServicesPage() {
     if (!service) {
         return (
             <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50 py-20">
+                <SEO
+                    title="Our Services | Globaq"
+                    description="Explore Globaq's range of consultancy and quality assurance services."
+                    path={location.pathname}
+                    noindex={true}
+                />
                 <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
                     <div className="bg-white rounded-3xl p-12 shadow-2xl">
                         <div className="text-6xl mb-6">⚙️</div>
@@ -117,6 +124,11 @@ function ServicesPage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50 py-20">
+            <SEO
+                title={`${service.title} | Globaq`}
+                description={service.description}
+                path={location.pathname}
+            />
             <div className="max-w-6xl mx-auto px-4 md:px-8">
                 {/* Header Section */}
                 <div className="text-center mb-16">
