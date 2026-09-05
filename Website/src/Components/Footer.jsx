@@ -79,13 +79,17 @@ function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <a 
+
+                                {/* CAREERS PAGE LINK */}
+
+                                {/* <a 
                                     href="#" 
                                     className="flex items-center text-gray-300 hover:text-orange-400 transition-all duration-300 group"
                                 >
                                     <div className="w-2 h-2 bg-orange-400 rounded-full mr-3 scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                                     <span className="group-hover:translate-x-1 transition-transform duration-300">Careers</span>
-                                </a>
+                                </a> */}
+
                             </li>
                             <li>
                                 <Link 
@@ -103,25 +107,26 @@ function Footer() {
                             <h4 className="text-lg font-semibold text-gray-300 mb-4">Follow Us</h4>
                             <div className="flex space-x-4">
                                 <a 
-                                    href="#" 
+                                    href="https://www.facebook.com/story.php?story_fbid=122143377573077682&id=61582330474911&rdid=2TEvaAzySNDzNGVo#" 
                                     className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-600 transition-all duration-300 transform hover:scale-110 hover:rotate-6"
                                 >
                                     <FaFacebook className="text-white text-lg" />
                                 </a>
-                                <a 
+                                {/* Twitter */}
+                                {/* <a 
                                     href="#" 
                                     className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-600 transition-all duration-300 transform hover:scale-110 hover:rotate-6"
                                 >
                                     <FaTwitter className="text-white text-lg" />
-                                </a>
+                                </a> */}
                                 <a 
-                                    href="#" 
+                                    href="https://www.linkedin.com/posts/global-quality-specialists-company-limited-globaq_kpi-performancemanagement-operationalexcellence-activity-7498290508939833344-InO8/?utm_source=share&utm_medium=member_android&rcm=ACoAADgXey4BkbumBYKUizPUPT90DZ0uBO42Ojw&skipRedirect=true" 
                                     className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-600 transition-all duration-300 transform hover:scale-110 hover:rotate-6"
                                 >
                                     <FaLinkedin className="text-white text-lg" />
                                 </a>
                                 <a 
-                                    href="#" 
+                                    href="https://www.instagram.com/globalqualityspecialists?igsi=NzFlN2xkdm95dDJ4&utm_source=ig_contact_invite" 
                                     className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-600 transition-all duration-300 transform hover:scale-110 hover:rotate-6"
                                 >
                                     <FaInstagram className="text-white text-lg" />
