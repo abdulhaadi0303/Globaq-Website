@@ -4,7 +4,7 @@ import SEO from "./SEO";
 
 const groupImages = {
     consultancy: "/consultancy.jpg",
-    audits: "/audits.jpg",
+    audits: "/audit.jpg",
     aramco: "/aramco-safety.jpg",
 };
 
