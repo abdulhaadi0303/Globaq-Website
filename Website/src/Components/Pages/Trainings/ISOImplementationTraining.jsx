@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function ISOImplementationTraining() {
     return (
@@ -9,6 +10,20 @@ function ISOImplementationTraining() {
                 description="Hands-on ISO implementation training to help you effectively integrate ISO 9001, ISO 14001, ISO 45001, and other standards into your operations."
                 path="/Trainings/ISOTrainings/ISOImplementationTraining"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "ISO Implementation Training",
+                    description: "Hands-on ISO implementation training to help you effectively integrate ISO 9001, ISO 14001, ISO 45001, and other standards into your operations.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/Trainings/ISOTrainings/ISOImplementationTraining",
+                }}
+            />
+
             <div className="textbox">
                 <h1>ISO Implementation Training</h1>
                 <p>

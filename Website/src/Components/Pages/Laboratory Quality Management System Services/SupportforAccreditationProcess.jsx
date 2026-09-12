@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function AccreditationSupport() {
     return (
@@ -9,6 +10,20 @@ function AccreditationSupport() {
                 description="Full accreditation process support, coordinating directly with the accreditation body from assessment scheduling through final audit."
                 path="/LaboratoryQualityManagementSystemServices/SupportforAccreditationProcess"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "Laboratory QMS Accreditation Support",
+                    description: "Full accreditation process support, coordinating directly with the accreditation body from assessment scheduling through final audit.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/LaboratoryQualityManagementSystemServices/SupportforAccreditationProcess",
+                }}
+            />
+
             <div className="textbox">
                 <h1>Support for Accreditation Process</h1>
                 <p>

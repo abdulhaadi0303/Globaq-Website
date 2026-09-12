@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function Training() {
     return (
@@ -9,6 +10,20 @@ function Training() {
                 description="Laboratory quality management system training covering ISO/IEC 17025 awareness, internal auditing, measurement uncertainty, proficiency testing, risk assessment, and root cause analysis."
                 path="/LaboratoryQualityManagementSystemServices/Training"
             />
+
+<PageSchema
+    id="page-schema-service"
+    data={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Laboratory QMS Training",
+        description: "Laboratory quality management system training covering ISO/IEC 17025 awareness, internal auditing, measurement uncertainty, proficiency testing, risk assessment, and root cause analysis.",
+        provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+        areaServed: { "@type": "Country", name: "Saudi Arabia" },
+        url: "https://globaqksa.com/LaboratoryQualityManagementSystemServices/Training",
+    }}
+/>
+
             <div className="textbox">
                 <h1>Training</h1>
                 <p>

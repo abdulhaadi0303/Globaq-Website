@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function ThirdPartyInternalAudit() {
     return (
@@ -9,6 +10,20 @@ function ThirdPartyInternalAudit() {
                 description="Third-party internal audit services to help your laboratory prepare for accreditation body assessments and maintain full ISO/IEC 17025 compliance."
                 path="/LaboratoryQualityManagementSystemServices/3rdPartyInternalAudit"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "Laboratory QMS 3rd Party Internal Audit",
+                    description: "Third-party internal audit services to help your laboratory prepare for accreditation body assessments and maintain full ISO/IEC 17025 compliance.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/LaboratoryQualityManagementSystemServices/3rdPartyInternalAudit",
+                }}
+            />
+
             <div className="textbox">
                 <h1>Third-Party Internal Audit</h1>
                 <p>

@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function InternalAuditSupport() {
     return (
@@ -9,6 +10,20 @@ function InternalAuditSupport() {
                 description="Collaborative internal audit support for laboratories, with on-the-job training to build independent internal audit capability."
                 path="/LaboratoryQualityManagementSystemServices/SupportforInternalAudit"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "Laboratory QMS Internal Audit Support",
+                    description: "Collaborative internal audit support for laboratories, with on-the-job training to build independent internal audit capability.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/LaboratoryQualityManagementSystemServices/SupportforInternalAudit",
+                }}
+            />
+
             <div className="textbox">
                 <h1>Support for Internal Audit</h1>
                 <p>

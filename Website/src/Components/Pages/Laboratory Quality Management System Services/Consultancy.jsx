@@ -1,5 +1,7 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
+
 function ISOConsultancy() {
     return (
         <div className="page-container">
@@ -8,6 +10,20 @@ function ISOConsultancy() {
                 description="ISO/IEC 17025:2017 consultancy services helping laboratories achieve accreditation, from system implementation to final accreditation application."
                 path="/LaboratoryQualityManagementSystemServices/Consultancy"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "Laboratory QMS Consultancy",
+                    description: "ISO/IEC 17025:2017 consultancy services helping laboratories achieve accreditation, from system implementation to final accreditation application.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/LaboratoryQualityManagementSystemServices/Consultancy",
+                }}
+            />
+
             <div className="textbox">
                 <h1>Consultancy</h1>
                 <p>

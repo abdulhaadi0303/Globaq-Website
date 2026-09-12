@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function ScheduleD() {
     return (
@@ -9,6 +10,20 @@ function ScheduleD() {
                 description="Independent third-party safety assessments for Saudi Aramco contractors, as required under Schedule D, CSM, and CSAR. GLOBAQ Aramco-qualified auditors deliver both Schedule Q and Schedule D assessments."
                 path="/MangementSystemAudits/ScheduleDSafetyAssessment"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "Schedule D - Safety Assessment",
+                    description: "Independent third-party safety assessments for Saudi Aramco contractors, as required under Schedule D, CSM, and CSAR.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/MangementSystemAudits/ScheduleDSafetyAssessment",
+                }}
+            />
+
             <div className="textbox">
                 <h1>Schedule D - Safety Assessment</h1>
                 <p>

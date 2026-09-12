@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import SEO from "./SEO";
+import PageSchema from "./PageSchema";
 
 const groupImages = {
     consultancy: "/consultancy.jpg",
@@ -99,6 +100,22 @@ function AboutUs() {
                 title="About Us | Globaq"
                 description="Globaq KSA is an ISO 9001 quality management consulting company based in the Dammam/Khobar corridor, helping businesses across Saudi Arabia's Eastern Province build quality management systems that work."
                 path="/AboutUs"
+            />
+
+            <PageSchema
+                id="page-schema-about"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "AboutPage",
+                    name: "About Us | Globaq",
+                    description: "Globaq KSA is an ISO 9001 quality management consulting company based in the Dammam/Khobar corridor, helping businesses across Saudi Arabia's Eastern Province build quality management systems that work.",
+                    url: "https://globaqksa.com/AboutUs",
+                    mainEntity: {
+                        "@type": "Organization",
+                        name: "GLOBAQ KSA",
+                        url: "https://globaqksa.com",
+                    },
+                }}
             />
 
             <div className="py-20 md:py-28 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-orange-50">

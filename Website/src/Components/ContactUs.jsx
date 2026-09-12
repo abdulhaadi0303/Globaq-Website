@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import contactimg from '../assets/contact.jpg'; 
 import SEO from './SEO';
+import PageSchema from './PageSchema';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -85,6 +86,24 @@ const ContactForm = () => {
         description="Get in touch with Globaq for ISO consultancy, quality audits, and accreditation support in Saudi Arabia."
         path="/ContactUs"
       />
+
+        <PageSchema
+            id="page-schema-contact"
+            data={{
+                "@context": "https://schema.org",
+                "@type": "ContactPage",
+                name: "Contact Us | Globaq",
+                description: "Get in touch with Globaq for ISO consultancy, quality audits, and accreditation support in Saudi Arabia.",
+                url: "https://globaqksa.com/ContactUs",
+                mainEntity: {
+                    "@type": "LocalBusiness",
+                    name: "GLOBAQ KSA",
+                    telephone: "+966530767286",
+                    email: "info@globaqksa.com",
+                    address: { "@type": "PostalAddress", addressLocality: "Al-Khobar", addressCountry: "SA" },
+                },
+            }}
+        />
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12 animate-fade-in">

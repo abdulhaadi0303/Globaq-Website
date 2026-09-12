@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function ImplementationSupport() {
     return (
@@ -9,6 +10,21 @@ function ImplementationSupport() {
                 description="Hands-on ISO/IEC 17025:2017 implementation support and training, from awareness to full management system implementation."
                 path="/LaboratoryQualityManagementSystemServices/ImplementationSupport"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "Laboratory QMS Implementation Support",
+                    description: "Hands-on ISO/IEC 17025:2017 implementation support and training, from awareness to full management system implementation.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/LaboratoryQualityManagementSystemServices/ImplementationSupport",
+                }}
+            />
+
+
             <div className="textbox">
                 <h1>Implementation Support</h1>
                 <p>

@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema"; // same relative path as your SEO import
 
 function ISOThirdPartyAudits() {
     return (
@@ -9,6 +10,20 @@ function ISOThirdPartyAudits() {
                 description="Expert preparation for ISO third-party and certification audits, including gap analysis, pre-assessment audits, and corrective action guidance."
                 path="/AuditAssistance/ISOThirdPartyAudits"
             />
+
+        <PageSchema
+            id="page-schema-service"
+            data={{
+                "@context": "https://schema.org",
+                "@type": "Service",
+                name: "ISO Internal Audits",
+                description: "ISO internal audit services from Globaq, including collaborative audits and on-the-job training for your internal audit team.",
+                provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                url: "https://globaqksa.com/AuditAssistance/ISOInternalAudits",
+            }}
+        />
+
             <div className="textbox">
             <h1>ISO Third-Party Audits</h1>
             <p>

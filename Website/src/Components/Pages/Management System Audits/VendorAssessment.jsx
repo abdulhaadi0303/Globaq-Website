@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function VendorAssessment() {
     return (
@@ -9,6 +10,20 @@ function VendorAssessment() {
                 description="Supplier evaluation and vendor assessment services covering management systems, capability, capacity, and compliance to reduce onboarding risk."
                 path="/MangementSystemAudits/VendorAssessment"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "Vendor Assessment",
+                    description: "Supplier evaluation and vendor assessment services covering management systems, capability, capacity, and compliance to reduce onboarding risk.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/MangementSystemAudits/VendorAssessment",
+                }}
+            />
+
             <div className="textbox">
                 <h1>Vendor Assessment</h1>
                 <p>

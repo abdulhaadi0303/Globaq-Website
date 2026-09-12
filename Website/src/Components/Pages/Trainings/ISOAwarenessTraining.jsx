@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function ISOAwarenessTraining() {
     return (
@@ -9,6 +10,20 @@ function ISOAwarenessTraining() {
                 description="ISO awareness training courses covering ISO 9001, ISO 14001, ISO 45001, ISO/IEC 17025, and other key management system standards."
                 path="/Trainings/ISOTrainings/ISOAwarenessTraining"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "ISO Awareness Training",
+                    description: "ISO awareness training courses covering ISO 9001, ISO 14001, ISO 45001, ISO/IEC 17025, and other key management system standards.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/Trainings/ISOTrainings/ISOAwarenessTraining",
+                }}
+            />
+
             <div className="textbox">
                 <h1>ISO Awareness Training</h1>
                 <p>

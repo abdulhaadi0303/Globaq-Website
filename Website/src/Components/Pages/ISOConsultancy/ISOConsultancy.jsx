@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema"; 
 
 function ISOConsultancy() {
     return (
@@ -9,6 +10,21 @@ function ISOConsultancy() {
                 description="Expert ISO consultancy services in Saudi Arabia covering ISO 9001, ISO 14001, ISO 45001, ISO/IEC 17025, and more — from initial assessment to certification."
                 path="/ISOConsultancy"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "ISO Consultancy",
+                    description: "Expert ISO consultancy services in Saudi Arabia covering ISO 9001, ISO 14001, ISO 45001, ISO/IEC 17025, and more — from initial assessment to certification.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/ISOConsultancy",
+                }}
+            />
+
+
             <div className="textbox">
                 <h1>ISO Consultancy</h1>
                 <p>

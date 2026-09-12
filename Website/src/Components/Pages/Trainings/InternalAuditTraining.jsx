@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function InternalAuditTraining() {
     return (
@@ -9,6 +10,19 @@ function InternalAuditTraining() {
                 description="Two-day internal auditor training programs covering Quality, Environmental, OH&S, Food Safety, and Laboratory Quality Management Systems."
                 path="/Trainings/ISOTrainings/InternalAuditTraining"
             />
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "Internal Audit Training",
+                    description: "Two-day internal auditor training programs covering Quality, Environmental, OH&S, Food Safety, and Laboratory Quality Management Systems.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/Trainings/ISOTrainings/InternalAuditTraining",
+                }}
+            />
+
             <div className="textbox">
                 <h1>Internal Audit Training</h1>
                 <p>

@@ -1,5 +1,6 @@
 import "../../styles/routes.css";
 import SEO from "../../SEO";
+import PageSchema from "../../PageSchema";
 
 function OtherTrainings() {
     return (
@@ -9,6 +10,20 @@ function OtherTrainings() {
                 description="Training programs beyond ISO standards, including Six Sigma, Lean, 5S, ESG, HACCP, HIRAC, and Saudi Aramco-specific awareness training."
                 path="/Trainings/OtherTrainings"
             />
+
+            <PageSchema
+                id="page-schema-service"
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    name: "Other Trainings",
+                    description: "Training programs beyond ISO standards, including Six Sigma, Lean, 5S, ESG, HACCP, HIRAC, and Saudi Aramco-specific awareness training.",
+                    provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
+                    areaServed: { "@type": "Country", name: "Saudi Arabia" },
+                    url: "https://globaqksa.com/Trainings/OtherTrainings",
+                }}
+            />
+
             <div className="textbox">
                 <h1>Other Trainings</h1>
                 <p>
