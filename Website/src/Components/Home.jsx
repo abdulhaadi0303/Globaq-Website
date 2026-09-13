@@ -479,6 +479,7 @@ function Home() {
                                                         <img
                                                             src={client.image}
                                                             alt={`Client ${client.index + 1}`}
+                                                            loading="lazy"
                                                             className="max-w-full max-h-full object-contain transition-all duration-300 hover:scale-110"
                                                             onError={() => handleClientImageError(client.index)}
                                                         />
