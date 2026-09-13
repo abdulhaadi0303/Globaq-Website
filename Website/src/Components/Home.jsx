@@ -195,6 +195,7 @@ function Home() {
                     {/* Previous Button */}
                     <button
                         onClick={prevImage}
+                        aria-label="Previous image"
                         className="absolute left-4 z-10 bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 hover:shadow-xl text-2xl font-bold"
                     >
                         ‹
@@ -236,6 +237,7 @@ function Home() {
                     {/* Next Button */}
                     <button
                         onClick={nextImage}
+                        aria-label="Next image"
                         className="absolute right-4 z-10 bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 hover:shadow-xl text-2xl font-bold"
                     >
                         ›
@@ -248,6 +250,7 @@ function Home() {
                         <button
                             key={index}
                             onClick={() => setCurrentIndex(index)}
+                            aria-label={`Go to image ${index + 1}`}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${
                                 index === currentIndex ? 'bg-orange-500 w-8' : 'bg-white bg-opacity-50'
                             }`}

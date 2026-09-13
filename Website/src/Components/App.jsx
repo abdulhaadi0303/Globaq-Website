@@ -67,9 +67,9 @@ function Layout() {
       <div className="fixed-header">
         <Header />
       </div>
-      <div className="scrollable-content">
+      <main className="scrollable-content">
         <Outlet />
-      </div>
+      </main>
       <div className="footer">
         <Footer />
       </div>

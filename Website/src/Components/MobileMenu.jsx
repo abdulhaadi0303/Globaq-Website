@@ -3,6 +3,17 @@ import "./styles/MobileMenu.css";
 import { useState } from "react";
 import dropdownData from "./data.jsx";
 
+const unstyledButton = {
+  background: "none",
+  border: "none",
+  padding: 0,
+  margin: 0,
+  font: "inherit",
+  color: "inherit",
+  textAlign: "left",
+  width: "100%",
+};
+
 function MobileDropdown({ title, items, closeMenu }) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -16,13 +27,16 @@ function MobileDropdown({ title, items, closeMenu }) {
 
   return (
     <div className="mobile-dropdown">
-      <div
+      <button
+        type="button"
         className="mobile-dropdown-title"
+        style={unstyledButton}
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
       >
         {title}
         <span className={`arrow ${isOpen ? "open" : ""}`}>&#x25BE;</span>
-      </div>
+      </button>
       {isOpen && (
         <div className="mobile-dropdown-content">
           {items.map((item, index) => (
@@ -34,12 +48,14 @@ function MobileDropdown({ title, items, closeMenu }) {
                   closeMenu={closeMenu}
                 />
               ) : (
-                <span
+                <button
+                  type="button"
+                  style={unstyledButton}
                   onClick={() => handleClick(item)}
-                  style={{ cursor: item.route ? "pointer" : "default" }}
+                  disabled={!item.route}
                 >
                   {item.label}
-                </span>
+                </button>
               )}
             </div>
           ))}
@@ -58,14 +74,18 @@ function MobileMenu() {
 
   return (
     <div className="mobile-menu-container">
-      <div
+      <button
+        type="button"
         className={`hamburger-icon ${menuOpen ? "open" : ""}`}
+        style={{ background: "none", border: "none", padding: 0 }}
         onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={menuOpen}
       >
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
-      </div>
+      </button>
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <nav>
           <Link to="/" onClick={closeMenu}>
