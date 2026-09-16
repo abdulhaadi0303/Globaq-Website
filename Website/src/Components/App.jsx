@@ -95,7 +95,7 @@ function App() {
         <Route path="/services/ms-audits" element={<ServicesPage />} />
         <Route path="/services/trainings" element={<ServicesPage />} />
         <Route path="/services/audit-assistance" element={<ServicesPage />} />
-        <Route path="/services/laboratory-management" element={<ServicesPage />} />
+        <Route path="/services/laboratory-management-services" element={<ServicesPage />} />
         <Route path="/services/iso-consultancy" element={<ServicesPage />} />
         <Route path="/services/ccc-consultancy" element={<ServicesPage />} />
         <Route path="/services/ai-solutions" element={<ServicesPage />} />

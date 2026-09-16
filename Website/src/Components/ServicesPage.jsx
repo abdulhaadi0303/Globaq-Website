@@ -23,8 +23,8 @@ function ServicesPage() {
             title: "Audit Assistance & Solutions",
             description: "Expert audit assistance and comprehensive solutions to ensure successful compliance assessments.",
             fullDescription: "We provide expert audit assistance and comprehensive solutions to ensure successful compliance assessments. Our experienced team supports organizations through internal audits, third-party audits, and compliance reviews with proven methodologies."
-        },
-        "laboratory-management": {
+        }, 
+        "laboratory-management-services": {
             title: "Laboratory Management System Services",
             description: "Complete laboratory management services and ISO/IEC 17025:2017 accreditation support.",
             fullDescription: "Our laboratory management system services provide complete support for ISO/IEC 17025:2017 accreditation. We offer consultancy, training, implementation support, and ongoing assistance to ensure your laboratory meets the highest international standards."
