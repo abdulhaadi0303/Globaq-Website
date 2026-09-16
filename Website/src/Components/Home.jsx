@@ -43,7 +43,7 @@ const services = [
     {
         title: "Laboratory Management System Services",
         description: "Complete laboratory management services and ISO/IEC 17025:2017 accreditation support.",
-        route: "/services/laboratory-management"
+        route: "/services/laboratory-management-services"
     },
     {
         title: "ISO Consultancy",
