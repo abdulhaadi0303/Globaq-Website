@@ -1,22 +1,21 @@
 const dropdownData = [
-  // 1- Management System Audits
+
+  // 1 - Management System Audits
   {
     title: "Management System Audits",
+    route: "services/management-system-audits-saudi-arabia/",
     items: [
-
       {
-        label: "Vendor Assessment", route: "MangementSystemAudits/VendorAssessment" 
+        label: "Vendor Assessment",
+        route: "services/management-system-audits-saudi-arabia/vendor-assessment/",
       },
       {
-        label: "Schedule Q - Quality Assessment",route: "MangementSystemAudits/ScheduleQQualityAssessment"
+        label: "Project Quality Assessments",
+        route: "services/management-system-audits-saudi-arabia/project-quality-assessments/",
       },
       {
-        label: "Schedule D - Safety Assessment", route: "MangementSystemAudits/ScheduleDSafetyAssessment"
-      },
-
-      {
-        label: "Other Audits (Coming Soon)", route: "MangementSystemAudits/ManagementSystemCertificationAudits",
-        // subItems: [{ label: "ManagementSystemAudits" , route: "ManagementSystemAudits"}],
+        label: "Project Safety Assessment",
+        route: "services/management-system-audits-saudi-arabia/project-safety-assessment/",
       },
     ],
   },

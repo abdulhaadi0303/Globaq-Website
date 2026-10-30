@@ -14,6 +14,11 @@ module.exports = [
   { path: '/ContactUs', priority: 0.8 },
   { path: '/Partner', priority: 0.6 },
 
+
+  { path: '/services/management-system-audits-saudi-arabia/',priority: 0.9,},
+  
+
+
   { path: '/services/ms-audits', priority: 0.9 },
   { path: '/services/trainings', priority: 0.9 },
   { path: '/services/audit-assistance', priority: 0.9 },
@@ -26,11 +31,10 @@ module.exports = [
   { path: '/services/sustainability-esg', priority: 0.7 },
   { path: '/services/circular-economy', priority: 0.7 },
   { path: '/services/csr-solutions', priority: 0.7 },
-
-  { path: '/MangementSystemAudits/ScheduleQQualityAssessment', priority: 0.7 },
-  { path: '/MangementSystemAudits/ScheduleDSafetyAssessment', priority: 0.7 },
-  { path: '/MangementSystemAudits/VendorAssessment', priority: 0.7 },
-  { path: '/MangementSystemAudits/ManagementSystemCertificationAudits', priority: 0.7 },
+  
+  {path: '/services/management-system-audits-saudi-arabia/vendor-assessment/',priority: 0.8,},
+  {path: '/services/management-system-audits-saudi-arabia/project-quality-assessments/',priority: 0.8,},
+  { path: '/services/management-system-audits-saudi-arabia/project-safety-assessment/',priority: 0.8,},
 
   { path: '/Trainings/ISOTrainings/ISOImplementationTraining', priority: 0.7 },
   { path: '/Trainings/ISOTrainings/ISOAwarenessTraining', priority: 0.7 },

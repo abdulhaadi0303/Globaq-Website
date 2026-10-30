@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import dropdownData from "./data.jsx";
 
-function Dropdown({ title, items }) {
+function Dropdown({ title, items, route }) {
   const [isOpen, setIsOpen] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
   const navigate = useNavigate();
@@ -32,7 +32,17 @@ function Dropdown({ title, items }) {
       onMouseLeave={handleMouseLeave}
     >
       <div className="cursor-pointer text-base font-bold text-gray-800 hover:text-orange-500 transition duration-300 flex items-center">
-        <span>{title}</span>
+          {route ? (
+            <Link
+              to={`/${route.replace(/^\/+/, "")}`}
+              onClick={() => setIsOpen(false)}
+            >
+              {title}
+            </Link>
+          ) : (
+            <span>{title}</span>
+          )}
+
         <svg
           className={`ml-1 w-3 h-3 text-gray-600 transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""
@@ -154,14 +164,24 @@ function DropdownMenu() {
             Our Message
           </Link> */}
           {row1Dropdowns.map((dropdown, index) => (
-            <Dropdown key={index} title={dropdown.title} items={dropdown.items} />
+            <Dropdown
+              key={index}
+              title={dropdown.title}
+              items={dropdown.items}
+              route={dropdown.route}
+            />
           ))}
         </div>
 
         {/* Row 2: Remaining dropdowns */}
         <div className="flex gap-6 flex-wrap items-center">
           {row2Dropdowns.map((dropdown, index) => (
-            <Dropdown key={index} title={dropdown.title} items={dropdown.items} />
+            <Dropdown
+              key={index}
+              title={dropdown.title}
+              items={dropdown.items}
+              route={dropdown.route}
+            />
           ))}
         </div>
       </div>

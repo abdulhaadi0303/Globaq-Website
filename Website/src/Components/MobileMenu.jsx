@@ -14,29 +14,65 @@ const unstyledButton = {
   width: "100%",
 };
 
-function MobileDropdown({ title, items, closeMenu }) {
+function MobileDropdown({ title, items, route, closeMenu }) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = (item) => {
     if (item.route) {
-      navigate(item.route); // Navigate to the route if it exists
+      navigate(`/${item.route.replace(/^\/+/, "")}`); // Navigate to the route if it exists
       closeMenu(); // Close the mobile menu after navigation
     }
   };
 
   return (
     <div className="mobile-dropdown">
-      <button
-        type="button"
-        className="mobile-dropdown-title"
-        style={unstyledButton}
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-      >
-        {title}
-        <span className={`arrow ${isOpen ? "open" : ""}`}>&#x25BE;</span>
-      </button>
+      {route ? (
+  <div
+    className="mobile-dropdown-title"
+    style={{ display: "flex", alignItems: "center", gap: "12px" }}
+  >
+    <Link
+      to={`/${route.replace(/^\/+/, "")}`}
+      onClick={closeMenu}
+      style={{ flex: 1 }}
+    >
+      {title}
+    </Link>
+
+    <button
+      type="button"
+      onClick={() => setIsOpen(!isOpen)}
+      aria-label={`Toggle ${title} submenu`}
+      aria-expanded={isOpen}
+      style={{
+        ...unstyledButton,
+        width: "44px",
+        minHeight: "44px",
+        textAlign: "center",
+        flexShrink: 0,
+      }}
+    >
+      <span className={`arrow ${isOpen ? "open" : ""}`}>
+        &#x25BE;
+      </span>
+    </button>
+  </div>
+        ) : (
+          <button
+            type="button"
+            className="mobile-dropdown-title"
+            style={unstyledButton}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+          >
+            {title}
+            <span className={`arrow ${isOpen ? "open" : ""}`}>
+              &#x25BE;
+            </span>
+          </button>
+        )}
+
       {isOpen && (
         <div className="mobile-dropdown-content">
           {items.map((item, index) => (
@@ -99,8 +135,10 @@ function MobileMenu() {
               key={index}
               title={dropdown.title}
               items={dropdown.items}
+              route={dropdown.route}
               closeMenu={closeMenu}
             />
+
           ))}
         </nav>
       </div>
