@@ -22,7 +22,7 @@ module.exports = [
   { path: '/services/ms-audits', priority: 0.9 },
   { path: '/services/trainings', priority: 0.9 },
   { path: '/services/audit-assistance', priority: 0.9 },
-  { path: '/services/laboratory-management', priority: 0.9 },
+  { path: '/services/laboratory-management-services', priority: 0.9 },
   { path: '/services/iso-consultancy', priority: 0.9 },
   { path: '/services/ccc-consultancy', priority: 0.7 },
   { path: '/services/ai-solutions', priority: 0.7 },
