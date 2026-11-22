@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types -- Menu data and internal handlers are supplied by this navigation module. */
 import { Link, useNavigate } from "react-router-dom";
 import "./styles/MobileMenu.css";
 import { useState } from "react";
@@ -81,6 +82,7 @@ function MobileDropdown({ title, items, route, closeMenu }) {
                 <MobileDropdown
                   title={item.label}
                   items={item.subItems}
+                  route={item.inlineSubmenu ? item.route : undefined}
                   closeMenu={closeMenu}
                 />
               ) : (
@@ -122,7 +124,7 @@ function MobileMenu() {
         <div className="bar"></div>
         <div className="bar"></div>
       </button>
-      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+      <div className={`mobile-menu overflow-y-auto overscroll-contain ${menuOpen ? "open" : ""}`}>
         <nav>
           <Link to="/" onClick={closeMenu}>
             Home

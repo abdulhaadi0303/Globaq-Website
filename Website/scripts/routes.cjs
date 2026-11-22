@@ -21,6 +21,7 @@ module.exports = [
 
   { path: '/services/ms-audits', priority: 0.9 },
   { path: '/services/trainings', priority: 0.9 },
+  { path: '/trainings/', priority: 0.9 },
   { path: '/services/audit-assistance', priority: 0.9 },
   { path: '/services/laboratory-management-services', priority: 0.9 },
   { path: '/services/iso-consultancy', priority: 0.9 },
@@ -36,9 +37,16 @@ module.exports = [
   {path: '/services/management-system-audits-saudi-arabia/project-quality-assessments/',priority: 0.8,},
   { path: '/services/management-system-audits-saudi-arabia/project-safety-assessment/',priority: 0.8,},
 
-  { path: '/Trainings/ISOTrainings/ISOImplementationTraining', priority: 0.7 },
-  { path: '/Trainings/ISOTrainings/ISOAwarenessTraining', priority: 0.7 },
-  { path: '/Trainings/ISOTrainings/InternalAuditTraining', priority: 0.7 },
+  { path: '/services/trainings/iso-training-courses/', priority: 0.8 },
+  { path: '/services/trainings/iso-lead-auditor-training/', priority: 0.7 },
+  { path: '/services/trainings/iso-internal-auditor-training/', priority: 0.7 },
+  { path: '/services/trainings/iso-awareness-training/', priority: 0.7 },
+  { path: '/services/trainings/six-sigma-training/', priority: 0.7 },
+  { path: '/services/trainings/sustainability-training/', priority: 0.7 },
+  { path: '/services/trainings/risk-assessment-training/', priority: 0.7 },
+  { path: '/services/trainings/haccp-training/', priority: 0.7 },
+  { path: '/services/trainings/saudi-aramco-awareness-training/', priority: 0.7 },
+  { path: '/services/trainings/implementation-training/', priority: 0.7 },
   { path: '/Trainings/OtherTrainings', priority: 0.6 },
 
   { path: '/ISOConsultancy', priority: 0.8 },

@@ -1,6 +1,6 @@
-import "../../styles/routes.css";
-import SEO from "../../SEO";
-import PageSchema from "../../PageSchema";
+import "../../../styles/routes.css";
+import SEO from "../../../SEO";
+import PageSchema from "../../../PageSchema";
 
 function OtherTrainings() {
     return (
@@ -39,7 +39,6 @@ function OtherTrainings() {
                     <li>UN Sustainable Development Goals (SDGs) Awareness Training</li>
                     <li>Circular Economy Awareness Training</li>
                     <li>Risk Assessment Training</li>
-                    <li>Root Cause Analysis Training</li>
                     <li>Hazard Analysis & Critical Control Points (HACCP) Awareness Training</li>
                     <li>Hazard Identification, Risk Assessment and Control (HIRAC) Training</li>
                     <li>Saudi Aramco Schedule Q Awareness Training</li>

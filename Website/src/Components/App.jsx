@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Navigate, Routes, Route, Outlet } from "react-router-dom";
 
 import Header from "./Header";
 import Home from "./Home";
@@ -16,16 +16,25 @@ import "./styles/App.css";
 
 // Management System Audits
 import ManagementSystemAudits from "./Pages/ManagementSystemAudits.jsx";
+
 import ProjectQualityAssesment from "./Pages/Management System Audits/ProjectQualityAssesment.jsx";
 import ProjectSafetyAssesment from "./Pages/Management System Audits/ProjectSafetyAssesment.jsx";
 import VendorAssessment from "./Pages/Management System Audits/VendorAssessment.jsx";
 
 
 // Trainings
-import ISOImplementationTraining from "./Pages/Trainings/ISOImplementationTraining.jsx";
-import InternalAuditTraining from "./Pages/Trainings/InternalAuditTraining.jsx";
-import ISOAwarenessTraining from "./Pages/Trainings/ISOAwarenessTraining.jsx";
-import OtherTrainings from "./Pages/Trainings/OtherTrainings.jsx";
+import TrainingsHub from "./Pages/Training/Trainings.jsx";
+import ISOTrainingCourses from "./Pages/Training/ISO/ISOTrainingCourses.jsx";
+import ISOLeadAuditorTraining from "./Pages/Training/ISO/ISOLeadAuditorTraining.jsx";
+import InternalAuditTraining from "./Pages/Training/ISO/InternalAuditTraining.jsx";
+import ISOAwarenessTraining from "./Pages/Training/ISO/ISOAwarenessTraining.jsx";
+import OtherTrainings from "./Pages/Training/Other/OtherTrainings.jsx";
+import SixSigmaTraining from "./Pages/Training/Other/SixSigmaTraining.jsx";
+import SustainabilityTraining from "./Pages/Training/Other/SustainabilityTraining.jsx";
+import RiskAssessmentTraining from "./Pages/Training/Other/RiskAssessmentTraining.jsx";
+import HACCPTraining from "./Pages/Training/Other/HACCPTraining.jsx";
+import SaudiAramcoAwarenessTraining from "./Pages/Training/Other/SaudiAramcoAwarenessTraining.jsx";
+import ImplementationTraining from "./Pages/Training/Other/ImplementationTraining.jsx";
 
 // ISO Consultancy
 import ISOConsultancy from "./Pages/ISOConsultancy/ISOConsultancy.jsx";
@@ -152,18 +161,19 @@ function App() {
           />
 
           {/* Training Pages */}
-          <Route
-            path="Trainings/ISOTrainings/ISOImplementationTraining"
-            element={<ISOImplementationTraining />}
-          />
-          <Route
-            path="Trainings/ISOTrainings/ISOAwarenessTraining"
-            element={<ISOAwarenessTraining />}
-          />
-          <Route
-            path="Trainings/ISOTrainings/InternalAuditTraining"
-            element={<InternalAuditTraining />}
-          />
+          <Route path="/trainings/" element={<TrainingsHub />} />
+          <Route path="/services/trainings/iso-training-courses/" element={<ISOTrainingCourses />} />
+          <Route path="/services/trainings/iso-lead-auditor-training/" element={<ISOLeadAuditorTraining />} />
+          <Route path="/services/trainings/iso-internal-auditor-training/" element={<InternalAuditTraining />} />
+          <Route path="/services/trainings/iso-awareness-training/" element={<ISOAwarenessTraining />} />
+          <Route path="/Trainings/ISOTrainings/ISOAwarenessTraining" element={<Navigate to="/services/trainings/iso-awareness-training/" replace />} />
+          <Route path="/Trainings/ISOTrainings/InternalAuditTraining" element={<Navigate to="/services/trainings/iso-internal-auditor-training/" replace />} />
+          <Route path="/services/trainings/six-sigma-training/" element={<SixSigmaTraining />} />
+          <Route path="/services/trainings/sustainability-training/" element={<SustainabilityTraining />} />
+          <Route path="/services/trainings/risk-assessment-training/" element={<RiskAssessmentTraining />} />
+          <Route path="/services/trainings/haccp-training/" element={<HACCPTraining />} />
+          <Route path="/services/trainings/saudi-aramco-awareness-training/" element={<SaudiAramcoAwarenessTraining />} />
+          <Route path="/services/trainings/implementation-training/" element={<ImplementationTraining />} />
           <Route
             path="Trainings/OtherTrainings"
             element={<OtherTrainings />}

@@ -1,11 +1,16 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types -- Menu data and internal handlers are supplied by this navigation module. */
+import { useEffect, useId, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import dropdownData from "./data.jsx";
 
 function Dropdown({ title, items, route }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [timeoutId, setTimeoutId] = useState(null);
+  const closeTimer = useRef(null);
   const navigate = useNavigate();
+  const menuId = useId();
+  const hasInlineSubmenus = items?.some((item) => item.inlineSubmenu);
+
+  useEffect(() => () => clearTimeout(closeTimer.current), []);
 
   const handleClick = (item) => {
     if (item.route) {
@@ -14,13 +19,25 @@ function Dropdown({ title, items, route }) {
   };
 
   const handleMouseEnter = () => {
-    if (timeoutId) clearTimeout(timeoutId);
+    clearTimeout(closeTimer.current);
     setIsOpen(true);
   };
 
-  const handleMouseLeave = () => {
-    const id = setTimeout(() => setIsOpen(false), 150);
-    setTimeoutId(id);
+  const handleMouseLeave = (event) => {
+    const dropdown = event.currentTarget;
+    clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => {
+      if (!hasInlineSubmenus || !dropdown.contains(document.activeElement)) setIsOpen(false);
+    }, 150);
+  };
+
+  const handleToggle = () => {
+    clearTimeout(closeTimer.current);
+    setIsOpen((open) => !open);
+  };
+
+  const handleBlur = (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) setIsOpen(false);
   };
 
   if (!items || items.length === 0) return null;
@@ -30,6 +47,7 @@ function Dropdown({ title, items, route }) {
       className="relative group"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onBlur={hasInlineSubmenus ? handleBlur : undefined}
     >
       <div className="cursor-pointer text-base font-bold text-gray-800 hover:text-orange-500 transition duration-300 flex items-center">
           {route ? (
@@ -43,33 +61,110 @@ function Dropdown({ title, items, route }) {
             <span>{title}</span>
           )}
 
-        <svg
-          className={`ml-1 w-3 h-3 text-gray-600 transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
+        {hasInlineSubmenus ? (
+          <button
+            type="button"
+            className="ml-1 inline-flex items-center justify-center rounded p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500"
+            aria-label={`Toggle ${title} menu`}
+            aria-expanded={isOpen}
+            aria-controls={menuId}
+            onClick={handleToggle}
+          >
+            <DropdownArrow open={isOpen} />
+          </button>
+        ) : (
+          <DropdownArrow open={isOpen} className="ml-1" />
+        )}
       </div>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-1 bg-white shadow-xl rounded-lg min-w-[250px] z-[9999] py-2 border border-gray-300">
-          {items.map((item, index) => (
-            <DropdownItem
-              key={index}
-              item={item}
-              handleClick={handleClick}
-              isLast={index === items.length - 1}
-            />
-          ))}
+        <div
+          id={menuId}
+          className={`absolute top-full left-0 mt-1 bg-white shadow-xl rounded-lg min-w-[250px] z-[9999] py-2 border border-gray-300 ${hasInlineSubmenus ? "max-h-[70vh] w-72 overflow-y-auto overscroll-contain" : ""}`}
+        >
+          {items.map((item, index) =>
+            item.inlineSubmenu ? (
+              <InlineDropdownItem
+                key={item.label}
+                item={item}
+                onNavigate={() => setIsOpen(false)}
+                isLast={index === items.length - 1}
+              />
+            ) : (
+              <DropdownItem
+                key={index}
+                item={item}
+                handleClick={handleClick}
+                isLast={index === items.length - 1}
+              />
+            )
+          )}
         </div>
       )}
+    </div>
+  );
+}
+
+function DropdownArrow({ open, className = "" }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={`w-3 h-3 text-gray-600 transition-transform duration-300 ${open ? "rotate-180" : ""} ${className}`}
+      fill="currentColor"
+      viewBox="0 0 20 20"
+    >
+      <path
+        fillRule="evenodd"
+        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+function InlineDropdownItem({ item, isLast, onNavigate }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const submenuId = useId();
+  const toggleLabel = `${isOpen ? "Collapse" : "Expand"} ${item.label}`;
+  const style = "flex items-center gap-2 text-left text-base font-medium text-gray-800 hover:bg-orange-50 hover:text-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-orange-500";
+
+  return (
+    <div className={isLast ? "" : "border-b border-gray-200"}>
+      <div className="flex">
+        {item.route && (
+          <Link
+            to={`/${item.route}`}
+            onClick={onNavigate}
+            className={`${style} flex-1 px-5 py-3`}
+          >
+            {item.label}
+          </Link>
+        )}
+        <button
+          type="button"
+          className={`${style} ${item.route ? "px-4 py-3" : "w-full justify-between px-5 py-3"}`}
+          aria-label={item.route ? toggleLabel : undefined}
+          aria-expanded={isOpen}
+          aria-controls={submenuId}
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          {!item.route && item.label}
+          <DropdownArrow open={isOpen} />
+        </button>
+      </div>
+      <ul id={submenuId} hidden={!isOpen} className="bg-orange-50/40 py-1">
+        {item.subItems.map((subItem) => (
+          <li key={subItem.route}>
+            <Link
+              to={`/${subItem.route}`}
+              onClick={onNavigate}
+              className={`${style} px-7 py-2.5 text-sm`}
+            >
+              {subItem.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

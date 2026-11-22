@@ -22,86 +22,29 @@ const dropdownData = [
   // 2 - Trainings
   {
     title: "Trainings",
+    route: "trainings/",
     items: [
       {
-        label: "ISO Trainings",
+        label: "ISO Training Courses",
+        route: "services/trainings/iso-training-courses/",
+        inlineSubmenu: true,
         subItems: [
-          {
-            label: "ISO Implementation Training", route: "Trainings/ISOTrainings/ISOImplementationTraining",
-            subItems: [
-              "ISO/IEC 17025:2017",
-              "ISO/IEC 17020:2012",
-              "ISO 9001:2015",
-              "ISO 14001:2015",
-              "ISO 45001:2018",
-              "ISO 22000:2018",
-              "ISO 55001:2014",
-              "ISO 31000:2018",
-              "ISO 59004:2024",
-              "ISO 59010:2024",
-              "ISO 59020:2024",
-            ].map((item) => ({
-              label: item,
-              route: "Trainings/ISOTrainings/ISOImplementationTraining"
-            })),
-          },
-          {
-            label: "ISO Awareness Training", route: "Trainings/ISOTrainings/ISOAwarenessTraining",
-            subItems: [
-              "ISO/IEC 17025:2017",
-              "ISO/IEC 17020:2012",
-              "ISO 9001:2015",
-              "ISO 14001:2015",
-              "ISO 45001:2018",
-              "ISO 22000:2018",
-              "ISO 55001:2014",
-              "ISO 31000:2018",
-              "ISO 59004:2024",
-              "ISO 59010:2024",
-              "ISO 59020:2024",
-            ].map((item) => ({
-              label: item,
-              route: "Trainings/ISOTrainings/ISOAwarenessTraining"
-            })),
-          },
-          {
-            label: "Internal Audit Training", route: "Trainings/ISOTrainings/InternalAuditTraining",
-            subItems: [
-              "ISO/IEC 17025:2017",
-              "ISO/IEC 17020:2012",
-              "ISO 9001:2015",
-              "ISO 14001:2015",
-              "ISO 45001:2018",
-              "ISO 22000:2018",
-            ].map((item) => ({
-              label: item,
-              route: "Trainings/ISOTrainings/InternalAuditTraining"
-            })),
-          },
+          { label: "ISO Lead Auditor Training", route: "services/trainings/iso-lead-auditor-training/" },
+          { label: "ISO Internal Auditor Training", route: "services/trainings/iso-internal-auditor-training/" },
+          { label: "ISO Awareness Training", route: "services/trainings/iso-awareness-training/" },
         ],
       },
       {
-        label: "Other Trainings", route: "Trainings/OtherTrainings",
+        label: "Other Trainings",
+        inlineSubmenu: true,
         subItems: [
-          "Six Sigma Training",
-          "Lean Six Sigma Training",
-          "5S Training",
-          "Environmental, Social and Governance (ESG) Training",
-          "UN Sustainable Development Goals (SDGs) Awareness Training",
-          "Circular Economy Awareness Training",
-          "Risk Assessment Training",
-          "Root Cause Analysis Training",
-          "Hazard Analysis & Critical Control Points (HACCP) Awareness Training",
-          "Hazard Identification, Risk Assessment and Control (HIRAC) Training",
-          "Saudi Aramco Schedule Q Awareness Training",
-          "Saudi Aramco Schedule D Awareness Training",
-          "Saudi Aramco Construction Safety Manual (CSM) Awareness Training",
-          "Saudi Aramco Contractor Safety Administrative Requirements (CSAR) Awareness Training",
-          "Saudi Aramco Work Site Safety Manual (WSSM) Awareness Training",
-        ].map((item) => ({
-          label: item,
-          route: "Trainings/OtherTrainings"
-        })),
+          { label: "Six Sigma Training", route: "services/trainings/six-sigma-training/" },
+          { label: "Sustainability Training", route: "services/trainings/sustainability-training/" },
+          { label: "Risk Assessment Training", route: "services/trainings/risk-assessment-training/" },
+          { label: "HACCP Awareness Training", route: "services/trainings/haccp-training/" },
+          { label: "Saudi Aramco Awareness Training", route: "services/trainings/saudi-aramco-awareness-training/" },
+          { label: "Management System Implementation Training", route: "services/trainings/implementation-training/" },
+        ],
       },
     ],
   },
