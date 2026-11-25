@@ -1168,7 +1168,7 @@ export default function VendorAssessment() {
           <figure data-reveal data-delay="240" className="group relative isolate m-0">
             <div aria-hidden="true" className="absolute -inset-3 -z-10 rounded-[28px] border border-orange-200 sm:-inset-4" />
             <div className="relative overflow-hidden rounded-2xl bg-orange-100 shadow-2xl shadow-orange-950/10">
-              <img src="/audit.jpg" alt="" width="1024" height="536" fetchPriority="high" className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-out lg:group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
+              <img src="/audit.webp" alt="" width="1024" height="536" fetchPriority="high" className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-out lg:group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-orange-950/10 via-transparent to-orange-400/10" />
             </div>
           </figure>

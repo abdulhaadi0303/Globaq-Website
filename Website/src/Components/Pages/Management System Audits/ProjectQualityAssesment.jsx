@@ -569,7 +569,7 @@ const page = {
   ]
 };
 
-const heroImage = { src: "/audit.jpg", width: 1024, height: 536 };
+const heroImage = { src: "/audit.webp", width: 1024, height: 536 };
 
 const parentPath = "/services/management-system-audits-saudi-arabia/";
 

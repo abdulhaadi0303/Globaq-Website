@@ -4,9 +4,9 @@ import SEO from "./SEO";
 
 // Group images — see notes below the code for exactly what to source for each
 const groupImages = {
-    consultancy: "/consultancy.jpg",
-    audits: "/audit.jpg",
-    aramco: "/aramco-safety.jpg",
+    consultancy: "/consultancy.webp",
+    audits: "/audit.webp",
+    aramco: "/aramco-safety.webp",
 };
 
 const consultancyItems = [

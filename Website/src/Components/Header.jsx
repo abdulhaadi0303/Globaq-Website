@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import DropdownMenu from "./Dropdown"; // renamed for clarity
 import MobileMenu from "./MobileMenu";
 
-import Logo from "../assets/Logo.jpg";
+import Logo from "../assets/Logo.webp";
 
 function Head() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1150);

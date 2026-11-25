@@ -452,7 +452,7 @@ export default function TrainingsHub() {
           <figure className={`group relative isolate m-0 ${heroEntrance} motion-safe:[animation-delay:170ms]`}>
             <div aria-hidden="true" className="absolute -inset-3 -z-10 rounded-[28px] border border-orange-200 sm:-inset-4" />
             <img
-              src="/consultancy.jpg"
+              src="/consultancy.webp"
               alt=""
               width="1280"
               height="853"

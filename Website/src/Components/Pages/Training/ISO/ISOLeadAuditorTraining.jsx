@@ -12,7 +12,7 @@ const content = {
   "metaDescription": "Develop professional auditing skills with GLOBAQ's ISO Lead Auditor Training in Saudi Arabia. Learn audit planning, team leadership, reporting and follow-up.",
   "description": "GLOBAQ offers professional ISO Lead Auditor Training in Saudi Arabia to develop the skills required to plan, lead, conduct and report management system audits. Our training combines ISO requirements, auditing principles, practical techniques and real-world case studies to strengthen auditor competence.",
   "image": {
-    "src": "/audit.jpg",
+    "src": "/audit.webp",
     "width": 1024,
     "height": 536
   },

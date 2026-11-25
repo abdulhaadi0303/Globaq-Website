@@ -272,7 +272,7 @@ export default function ISOTrainingCourses() {
           </div>
           <div className={`overflow-hidden rounded-2xl border border-orange-200 bg-orange-50 shadow-lg shadow-orange-950/10 ${heroEntrance} motion-safe:[animation-delay:120ms]`}>
             <img
-              src="/consultancy.jpg"
+              src="/consultancy.webp"
               alt=""
               width="1280"
               height="853"

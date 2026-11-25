@@ -277,7 +277,7 @@ function TrainingBlocks({ blocks }) {
 
 export default function TrainingCourse({
   content,
-  image = { src: "/consultancy.jpg", width: 1280, height: 853 },
+  image = { src: "/consultancy.webp", width: 1280, height: 853 },
   exploreTo = "/trainings/",
   exploreLabel = content.exploreLabel,
 }) {

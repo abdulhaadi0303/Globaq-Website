@@ -608,7 +608,7 @@ const page = {
   ]
 };
 
-const heroImage = { src: "/aramco-safety.jpg", width: 678, height: 452 };
+const heroImage = { src: "/aramco-safety.webp", width: 678, height: 452 };
 
 const parentPath = "/services/management-system-audits-saudi-arabia/";
 

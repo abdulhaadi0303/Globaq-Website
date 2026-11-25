@@ -12,7 +12,7 @@ const content = {
   "metaDescription": "Build ISO management system knowledge with GLOBAQ's ISO Awareness Training in Saudi Arabia. Learn ISO principles, requirements, responsibilities and applications.",
   "description": "GLOBAQ provides ISO Awareness and Foundation Training in Saudi Arabia to help employees and professionals understand ISO management system principles, terminology, requirements and responsibilities. Our practical programmes build essential knowledge for effective system implementation and further auditor development.",
   "image": {
-    "src": "/consultancy.jpg",
+    "src": "/consultancy.webp",
     "width": 1280,
     "height": 853
   },

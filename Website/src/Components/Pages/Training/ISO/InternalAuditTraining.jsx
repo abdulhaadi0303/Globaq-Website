@@ -12,7 +12,7 @@ const content = {
   "metaDescription": "Develop practical audit skills with GLOBAQ's ISO Internal Auditor Training in Saudi Arabia. Learn audit planning, evidence gathering, reporting and follow-up.",
   "description": "GLOBAQ provides practical ISO Internal Auditor Training in Saudi Arabia to help professionals plan, conduct, report and follow up management system audits. Our programmes combine ISO auditing principles, evidence-gathering techniques, case studies and practical exercises to strengthen internal auditing competence.",
   "image": {
-    "src": "/audit.jpg",
+    "src": "/audit.webp",
     "width": 1024,
     "height": 536
   },

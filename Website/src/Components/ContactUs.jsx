@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import contactimg from '../assets/contact.jpg'; 
+import contactimg from '../assets/contact.webp';
 import SEO from './SEO';
 import PageSchema from './PageSchema';
 

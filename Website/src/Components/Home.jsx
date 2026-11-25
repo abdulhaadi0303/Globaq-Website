@@ -5,22 +5,22 @@ import SEO from "./SEO";
 // Images array - all images should be placed in the public folder
 // Public folder images are accessible directly with paths starting with "/"
 const images = [
-    "/pic1.jpg",     
-    "/pic2.jpg",     
-    "/pic3.jpg",     
-    "/pic4.jpg",     
-    "/pic8.jpg",     
-    "/pic10.jpg",    
-    "/pic11.jpg",        
+    "/pic1.webp",
+    "/pic2.webp",
+    "/pic3.webp",
+    "/pic4.webp",
+    "/pic8.webp",
+    "/pic10.webp",
+    "/pic11.webp",
 ];
 
 // Client images array
 const clientImages = [
-    "/client1.jpg",
-    "/client2.jpg",
-    "/client3.jpg",
-    "/client4.jpg",
-    "/aramcologo.jpg"
+    "/client1.webp",
+    "/client2.webp",
+    "/client3.webp",
+    "/client4.webp",
+    "/aramcologo.webp"
 ];
 
 // Services data with descriptions

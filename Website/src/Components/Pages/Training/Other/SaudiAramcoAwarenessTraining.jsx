@@ -279,5 +279,5 @@ const content = {
 };
 
 export default function SaudiAramcoAwarenessTraining() {
-  return <TrainingCourse content={content} image={{ src: "/aramco-safety.jpg", width: 678, height: 452 }} />;
+  return <TrainingCourse content={content} image={{ src: "/aramco-safety.webp", width: 678, height: 452 }} />;
 }

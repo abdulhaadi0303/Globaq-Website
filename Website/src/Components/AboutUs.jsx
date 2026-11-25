@@ -4,9 +4,9 @@ import SEO from "./SEO";
 import PageSchema from "./PageSchema";
 
 const groupImages = {
-    consultancy: "/consultancy.jpg",
-    audits: "/audit.jpg",
-    aramco: "/aramco-safety.jpg",
+    consultancy: "/consultancy.webp",
+    audits: "/audit.webp",
+    aramco: "/aramco-safety.webp",
 };
 
 const consultancyItems = [
