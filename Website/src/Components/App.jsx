@@ -93,10 +93,6 @@ function App() {
             element={<ServicesPage />}
           />
           <Route
-            path="/services/trainings"
-            element={<ServicesPage />}
-          />
-          <Route
             path="/services/audit-assistance"
             element={<ServicesPage />}
           />
@@ -161,7 +157,8 @@ function App() {
           />
 
           {/* Training Pages */}
-          <Route path="/trainings/" element={<TrainingsHub />} />
+          <Route path="/services/trainings/" element={<TrainingsHub />} />
+          <Route path="/trainings/" element={<Navigate to="/services/trainings/" replace />} />
           <Route path="/services/trainings/iso-training-courses/" element={<ISOTrainingCourses />} />
           <Route path="/services/trainings/iso-lead-auditor-training/" element={<ISOLeadAuditorTraining />} />
           <Route path="/services/trainings/iso-internal-auditor-training/" element={<InternalAuditTraining />} />
@@ -174,6 +171,7 @@ function App() {
           <Route path="/services/trainings/haccp-training/" element={<HACCPTraining />} />
           <Route path="/services/trainings/saudi-aramco-awareness-training/" element={<SaudiAramcoAwarenessTraining />} />
           <Route path="/services/trainings/implementation-training/" element={<ImplementationTraining />} />
+          <Route path="/Trainings/ISOTrainings/ISOImplementationTraining" element={<Navigate to="/services/trainings/implementation-training/" replace />} />
           <Route
             path="Trainings/OtherTrainings"
             element={<OtherTrainings />}

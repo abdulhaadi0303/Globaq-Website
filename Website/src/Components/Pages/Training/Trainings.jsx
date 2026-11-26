@@ -150,7 +150,7 @@ const content = {
   ]
 };
 
-const pagePath = "/trainings/";
+const pagePath = "/services/trainings/";
 const courseIcons = [FaBookOpen, FaChartLine, FaLeaf, FaShieldAlt, FaUtensils, FaClipboardCheck, FaClipboardCheck];
 const isoCourses = [
   ["ISO Lead Auditor Training", "/services/trainings/iso-lead-auditor-training/"],

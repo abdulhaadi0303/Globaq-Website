@@ -33,7 +33,7 @@ const services = [
     {
         title: "Trainings (ISO, QHSE, Process Improvement)",
         description: "Professional training programs covering ISO standards, QHSE practices, and process improvement methodologies.",
-        route: "/services/trainings"
+        route: "/services/trainings/"
     },
     {
         title: "Audit Assistance & Solutions",

@@ -22,7 +22,7 @@ const dropdownData = [
   // 2 - Trainings
   {
     title: "Trainings",
-    route: "trainings/",
+    route: "services/trainings/",
     items: [
       {
         label: "ISO Training Courses",

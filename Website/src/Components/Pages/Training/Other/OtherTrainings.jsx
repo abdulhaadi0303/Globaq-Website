@@ -1,14 +1,16 @@
+import { useLocation } from "react-router-dom";
 import "../../../styles/routes.css";
 import SEO from "../../../SEO";
 import PageSchema from "../../../PageSchema";
 
 function OtherTrainings() {
+    const { pathname } = useLocation();
     return (
         <div className="page-container">
             <SEO
                 title="Other Trainings | Globaq"
                 description="Training programs beyond ISO standards, including Six Sigma, Lean, 5S, ESG, HACCP, HIRAC, and Saudi Aramco-specific awareness training."
-                path="/Trainings/OtherTrainings"
+                path={pathname}
             />
 
             <PageSchema
@@ -20,15 +22,15 @@ function OtherTrainings() {
                     description: "Training programs beyond ISO standards, including Six Sigma, Lean, 5S, ESG, HACCP, HIRAC, and Saudi Aramco-specific awareness training.",
                     provider: { "@type": "LocalBusiness", name: "GLOBAQ KSA", url: "https://globaqksa.com" },
                     areaServed: { "@type": "Country", name: "Saudi Arabia" },
-                    url: "https://globaqksa.com/Trainings/OtherTrainings",
+                    url: `https://globaqksa.com${pathname}`,
                 }}
             />
 
             <div className="textbox">
                 <h1>Other Trainings</h1>
                 <p>
-                    Beyond ISO standards, GLOBAQ offers a diverse portfolio of training programs designed to 
-                    enhance organizational performance and sustainability across a range of disciplines. These include, 
+                    Beyond ISO standards, GLOBAQ offers a diverse portfolio of training programs designed to
+                    enhance organizational performance and sustainability across a range of disciplines. These include,
                     but not limited to:
                 </p>
                 <ul>
@@ -39,6 +41,7 @@ function OtherTrainings() {
                     <li>UN Sustainable Development Goals (SDGs) Awareness Training</li>
                     <li>Circular Economy Awareness Training</li>
                     <li>Risk Assessment Training</li>
+                    <li>Root Cause Analysis Training</li>
                     <li>Hazard Analysis & Critical Control Points (HACCP) Awareness Training</li>
                     <li>Hazard Identification, Risk Assessment and Control (HIRAC) Training</li>
                     <li>Saudi Aramco Schedule Q Awareness Training</li>

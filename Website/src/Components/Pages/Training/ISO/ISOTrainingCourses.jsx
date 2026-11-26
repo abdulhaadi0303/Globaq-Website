@@ -254,7 +254,7 @@ export default function ISOTrainingCourses() {
       <header className="overflow-hidden border-b border-orange-100 bg-gradient-to-br from-orange-50 via-white to-gray-50 py-12 lg:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
           <div>
-            <Link to="/trainings/" className={`mb-5 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-orange-800 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-700 ${heroEntrance}`}>
+            <Link to="/services/trainings/" className={`mb-5 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-orange-800 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-700 ${heroEntrance}`}>
               <span aria-hidden="true">←</span> Trainings
             </Link>
             <h1 className={`mb-6 text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl xl:text-6xl ${heroEntrance} motion-safe:[animation-delay:60ms]`}>

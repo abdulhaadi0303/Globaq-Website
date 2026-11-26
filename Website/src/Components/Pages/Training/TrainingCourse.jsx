@@ -278,7 +278,7 @@ function TrainingBlocks({ blocks }) {
 export default function TrainingCourse({
   content,
   image = { src: "/consultancy.webp", width: 1280, height: 853 },
-  exploreTo = "/trainings/",
+  exploreTo = "/services/trainings/",
   exploreLabel = content.exploreLabel,
 }) {
   const ref = useSectionReveals();
@@ -315,7 +315,7 @@ export default function TrainingCourse({
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.2fr_0.85fr] lg:gap-14">
           <div>
             <nav aria-label="Breadcrumb" className={`mb-5 text-sm font-semibold text-orange-800 ${entrance}`}>
-              <Link to="/trainings/" className="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-700"><span aria-hidden="true">←</span> Trainings</Link>
+              <Link to="/services/trainings/" className="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-700"><span aria-hidden="true">←</span> Trainings</Link>
             </nav>
             <h1 className={`mb-6 text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl xl:text-6xl ${entrance} motion-safe:[animation-delay:65ms]`}>
               {content.title.slice(0, accentStart)}<span className="text-orange-700">{content.title.slice(accentStart)}</span>
