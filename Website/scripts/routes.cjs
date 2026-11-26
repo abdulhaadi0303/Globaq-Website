@@ -40,6 +40,7 @@ module.exports = [
   { path: '/services/trainings/iso-lead-auditor-training/', priority: 0.7 },
   { path: '/services/trainings/iso-internal-auditor-training/', priority: 0.7 },
   { path: '/services/trainings/iso-awareness-training/', priority: 0.7 },
+  { path: '/services/trainings/iso-implementation-training/', priority: 0.7 },
   { path: '/services/trainings/six-sigma-training/', priority: 0.7 },
   { path: '/services/trainings/sustainability-training/', priority: 0.7 },
   { path: '/services/trainings/risk-assessment-training/', priority: 0.7 },

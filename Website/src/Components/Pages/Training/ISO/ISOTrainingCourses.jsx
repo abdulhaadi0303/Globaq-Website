@@ -52,6 +52,16 @@ const content = {
         "The GLOBAQ company profile describes foundation training as a one-day programme."
       ],
       "link": "Explore ISO Awareness Training"
+    },
+    {
+      "title": "ISO Implementation Training",
+      "path": "/services/trainings/iso-implementation-training/",
+      "body": [
+        "Learn how to translate ISO requirements into effective organisational processes and management controls.",
+        "GLOBAQ's implementation training covers process development, documentation, responsibilities, implementation planning, monitoring and continual improvement.",
+        "The programme supports employees and implementation teams responsible for establishing or improving management systems."
+      ],
+      "link": "Explore ISO Implementation Training"
     }
   ],
   "standardsIntro": "GLOBAQ offers training across multiple management system standards, including:",
@@ -301,7 +311,7 @@ export default function ISOTrainingCourses() {
       <Section id="iso-training-programmes" title="Our ISO Training Programmes" tone="border-y border-orange-100 bg-gradient-to-br from-orange-50/70 via-white to-gray-50">
         <ul className="grid gap-6 lg:grid-cols-3">
           {content.courses.map(({ title, path, body, link }, index) => {
-            const Icon = courseIcons[index];
+            const Icon = courseIcons[index % courseIcons.length];
             return (
               <li key={path} data-reveal={index * 95} className="flex flex-col rounded-2xl border border-orange-100 bg-white p-6 shadow-sm hover:border-orange-300 hover:shadow-lg motion-safe:transition motion-safe:duration-300 motion-safe:hover:-translate-y-1 sm:p-7">
                 <span aria-hidden="true" className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-800">

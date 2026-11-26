@@ -12,7 +12,7 @@ const content = {
     "Our documented implementation training helps professionals understand how to translate management system requirements into organisational procedures, responsibilities and effective operational controls."
   ],
   "requestLabel": "Request Implementation Training Details",
-  "exploreLabel": "Explore ISO Training Courses",
+  "exploreLabel": "Explore ISO Implementation Training",
   "sections": [
     {
       "id": "training-overview",
@@ -146,5 +146,5 @@ const content = {
 };
 
 export default function ImplementationTraining() {
-  return <TrainingCourse content={content} exploreTo="/services/trainings/iso-training-courses/" />;
+  return <TrainingCourse content={content} exploreTo="/services/trainings/iso-implementation-training/" />;
 }

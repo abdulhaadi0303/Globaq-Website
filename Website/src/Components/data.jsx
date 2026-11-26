@@ -32,6 +32,7 @@ const dropdownData = [
           { label: "ISO Lead Auditor Training", route: "services/trainings/iso-lead-auditor-training/" },
           { label: "ISO Internal Auditor Training", route: "services/trainings/iso-internal-auditor-training/" },
           { label: "ISO Awareness Training", route: "services/trainings/iso-awareness-training/" },
+          { label: "ISO Implementation Training", route: "services/trainings/iso-implementation-training/" },
         ],
       },
       {

@@ -28,6 +28,7 @@ import ISOTrainingCourses from "./Pages/Training/ISO/ISOTrainingCourses.jsx";
 import ISOLeadAuditorTraining from "./Pages/Training/ISO/ISOLeadAuditorTraining.jsx";
 import InternalAuditTraining from "./Pages/Training/ISO/InternalAuditTraining.jsx";
 import ISOAwarenessTraining from "./Pages/Training/ISO/ISOAwarenessTraining.jsx";
+import ISOImplementationTraining from "./Pages/Training/ISO/ISOImplementationTraining.jsx";
 import OtherTrainings from "./Pages/Training/Other/OtherTrainings.jsx";
 import SixSigmaTraining from "./Pages/Training/Other/SixSigmaTraining.jsx";
 import SustainabilityTraining from "./Pages/Training/Other/SustainabilityTraining.jsx";
@@ -163,6 +164,7 @@ function App() {
           <Route path="/services/trainings/iso-lead-auditor-training/" element={<ISOLeadAuditorTraining />} />
           <Route path="/services/trainings/iso-internal-auditor-training/" element={<InternalAuditTraining />} />
           <Route path="/services/trainings/iso-awareness-training/" element={<ISOAwarenessTraining />} />
+          <Route path="/services/trainings/iso-implementation-training/" element={<ISOImplementationTraining />} />
           <Route path="/Trainings/ISOTrainings/ISOAwarenessTraining" element={<Navigate to="/services/trainings/iso-awareness-training/" replace />} />
           <Route path="/Trainings/ISOTrainings/InternalAuditTraining" element={<Navigate to="/services/trainings/iso-internal-auditor-training/" replace />} />
           <Route path="/services/trainings/six-sigma-training/" element={<SixSigmaTraining />} />
@@ -171,7 +173,7 @@ function App() {
           <Route path="/services/trainings/haccp-training/" element={<HACCPTraining />} />
           <Route path="/services/trainings/saudi-aramco-awareness-training/" element={<SaudiAramcoAwarenessTraining />} />
           <Route path="/services/trainings/implementation-training/" element={<ImplementationTraining />} />
-          <Route path="/Trainings/ISOTrainings/ISOImplementationTraining" element={<Navigate to="/services/trainings/implementation-training/" replace />} />
+          <Route path="/Trainings/ISOTrainings/ISOImplementationTraining" element={<Navigate to="/services/trainings/iso-implementation-training/" replace />} />
           <Route
             path="Trainings/OtherTrainings"
             element={<OtherTrainings />}
