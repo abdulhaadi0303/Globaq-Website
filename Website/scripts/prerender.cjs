@@ -6,6 +6,7 @@
  */
 const path = require('path');
 const fs = require('fs');
+const os = require('os');
 const { spawn } = require('child_process');
 const puppeteer = require('puppeteer');
 const ROUTES = require('./routes.cjs');
@@ -37,45 +38,82 @@ async function getLaunchOptions() {
     };
   }
   const opts = { headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] };
-  if (process.env.CHROME_PATH) opts.executablePath = process.env.CHROME_PATH;
+  if (process.env.CHROME_PATH) {
+    opts.executablePath = process.env.CHROME_PATH;
+    return opts;
+  }
+
+  // Prefer Puppeteer's own browser when installed; otherwise use local Chrome.
+  const candidates = [];
+  try {
+    candidates.push(puppeteer.executablePath());
+  } catch {
+    // Puppeteer may throw when its requested browser version is not cached.
+  }
+  if (process.platform === 'darwin') {
+    candidates.push(
+      '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+      path.join(os.homedir(), 'Applications/Google Chrome.app/Contents/MacOS/Google Chrome'),
+    );
+  }
+  opts.executablePath = candidates.find((candidate) => {
+    try {
+      fs.accessSync(candidate, fs.constants.X_OK);
+      return true;
+    } catch {
+      return false;
+    }
+  });
+  if (!opts.executablePath) {
+    throw new Error(
+      'No Chrome browser found. Install Google Chrome on macOS, run ' +
+      '"npx puppeteer browsers install chrome", or set CHROME_PATH to your browser executable.',
+    );
+  }
   return opts;
 }
 
 async function prerender() {
   console.log(`Starting local static server for prerendering (environment: ${IS_VERCEL ? 'Vercel' : 'local'})...`);
-  const server = spawn('npx', ['serve', '-s', 'dist', '-l', String(PORT)], {
+  const launchOpts = await getLaunchOptions();
+  console.log(`Prerender browser: ${launchOpts.executablePath}`);
+  const server = spawn(process.execPath, [path.join(__dirname, '..', 'node_modules', 'serve', 'build', 'main.js'), '-s', 'dist', '-l', String(PORT)], {
     cwd: path.join(__dirname, '..'),
     stdio: 'ignore',
   });
-  await waitForServer(`http://localhost:${PORT}/`);
-
-  const launchOpts = await getLaunchOptions();
-  const browser = await puppeteer.launch(launchOpts);
-
+  let browser;
   const captured = [];
   let failed = 0;
-  for (const route of ROUTES) {
-    const page = await browser.newPage();
-    const url = `http://localhost:${PORT}${route.path}`;
+  try {
+    await waitForServer(`http://localhost:${PORT}/`);
+    browser = await puppeteer.launch(launchOpts);
+    for (const route of ROUTES) {
+      const page = await browser.newPage();
+      const url = `http://localhost:${PORT}${route.path}`;
+      try {
+        await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
+        let html = await page.content();
+        // Some assets (e.g. images referenced via `new URL(path, import.meta.url)`)
+        // get baked in as absolute URLs pointing at the local prerender server.
+        // Strip that so the shipped HTML uses relative/production-correct URLs.
+        html = html.split(`http://localhost:${PORT}`).join('');
+        captured.push({ route: route.path, html });
+        console.log(`✓ ${route.path}`);
+      } catch (err) {
+        console.error(`✗ FAILED: ${route.path} — ${err.message}`);
+        failed++;
+      } finally {
+        await page.close();
+      }
+    }
+
+  } finally {
     try {
-      await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
-      let html = await page.content();
-      // Some assets (e.g. images referenced via `new URL(path, import.meta.url)`)
-      // get baked in as absolute URLs pointing at the local prerender server.
-      // Strip that so the shipped HTML uses relative/production-correct URLs.
-      html = html.split(`http://localhost:${PORT}`).join('');
-      captured.push({ route: route.path, html });
-      console.log(`✓ ${route.path}`);
-    } catch (err) {
-      console.error(`✗ FAILED: ${route.path} — ${err.message}`);
-      failed++;
+      if (browser) await browser.close();
     } finally {
-      await page.close();
+      server.kill();
     }
   }
-
-  await browser.close();
-  server.kill();
 
   for (const { route, html } of captured) {
     const outDir = route === '/' ? DIST_DIR : path.join(DIST_DIR, route.replace(/^\//, ''));
